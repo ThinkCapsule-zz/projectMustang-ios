@@ -8,6 +8,12 @@
 
 #import "AppDelegate.h"
 
+//Navigation
+#import "NavigationManager.h"
+#import "TCMainMenuVC.h"
+#import "MainViewController.h"
+#import <RESideMenu/RESideMenu.h>
+
 @interface AppDelegate ()
 
 @end
@@ -16,7 +22,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    /* Setup left hand nav */
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
+    TCMainMenuVC* menuVC                         = [[TCMainMenuVC alloc] init];
+    RESideMenu* sideMenuVC                       = [[RESideMenu alloc] initWithContentViewController:navigationController
+                                                                              leftMenuViewController:menuVC
+                                                                             rightMenuViewController:nil];
+
+    self.window.rootViewController               = sideMenuVC;
+
     return YES;
 }
 

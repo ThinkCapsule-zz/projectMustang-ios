@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-BLKFlexibleHeightBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RESideMenu.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0492009B03CBE7B2D84D8E7E</key>
+		<key>3101F776BE80390D85E01AF0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9BB8CF37C727FC3BAC2698C9</key>
+		<key>4CD00CE98CDF7E6183168F69</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E3317D6784E21A074B1485BC</key>
+		<key>51A495CBAE0CA37DF1BFEA58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71AC6D059B32CAD2B8D22D14</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -8,3 +8,4 @@ inhibit_all_warnings!
 
 pod "AFNetworking", "2.2.1"
 pod 'RESideMenu', '~> 4.0.7'
+pod 'BLKFlexibleHeightBar', '~> 1.0.2'

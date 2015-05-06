@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		77E3FFED587D2B94B2B73130 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F91D294DF9F5DAC8DA3998 /* libPods.a */; };
+		CA6335201AFAAB29009DC83A /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA63351F1AFAAB29009DC83A /* config.plist */; };
+		CA6335231AFAAC9D009DC83A /* ConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6335221AFAAC9D009DC83A /* ConfigManager.m */; };
 		CAD5854A1AF26A5100F77ED7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585491AF26A5100F77ED7 /* main.m */; };
 		CAD585501AF26A5100F77ED7 /* projectMustang_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAD5854E1AF26A5100F77ED7 /* projectMustang_ios.xcdatamodeld */; };
 		CAD585561AF26A5100F77ED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD585541AF26A5100F77ED7 /* Main.storyboard */; };
@@ -16,6 +18,9 @@
 		CAD585671AF26A5100F77ED7 /* projectMustang_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585661AF26A5100F77ED7 /* projectMustang_iosTests.m */; };
 		CAD5857A1AF26C7400F77ED7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585751AF26C7400F77ED7 /* AppDelegate.m */; };
 		CAD5857B1AF26C7400F77ED7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585781AF26C7400F77ED7 /* MainViewController.m */; };
+		CAD585801AF26F9400F77ED7 /* NavigationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD5857F1AF26F9400F77ED7 /* NavigationManager.m */; };
+		CAD585841AF2715900F77ED7 /* TCMainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585831AF2715900F77ED7 /* TCMainMenuVC.m */; };
+		CAD585931AF2AC6A00F77ED7 /* TCBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585921AF2AC6A00F77ED7 /* TCBaseVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		1075B1093CE1BFBDF7FD3D0F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CA63351F1AFAAB29009DC83A /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		CA6335211AFAAC9D009DC83A /* ConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigManager.h; sourceTree = "<group>"; };
+		CA6335221AFAAC9D009DC83A /* ConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigManager.m; sourceTree = "<group>"; };
 		CAD585441AF26A5100F77ED7 /* projectMustang-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "projectMustang-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAD585481AF26A5100F77ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAD585491AF26A5100F77ED7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,6 +52,13 @@
 		CAD585751AF26C7400F77ED7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CAD585771AF26C7400F77ED7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		CAD585781AF26C7400F77ED7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		CAD5857E1AF26F9400F77ED7 /* NavigationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationManager.h; sourceTree = "<group>"; };
+		CAD5857F1AF26F9400F77ED7 /* NavigationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationManager.m; sourceTree = "<group>"; };
+		CAD585821AF2715900F77ED7 /* TCMainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMainMenuVC.h; sourceTree = "<group>"; };
+		CAD585831AF2715900F77ED7 /* TCMainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMainMenuVC.m; sourceTree = "<group>"; };
+		CAD585851AF27C2000F77ED7 /* TCNavigationStatics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCNavigationStatics.h; path = "projectMustang-ios/Core/Statics and Utilities/TCNavigationStatics.h"; sourceTree = SOURCE_ROOT; };
+		CAD585911AF2AC6A00F77ED7 /* TCBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCBaseVC.h; sourceTree = "<group>"; };
+		CAD585921AF2AC6A00F77ED7 /* TCBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCBaseVC.m; sourceTree = "<group>"; };
 		D2F91D294DF9F5DAC8DA3998 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79FF135A583509834B12298 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA63351E1AFAAB08009DC83A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA63351F1AFAAB29009DC83A /* config.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		CAD5853B1AF26A5100F77ED7 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +156,7 @@
 				CAD585721AF26C7400F77ED7 /* Logic */,
 				CAD585731AF26C7400F77ED7 /* Presentation */,
 				CAD585791AF26C7400F77ED7 /* Statics and Utilities */,
+				CA63351E1AFAAB08009DC83A /* Resources */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -140,6 +164,8 @@
 		CAD585711AF26C7400F77ED7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CA6335211AFAAC9D009DC83A /* ConfigManager.h */,
+				CA6335221AFAAC9D009DC83A /* ConfigManager.m */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -147,6 +173,7 @@
 		CAD585721AF26C7400F77ED7 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				CAD5857D1AF26F7E00F77ED7 /* Navigation */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -156,7 +183,14 @@
 			children = (
 				CAD585741AF26C7400F77ED7 /* AppDelegate.h */,
 				CAD585751AF26C7400F77ED7 /* AppDelegate.m */,
+				CAD585901AF2AC5000F77ED7 /* Base */,
+				CAD585861AF2830300F77ED7 /* Articles */,
+				CAD585871AF2830300F77ED7 /* Blogs */,
+				CAD585881AF2830300F77ED7 /* Events */,
+				CAD585891AF2830300F77ED7 /* Places */,
+				CAD5858A1AF2830300F77ED7 /* Videos */,
 				CAD585761AF26C7400F77ED7 /* Main */,
+				CAD585811AF2710100F77ED7 /* Navigation */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -173,8 +207,71 @@
 		CAD585791AF26C7400F77ED7 /* Statics and Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CAD585851AF27C2000F77ED7 /* TCNavigationStatics.h */,
 			);
 			path = "Statics and Utilities";
+			sourceTree = "<group>";
+		};
+		CAD5857D1AF26F7E00F77ED7 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CAD5857E1AF26F9400F77ED7 /* NavigationManager.h */,
+				CAD5857F1AF26F9400F77ED7 /* NavigationManager.m */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CAD585811AF2710100F77ED7 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CAD585821AF2715900F77ED7 /* TCMainMenuVC.h */,
+				CAD585831AF2715900F77ED7 /* TCMainMenuVC.m */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CAD585861AF2830300F77ED7 /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Articles;
+			sourceTree = "<group>";
+		};
+		CAD585871AF2830300F77ED7 /* Blogs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Blogs;
+			sourceTree = "<group>";
+		};
+		CAD585881AF2830300F77ED7 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		CAD585891AF2830300F77ED7 /* Places */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Places;
+			sourceTree = "<group>";
+		};
+		CAD5858A1AF2830300F77ED7 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
+		CAD585901AF2AC5000F77ED7 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CAD585911AF2AC6A00F77ED7 /* TCBaseVC.h */,
+				CAD585921AF2AC6A00F77ED7 /* TCBaseVC.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		CDAEDFDEC791B2D5A2F07471 /* Pods */ = {
@@ -276,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6335201AFAAB29009DC83A /* config.plist in Resources */,
 				CAD585561AF26A5100F77ED7 /* Main.storyboard in Resources */,
 				CAD5855B1AF26A5100F77ED7 /* LaunchScreen.xib in Resources */,
 				CAD585581AF26A5100F77ED7 /* Images.xcassets in Resources */,
@@ -331,7 +429,11 @@
 			files = (
 				CAD5854A1AF26A5100F77ED7 /* main.m in Sources */,
 				CAD585501AF26A5100F77ED7 /* projectMustang_ios.xcdatamodeld in Sources */,
+				CAD585931AF2AC6A00F77ED7 /* TCBaseVC.m in Sources */,
+				CA6335231AFAAC9D009DC83A /* ConfigManager.m in Sources */,
 				CAD5857A1AF26C7400F77ED7 /* AppDelegate.m in Sources */,
+				CAD585841AF2715900F77ED7 /* TCMainMenuVC.m in Sources */,
+				CAD585801AF26F9400F77ED7 /* NavigationManager.m in Sources */,
 				CAD5857B1AF26C7400F77ED7 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

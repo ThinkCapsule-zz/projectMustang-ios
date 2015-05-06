@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 2
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
 
+// BLKFlexibleHeightBar
+#define COCOAPODS_POD_AVAILABLE_BLKFlexibleHeightBar
+#define COCOAPODS_VERSION_MAJOR_BLKFlexibleHeightBar 1
+#define COCOAPODS_VERSION_MINOR_BLKFlexibleHeightBar 0
+#define COCOAPODS_VERSION_PATCH_BLKFlexibleHeightBar 2
+
 // RESideMenu
 #define COCOAPODS_POD_AVAILABLE_RESideMenu
 #define COCOAPODS_VERSION_MAJOR_RESideMenu 4
