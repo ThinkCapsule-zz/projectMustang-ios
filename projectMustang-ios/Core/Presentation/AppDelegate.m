@@ -10,8 +10,9 @@
 
 //Navigation
 #import "NavigationManager.h"
-#import "TCMainMenuVC.h"
+#import "MainMenuViewController.h"
 #import "MainViewController.h"
+#import <SQTShyNavigationBar/SQTShyNavigationBar.h>
 #import <RESideMenu/RESideMenu.h>
 
 @interface AppDelegate ()
@@ -24,8 +25,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     /* Setup left hand nav */
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
-    TCMainMenuVC* menuVC                         = [[TCMainMenuVC alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithNavigationBarClass:[SQTShyNavigationBar class] toolbarClass:nil];
+    MainViewController* mainVC = [[MainViewController alloc] init];
+    [navigationController setViewControllers:@[mainVC]];
+    
+    
+    MainMenuViewController* menuVC               = [[MainMenuViewController alloc] init];
     RESideMenu* sideMenuVC                       = [[RESideMenu alloc] initWithContentViewController:navigationController
                                                                               leftMenuViewController:menuVC
                                                                              rightMenuViewController:nil];

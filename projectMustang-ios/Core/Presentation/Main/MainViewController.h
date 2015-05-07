@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TCBaseVC.h"
+#import "BaseViewController.h"
 
-@interface MainViewController : TCBaseVC
+@interface MainViewController : BaseViewController
 
 
 @end

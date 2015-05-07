@@ -17,7 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Home";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
