@@ -54,6 +54,18 @@
 #define COCOAPODS_VERSION_MINOR_BLKFlexibleHeightBar 0
 #define COCOAPODS_VERSION_PATCH_BLKFlexibleHeightBar 2
 
+// ContentfulDeliveryAPI
+#define COCOAPODS_POD_AVAILABLE_ContentfulDeliveryAPI
+#define COCOAPODS_VERSION_MAJOR_ContentfulDeliveryAPI 1
+#define COCOAPODS_VERSION_MINOR_ContentfulDeliveryAPI 6
+#define COCOAPODS_VERSION_PATCH_ContentfulDeliveryAPI 0
+
+// ISO8601DateFormatter
+#define COCOAPODS_POD_AVAILABLE_ISO8601DateFormatter
+#define COCOAPODS_VERSION_MAJOR_ISO8601DateFormatter 0
+#define COCOAPODS_VERSION_MINOR_ISO8601DateFormatter 7
+#define COCOAPODS_VERSION_PATCH_ISO8601DateFormatter 0
+
 // RESideMenu
 #define COCOAPODS_POD_AVAILABLE_RESideMenu
 #define COCOAPODS_VERSION_MAJOR_RESideMenu 4

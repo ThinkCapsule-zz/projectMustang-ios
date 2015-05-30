@@ -7,10 +7,12 @@
 //
 
 #import "ConfigManager.h"
+#import "CDAClient.h"
 
 @interface ConfigManager()
 
 @property (nonatomic, strong) NSDictionary* configDictionary;
+@property (nonatomic, strong) CDAClient* client;
 
 @end
 
@@ -21,7 +23,7 @@
 
     self = [super init];
     if (self) {
-         _configDictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"]];
+        _configDictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"]];
     }
     
     return self;

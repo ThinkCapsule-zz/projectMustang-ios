@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "DataFetcher.h"
 
 @interface MainViewController ()
 
@@ -22,6 +23,18 @@
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(presentLeftMenuViewController:)];
+ 
+    // sample call
+    DataFetcher* dataFetcher = [DataFetcher singletonInstance];
+    
+    [[dataFetcher fetchClient] fetchEntriesWithSuccess:^(CDAResponse *response, CDAArray *array) {
+        
+        NSArray* items = array.items;
+        
+    } failure:^(CDAResponse *response, NSError *error) {
+        NSLog(@"somethings wrong");
+    }];
+
     
 }
 
