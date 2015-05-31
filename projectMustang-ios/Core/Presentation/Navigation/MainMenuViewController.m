@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Alan Hsu. All rights reserved.
 //
 
-#import "TCMainMenuVC.h"
+#import "MainMenuViewController.h"
 #import "ConfigManager.h"
 
 #define UIColorFromRGB(rgbValue) \
@@ -15,11 +15,13 @@ green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
 blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
 alpha:1.0]
 
-@interface TCMainMenuVC ()
+CGFloat const kLeftNavHeight = 340.0f;
+
+@interface MainMenuViewController ()
 
 @end
 
-@implementation TCMainMenuVC
+@implementation MainMenuViewController
 
 
 - (void)viewDidLoad {
@@ -28,8 +30,8 @@ alpha:1.0]
 
     ConfigManager* configManager         = [ConfigManager singletonInstance];
     self.menuItems                       = [configManager navigationItems];
-    self.menuItemsTable                  = [[UITableView alloc] initWithFrame:CGRectMake(0, (self.view.frame.size.height - 54 * 5) / 2.0f,
-                                                                                         self.view.frame.size.width, 54 * 5)
+    self.menuItemsTable                  = [[UITableView alloc] initWithFrame:CGRectMake(20, (self.view.frame.size.height - kLeftNavHeight) / 2.0f,
+                                                                                         self.view.frame.size.width, kLeftNavHeight)
                                                                         style:UITableViewStylePlain];
     self.menuItemsTable.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
     self.menuItemsTable.delegate         = self;

@@ -20,8 +20,8 @@
 		CAD5857A1AF26C7400F77ED7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585751AF26C7400F77ED7 /* AppDelegate.m */; };
 		CAD5857B1AF26C7400F77ED7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585781AF26C7400F77ED7 /* MainViewController.m */; };
 		CAD585801AF26F9400F77ED7 /* NavigationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD5857F1AF26F9400F77ED7 /* NavigationManager.m */; };
-		CAD585841AF2715900F77ED7 /* TCMainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585831AF2715900F77ED7 /* TCMainMenuVC.m */; };
-		CAD585931AF2AC6A00F77ED7 /* TCBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585921AF2AC6A00F77ED7 /* TCBaseVC.m */; };
+		CAD585841AF2715900F77ED7 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585831AF2715900F77ED7 /* MainMenuViewController.m */; };
+		CAD585931AF2AC6A00F77ED7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585921AF2AC6A00F77ED7 /* BaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,11 +57,11 @@
 		CAD585781AF26C7400F77ED7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		CAD5857E1AF26F9400F77ED7 /* NavigationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationManager.h; sourceTree = "<group>"; };
 		CAD5857F1AF26F9400F77ED7 /* NavigationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationManager.m; sourceTree = "<group>"; };
-		CAD585821AF2715900F77ED7 /* TCMainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMainMenuVC.h; sourceTree = "<group>"; };
-		CAD585831AF2715900F77ED7 /* TCMainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMainMenuVC.m; sourceTree = "<group>"; };
+		CAD585821AF2715900F77ED7 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		CAD585831AF2715900F77ED7 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		CAD585851AF27C2000F77ED7 /* TCNavigationStatics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCNavigationStatics.h; path = "projectMustang-ios/Core/Statics and Utilities/TCNavigationStatics.h"; sourceTree = SOURCE_ROOT; };
-		CAD585911AF2AC6A00F77ED7 /* TCBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCBaseVC.h; sourceTree = "<group>"; };
-		CAD585921AF2AC6A00F77ED7 /* TCBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCBaseVC.m; sourceTree = "<group>"; };
+		CAD585911AF2AC6A00F77ED7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		CAD585921AF2AC6A00F77ED7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		D2F91D294DF9F5DAC8DA3998 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79FF135A583509834B12298 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,8 +229,8 @@
 		CAD585811AF2710100F77ED7 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				CAD585821AF2715900F77ED7 /* TCMainMenuVC.h */,
-				CAD585831AF2715900F77ED7 /* TCMainMenuVC.m */,
+				CAD585821AF2715900F77ED7 /* MainMenuViewController.h */,
+				CAD585831AF2715900F77ED7 /* MainMenuViewController.m */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -273,8 +273,8 @@
 		CAD585901AF2AC5000F77ED7 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				CAD585911AF2AC6A00F77ED7 /* TCBaseVC.h */,
-				CAD585921AF2AC6A00F77ED7 /* TCBaseVC.m */,
+				CAD585911AF2AC6A00F77ED7 /* BaseViewController.h */,
+				CAD585921AF2AC6A00F77ED7 /* BaseViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -436,10 +436,10 @@
 				B6379F311B1A60A2005C0ADA /* DataFetcher.m in Sources */,
 				CAD5854A1AF26A5100F77ED7 /* main.m in Sources */,
 				CAD585501AF26A5100F77ED7 /* projectMustang_ios.xcdatamodeld in Sources */,
-				CAD585931AF2AC6A00F77ED7 /* TCBaseVC.m in Sources */,
+				CAD585931AF2AC6A00F77ED7 /* BaseViewController.m in Sources */,
 				CA6335231AFAAC9D009DC83A /* ConfigManager.m in Sources */,
 				CAD5857A1AF26C7400F77ED7 /* AppDelegate.m in Sources */,
-				CAD585841AF2715900F77ED7 /* TCMainMenuVC.m in Sources */,
+				CAD585841AF2715900F77ED7 /* MainMenuViewController.m in Sources */,
 				CAD585801AF26F9400F77ED7 /* NavigationManager.m in Sources */,
 				CAD5857B1AF26C7400F77ED7 /* MainViewController.m in Sources */,
 			);

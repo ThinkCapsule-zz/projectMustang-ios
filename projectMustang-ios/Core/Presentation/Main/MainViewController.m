@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import "DataFetcher.h"
+#import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
 
 @interface MainViewController ()
 
@@ -25,9 +25,13 @@
                                                                             action:@selector(presentLeftMenuViewController:)];
  
     // sample call
-    DataFetcher* dataFetcher = [DataFetcher singletonInstance];
+
     
-    [[dataFetcher fetchClient] fetchEntriesWithSuccess:^(CDAResponse *response, CDAArray *array) {
+    CDAConfiguration* config = [CDAConfiguration defaultConfiguration];
+    config.server = @"preview.contentful.com";
+    CDAClient* client = [[CDAClient alloc] initWithSpaceKey:@"1oq1lgnwupsh" accessToken:@"ea40f4d68e1983a625ac5330daaaaee3befeda5a26dc4da674ccee3b5dec4037" configuration: config];
+    
+    [client fetchEntriesWithSuccess:^(CDAResponse *response, CDAArray *array) {
         
         NSArray* items = array.items;
         

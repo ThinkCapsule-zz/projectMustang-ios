@@ -10,7 +10,7 @@
 #import "TCNavigationStatics.h"
 #import "RESideMenu.h"
 
-@interface TCMainMenuVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MainMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView* menuItemsTable;
 @property (nonatomic, strong) NSArray* menuItems;

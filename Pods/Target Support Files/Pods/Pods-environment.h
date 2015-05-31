@@ -72,3 +72,9 @@
 #define COCOAPODS_VERSION_MINOR_RESideMenu 0
 #define COCOAPODS_VERSION_PATCH_RESideMenu 7
 
+// SQTShyNavigationBar
+#define COCOAPODS_POD_AVAILABLE_SQTShyNavigationBar
+#define COCOAPODS_VERSION_MAJOR_SQTShyNavigationBar 1
+#define COCOAPODS_VERSION_MINOR_SQTShyNavigationBar 0
+#define COCOAPODS_VERSION_PATCH_SQTShyNavigationBar 0
+

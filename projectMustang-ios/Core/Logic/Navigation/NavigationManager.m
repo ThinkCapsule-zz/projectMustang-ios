@@ -8,7 +8,7 @@
 
 #import "NavigationManager.h"
 #import "MainViewController.h"
-#import "TCMainMenuVC.h"
+#import "MainMenuViewController.h"
 #import <RESideMenu/RESideMenu.h>
 
 @interface NavigationManager ()

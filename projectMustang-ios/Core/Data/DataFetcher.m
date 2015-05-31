@@ -7,6 +7,7 @@
 //
 
 #import "DataFetcher.h"
+#import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
 
 @implementation DataFetcher
 
@@ -15,7 +16,10 @@
     self = [super init];
     
     if (self) {
-        _fetchClient = [[CDAClient alloc] initWithSpaceKey:@"1oq1lgnwupsh" accessToken:@"15fb8db3a77203b19bacfd6589be0cf3630c3d7ef3c035049785bf2fc43c8c42"];
+   
+        CDAConfiguration* config = [CDAConfiguration defaultConfiguration];
+        config.server = @"preview.contentful.com";
+        _fetchClient = [[CDAClient alloc] initWithSpaceKey:@"1oq1lgnwupsh" accessToken:@"ea40f4d68e1983a625ac5330daaaaee3befeda5a26dc4da674ccee3b5dec4037" configuration: config];
     }
     
     return self;

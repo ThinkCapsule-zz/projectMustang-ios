@@ -24,12 +24,14 @@ PODS:
     - ISO8601DateFormatter
   - ISO8601DateFormatter (0.7)
   - RESideMenu (4.0.7)
+  - SQTShyNavigationBar (1.0)
 
 DEPENDENCIES:
   - AFNetworking (= 2.2.1)
   - BLKFlexibleHeightBar (~> 1.0.2)
   - ContentfulDeliveryAPI
   - RESideMenu (~> 4.0.7)
+  - SQTShyNavigationBar
 
 SPEC CHECKSUMS:
   AFNetworking: 59a0b8e9ecd4e194d64b4967232cd2cc83490113
@@ -37,5 +39,6 @@ SPEC CHECKSUMS:
   ContentfulDeliveryAPI: b39a985a2b2567a969c228d8a74a2f67e6a783ef
   ISO8601DateFormatter: ab926648eebe497f4d167c0fd083992f959f1274
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
+  SQTShyNavigationBar: 9857201cd368499bbdd4fbc67ae6cc442799d065
 
 COCOAPODS: 0.37.1
