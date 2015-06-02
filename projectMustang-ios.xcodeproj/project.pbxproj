@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		77E3FFED587D2B94B2B73130 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F91D294DF9F5DAC8DA3998 /* libPods.a */; };
 		B6379F311B1A60A2005C0ADA /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F301B1A60A2005C0ADA /* DataFetcher.m */; };
+		B6379F3E1B1D5A17005C0ADA /* TCArticleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F3D1B1D5A17005C0ADA /* TCArticleDataModel.m */; };
+		B6379F411B1D5A2D005C0ADA /* TCBlogDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F401B1D5A2D005C0ADA /* TCBlogDataModel.m */; };
+		B6379F441B1D5A41005C0ADA /* TCEventDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F431B1D5A41005C0ADA /* TCEventDataModel.m */; };
+		B6379F471B1D5A57005C0ADA /* TCPlacesDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F461B1D5A57005C0ADA /* TCPlacesDataModel.m */; };
+		B6379F4A1B1D5A68005C0ADA /* TCVideoDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F491B1D5A68005C0ADA /* TCVideoDataModel.m */; };
 		CA6335201AFAAB29009DC83A /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA63351F1AFAAB29009DC83A /* config.plist */; };
 		CA6335231AFAAC9D009DC83A /* ConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6335221AFAAC9D009DC83A /* ConfigManager.m */; };
 		CAD5854A1AF26A5100F77ED7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585491AF26A5100F77ED7 /* main.m */; };
@@ -38,6 +43,16 @@
 		1075B1093CE1BFBDF7FD3D0F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B6379F2F1B1A60A2005C0ADA /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
 		B6379F301B1A60A2005C0ADA /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
+		B6379F3C1B1D5A17005C0ADA /* TCArticleDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCArticleDataModel.h; sourceTree = "<group>"; };
+		B6379F3D1B1D5A17005C0ADA /* TCArticleDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCArticleDataModel.m; sourceTree = "<group>"; };
+		B6379F3F1B1D5A2D005C0ADA /* TCBlogDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCBlogDataModel.h; sourceTree = "<group>"; };
+		B6379F401B1D5A2D005C0ADA /* TCBlogDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCBlogDataModel.m; sourceTree = "<group>"; };
+		B6379F421B1D5A41005C0ADA /* TCEventDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCEventDataModel.h; sourceTree = "<group>"; };
+		B6379F431B1D5A41005C0ADA /* TCEventDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCEventDataModel.m; sourceTree = "<group>"; };
+		B6379F451B1D5A56005C0ADA /* TCPlacesDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPlacesDataModel.h; sourceTree = "<group>"; };
+		B6379F461B1D5A57005C0ADA /* TCPlacesDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPlacesDataModel.m; sourceTree = "<group>"; };
+		B6379F481B1D5A68005C0ADA /* TCVideoDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCVideoDataModel.h; sourceTree = "<group>"; };
+		B6379F491B1D5A68005C0ADA /* TCVideoDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCVideoDataModel.m; sourceTree = "<group>"; };
 		CA63351F1AFAAB29009DC83A /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		CA6335211AFAAC9D009DC83A /* ConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigManager.h; sourceTree = "<group>"; };
 		CA6335221AFAAC9D009DC83A /* ConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigManager.m; sourceTree = "<group>"; };
@@ -85,6 +100,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B6379F361B1D59FF005C0ADA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B6379F371B1D59FF005C0ADA /* Article */,
+				B6379F381B1D59FF005C0ADA /* Blog */,
+				B6379F391B1D59FF005C0ADA /* Events */,
+				B6379F3A1B1D59FF005C0ADA /* Places */,
+				B6379F3B1B1D59FF005C0ADA /* Video */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B6379F371B1D59FF005C0ADA /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				B6379F3C1B1D5A17005C0ADA /* TCArticleDataModel.h */,
+				B6379F3D1B1D5A17005C0ADA /* TCArticleDataModel.m */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		B6379F381B1D59FF005C0ADA /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				B6379F3F1B1D5A2D005C0ADA /* TCBlogDataModel.h */,
+				B6379F401B1D5A2D005C0ADA /* TCBlogDataModel.m */,
+			);
+			path = Blog;
+			sourceTree = "<group>";
+		};
+		B6379F391B1D59FF005C0ADA /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				B6379F421B1D5A41005C0ADA /* TCEventDataModel.h */,
+				B6379F431B1D5A41005C0ADA /* TCEventDataModel.m */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		B6379F3A1B1D59FF005C0ADA /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				B6379F451B1D5A56005C0ADA /* TCPlacesDataModel.h */,
+				B6379F461B1D5A57005C0ADA /* TCPlacesDataModel.m */,
+			);
+			path = Places;
+			sourceTree = "<group>";
+		};
+		B6379F3B1B1D59FF005C0ADA /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				B6379F481B1D5A68005C0ADA /* TCVideoDataModel.h */,
+				B6379F491B1D5A68005C0ADA /* TCVideoDataModel.m */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		CA63351E1AFAAB08009DC83A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +239,7 @@
 		CAD585711AF26C7400F77ED7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B6379F361B1D59FF005C0ADA /* Models */,
 				CA6335211AFAAC9D009DC83A /* ConfigManager.h */,
 				CA6335221AFAAC9D009DC83A /* ConfigManager.m */,
 				B6379F2F1B1A60A2005C0ADA /* DataFetcher.h */,
@@ -435,13 +508,18 @@
 			files = (
 				B6379F311B1A60A2005C0ADA /* DataFetcher.m in Sources */,
 				CAD5854A1AF26A5100F77ED7 /* main.m in Sources */,
+				B6379F4A1B1D5A68005C0ADA /* TCVideoDataModel.m in Sources */,
 				CAD585501AF26A5100F77ED7 /* projectMustang_ios.xcdatamodeld in Sources */,
 				CAD585931AF2AC6A00F77ED7 /* BaseViewController.m in Sources */,
 				CA6335231AFAAC9D009DC83A /* ConfigManager.m in Sources */,
+				B6379F471B1D5A57005C0ADA /* TCPlacesDataModel.m in Sources */,
 				CAD5857A1AF26C7400F77ED7 /* AppDelegate.m in Sources */,
+				B6379F411B1D5A2D005C0ADA /* TCBlogDataModel.m in Sources */,
 				CAD585841AF2715900F77ED7 /* MainMenuViewController.m in Sources */,
 				CAD585801AF26F9400F77ED7 /* NavigationManager.m in Sources */,
+				B6379F441B1D5A41005C0ADA /* TCEventDataModel.m in Sources */,
 				CAD5857B1AF26C7400F77ED7 /* MainViewController.m in Sources */,
+				B6379F3E1B1D5A17005C0ADA /* TCArticleDataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
