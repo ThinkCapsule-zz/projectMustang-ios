@@ -25,17 +25,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     /* Setup left hand nav */
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithNavigationBarClass:[SQTShyNavigationBar class] toolbarClass:nil];
-    MainViewController* mainVC = [[MainViewController alloc] init];
-    [navigationController setViewControllers:@[mainVC]];
+    NavigationManager* navManager = [NavigationManager singletonInstance];
+    MainViewController* mainVC    = [[MainViewController alloc] init];
+    [navManager setViewControllers:@[mainVC]];
     
-    
-    MainMenuViewController* menuVC               = [[MainMenuViewController alloc] init];
-    RESideMenu* sideMenuVC                       = [[RESideMenu alloc] initWithContentViewController:navigationController
-                                                                              leftMenuViewController:menuVC
-                                                                             rightMenuViewController:nil];
+    MainMenuViewController* menuVC = [[MainMenuViewController alloc] init];
+    RESideMenu* sideMenuVC         = [[RESideMenu alloc] initWithContentViewController:navManager
+                                                                leftMenuViewController:menuVC
+                                                               rightMenuViewController:nil];
 
-    self.window.rootViewController               = sideMenuVC;
+    self.window.rootViewController = sideMenuVC;
 
     return YES;
 }
