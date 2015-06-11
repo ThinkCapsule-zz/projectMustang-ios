@@ -420,7 +420,7 @@
 				TargetAttributes = {
 					CAD585431AF26A5100F77ED7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 8NB394663B;
+						DevelopmentTeam = Z6VJV3KRT7;
 					};
 					CAD5855F1AF26A5100F77ED7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -642,6 +642,7 @@
 			baseConfigurationReference = E79FF135A583509834B12298 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "projectMustang-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -654,6 +655,7 @@
 			baseConfigurationReference = 1075B1093CE1BFBDF7FD3D0F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "projectMustang-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
