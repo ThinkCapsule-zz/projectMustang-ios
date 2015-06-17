@@ -10,6 +10,17 @@
 
 @interface NavigationManager : UINavigationController
 
-+(NavigationManager* )singletonInstance;
++ (NavigationManager* )singletonInstance;
+
+/* Sections */
+- (void) goToMainSection;
+- (void) goToArticleSection;
+- (void) goToBlogSection;
+- (void) goToVideosSection;
+- (void) goToEventsSection;
+- (void) goToPlacesSection;
+
+/* Settings */
+- (void) goToSettings;
 
 @end

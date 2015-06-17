@@ -8,6 +8,7 @@
 
 #import "MainMenuViewController.h"
 #import "ConfigManager.h"
+#import "NavigationManager.h"
 
 #define UIColorFromRGB(rgbValue) \
 [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
@@ -54,21 +55,26 @@ CGFloat const kLeftNavHeight = 340.0f;
 #pragma mark - TableViewDelegate methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    NavigationManager* navManager = [NavigationManager singletonInstance];
+    
     switch (indexPath.row) {
+        case kMainSection:
+            [navManager goToMainSection];
+            break;
         case kArticleSection:
-            NSLog(@"article section");
+            [navManager goToArticleSection];
             break;
         case kBlogSection:
-            NSLog(@"blog section");
+            [navManager goToBlogSection];
             break;
         case kVideosSection:
-            NSLog(@"videos section");
+            [navManager goToVideosSection];
             break;
         case kPlacesSection:
-            NSLog(@"places section");
+            [navManager goToPlacesSection];
             break;
         case kEventsSection:
-            NSLog(@"events section");
+            [navManager goToEventsSection];
             break;
         default:
             break;
