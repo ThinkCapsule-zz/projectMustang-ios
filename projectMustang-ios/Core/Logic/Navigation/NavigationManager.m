@@ -11,13 +11,20 @@
 #import "MainMenuViewController.h"
 #import <RESideMenu/RESideMenu.h>
 
+/* sections */
+#import "ArticleSectionViewController.h"
+#import "BlogSectionViewController.h"
+#import "VideoSectionViewController.h"
+#import "EventsSectionViewController.h"
+#import "PlacesSectionViewController.h"
+
 @interface NavigationManager ()
 
 @end
 
 @implementation NavigationManager
 
-+(NavigationManager* )singletonInstance {
++ (NavigationManager* )singletonInstance {
     
     /* Create singleton instance of NavigationManager to be used everywhere */
     static dispatch_once_t once_token;
@@ -36,19 +43,51 @@
     // Do any additional setup after loading the view.
 }
 
+
+- (void) goToMainSection {
+    
+    MainViewController* mainSectionVC = [[MainViewController alloc] init];
+    [self setViewControllers:@[mainSectionVC] animated:NO];
+}
+- (void) goToArticleSection {
+    
+    ArticleSectionViewController* articleSectionVC = [[ArticleSectionViewController alloc] init];
+    [self setViewControllers:@[articleSectionVC] animated:NO];
+}
+
+- (void) goToBlogSection {
+    
+    BlogSectionViewController* blogSectionVC = [[BlogSectionViewController alloc] init];
+    [self setViewControllers:@[blogSectionVC] animated:NO];
+}
+
+- (void) goToVideosSection {
+ 
+    VideoSectionViewController* videoSectionVC = [[VideoSectionViewController alloc] init];
+    [self setViewControllers:@[videoSectionVC] animated:NO];
+}
+
+- (void) goToEventsSection {
+    EventsSectionViewController* eventsSectionVC = [[EventsSectionViewController alloc] init];
+    [self setViewControllers:@[eventsSectionVC] animated:NO];
+}
+
+- (void) goToPlacesSection {
+    PlacesSectionViewController* placesSectionVC = [[PlacesSectionViewController alloc] init];
+    [self setViewControllers:@[placesSectionVC] animated:NO];
+}
+
+- (void) goToSettings {
+    NSLog(@"nav manager - settings sections");
+}
+
+
+
 - (void)didReceiveMeamoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

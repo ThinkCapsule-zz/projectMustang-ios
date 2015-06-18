@@ -14,6 +14,11 @@
 		B6379F441B1D5A41005C0ADA /* TCEventDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F431B1D5A41005C0ADA /* TCEventDataModel.m */; };
 		B6379F471B1D5A57005C0ADA /* TCPlacesDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F461B1D5A57005C0ADA /* TCPlacesDataModel.m */; };
 		B6379F4A1B1D5A68005C0ADA /* TCVideoDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F491B1D5A68005C0ADA /* TCVideoDataModel.m */; };
+		CA5E2E331B3206FC004A9AE0 /* ArticleSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5E2E321B3206FC004A9AE0 /* ArticleSectionViewController.m */; };
+		CA5E2E361B3207A2004A9AE0 /* BlogSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5E2E351B3207A2004A9AE0 /* BlogSectionViewController.m */; };
+		CA5E2E391B320868004A9AE0 /* VideoSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5E2E381B320868004A9AE0 /* VideoSectionViewController.m */; };
+		CA5E2E401B320995004A9AE0 /* EventsSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5E2E3F1B320995004A9AE0 /* EventsSectionViewController.m */; };
+		CA5E2E431B3209D3004A9AE0 /* PlacesSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5E2E421B3209D3004A9AE0 /* PlacesSectionViewController.m */; };
 		CA6335201AFAAB29009DC83A /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA63351F1AFAAB29009DC83A /* config.plist */; };
 		CA6335231AFAAC9D009DC83A /* ConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6335221AFAAC9D009DC83A /* ConfigManager.m */; };
 		CAD5854A1AF26A5100F77ED7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585491AF26A5100F77ED7 /* main.m */; };
@@ -53,6 +58,16 @@
 		B6379F461B1D5A57005C0ADA /* TCPlacesDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPlacesDataModel.m; sourceTree = "<group>"; };
 		B6379F481B1D5A68005C0ADA /* TCVideoDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCVideoDataModel.h; sourceTree = "<group>"; };
 		B6379F491B1D5A68005C0ADA /* TCVideoDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCVideoDataModel.m; sourceTree = "<group>"; };
+		CA5E2E311B3206FC004A9AE0 /* ArticleSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleSectionViewController.h; sourceTree = "<group>"; };
+		CA5E2E321B3206FC004A9AE0 /* ArticleSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleSectionViewController.m; sourceTree = "<group>"; };
+		CA5E2E341B3207A2004A9AE0 /* BlogSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogSectionViewController.h; sourceTree = "<group>"; };
+		CA5E2E351B3207A2004A9AE0 /* BlogSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogSectionViewController.m; sourceTree = "<group>"; };
+		CA5E2E371B320868004A9AE0 /* VideoSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoSectionViewController.h; sourceTree = "<group>"; };
+		CA5E2E381B320868004A9AE0 /* VideoSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoSectionViewController.m; sourceTree = "<group>"; };
+		CA5E2E3E1B320995004A9AE0 /* EventsSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsSectionViewController.h; sourceTree = "<group>"; };
+		CA5E2E3F1B320995004A9AE0 /* EventsSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsSectionViewController.m; sourceTree = "<group>"; };
+		CA5E2E411B3209D3004A9AE0 /* PlacesSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesSectionViewController.h; sourceTree = "<group>"; };
+		CA5E2E421B3209D3004A9AE0 /* PlacesSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesSectionViewController.m; sourceTree = "<group>"; };
 		CA63351F1AFAAB29009DC83A /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		CA6335211AFAAC9D009DC83A /* ConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigManager.h; sourceTree = "<group>"; };
 		CA6335221AFAAC9D009DC83A /* ConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigManager.m; sourceTree = "<group>"; };
@@ -66,8 +81,8 @@
 		CAD585601AF26A5100F77ED7 /* projectMustang-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "projectMustang-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAD585651AF26A5100F77ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAD585661AF26A5100F77ED7 /* projectMustang_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = projectMustang_iosTests.m; sourceTree = "<group>"; };
-		CAD585741AF26C7400F77ED7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		CAD585751AF26C7400F77ED7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CAD585741AF26C7400F77ED7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Presentation/AppDelegate.h; sourceTree = "<group>"; };
+		CAD585751AF26C7400F77ED7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Presentation/AppDelegate.m; sourceTree = "<group>"; };
 		CAD585771AF26C7400F77ED7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		CAD585781AF26C7400F77ED7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		CAD5857E1AF26F9400F77ED7 /* NavigationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationManager.h; sourceTree = "<group>"; };
@@ -157,6 +172,51 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
+		CA5E2E2C1B320322004A9AE0 /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				CA5E2E311B3206FC004A9AE0 /* ArticleSectionViewController.h */,
+				CA5E2E321B3206FC004A9AE0 /* ArticleSectionViewController.m */,
+			);
+			path = Articles;
+			sourceTree = "<group>";
+		};
+		CA5E2E2D1B320322004A9AE0 /* Blogs */ = {
+			isa = PBXGroup;
+			children = (
+				CA5E2E341B3207A2004A9AE0 /* BlogSectionViewController.h */,
+				CA5E2E351B3207A2004A9AE0 /* BlogSectionViewController.m */,
+			);
+			path = Blogs;
+			sourceTree = "<group>";
+		};
+		CA5E2E2F1B320322004A9AE0 /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				CA5E2E411B3209D3004A9AE0 /* PlacesSectionViewController.h */,
+				CA5E2E421B3209D3004A9AE0 /* PlacesSectionViewController.m */,
+			);
+			path = Places;
+			sourceTree = "<group>";
+		};
+		CA5E2E301B320322004A9AE0 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				CA5E2E371B320868004A9AE0 /* VideoSectionViewController.h */,
+				CA5E2E381B320868004A9AE0 /* VideoSectionViewController.m */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
+		CA5E2E3D1B32097C004A9AE0 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				CA5E2E3E1B320995004A9AE0 /* EventsSectionViewController.h */,
+				CA5E2E3F1B320995004A9AE0 /* EventsSectionViewController.m */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
 		CA63351E1AFAAB08009DC83A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +287,8 @@
 		CAD585701AF26C7400F77ED7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CAD585741AF26C7400F77ED7 /* AppDelegate.h */,
+				CAD585751AF26C7400F77ED7 /* AppDelegate.m */,
 				CAD585711AF26C7400F77ED7 /* Data */,
 				CAD585721AF26C7400F77ED7 /* Logic */,
 				CAD585731AF26C7400F77ED7 /* Presentation */,
@@ -259,16 +321,14 @@
 		CAD585731AF26C7400F77ED7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				CAD585741AF26C7400F77ED7 /* AppDelegate.h */,
-				CAD585751AF26C7400F77ED7 /* AppDelegate.m */,
 				CAD585901AF2AC5000F77ED7 /* Base */,
-				CAD585861AF2830300F77ED7 /* Articles */,
-				CAD585871AF2830300F77ED7 /* Blogs */,
-				CAD585881AF2830300F77ED7 /* Events */,
-				CAD585891AF2830300F77ED7 /* Places */,
-				CAD5858A1AF2830300F77ED7 /* Videos */,
 				CAD585761AF26C7400F77ED7 /* Main */,
 				CAD585811AF2710100F77ED7 /* Navigation */,
+				CA5E2E2C1B320322004A9AE0 /* Articles */,
+				CA5E2E2D1B320322004A9AE0 /* Blogs */,
+				CA5E2E301B320322004A9AE0 /* Videos */,
+				CA5E2E3D1B32097C004A9AE0 /* Events */,
+				CA5E2E2F1B320322004A9AE0 /* Places */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -306,41 +366,6 @@
 				CAD585831AF2715900F77ED7 /* MainMenuViewController.m */,
 			);
 			path = Navigation;
-			sourceTree = "<group>";
-		};
-		CAD585861AF2830300F77ED7 /* Articles */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Articles;
-			sourceTree = "<group>";
-		};
-		CAD585871AF2830300F77ED7 /* Blogs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Blogs;
-			sourceTree = "<group>";
-		};
-		CAD585881AF2830300F77ED7 /* Events */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Events;
-			sourceTree = "<group>";
-		};
-		CAD585891AF2830300F77ED7 /* Places */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Places;
-			sourceTree = "<group>";
-		};
-		CAD5858A1AF2830300F77ED7 /* Videos */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Videos;
 			sourceTree = "<group>";
 		};
 		CAD585901AF2AC5000F77ED7 /* Base */ = {
@@ -508,18 +533,23 @@
 			files = (
 				B6379F311B1A60A2005C0ADA /* DataFetcher.m in Sources */,
 				CAD5854A1AF26A5100F77ED7 /* main.m in Sources */,
+				CA5E2E361B3207A2004A9AE0 /* BlogSectionViewController.m in Sources */,
 				B6379F4A1B1D5A68005C0ADA /* TCVideoDataModel.m in Sources */,
 				CAD585501AF26A5100F77ED7 /* projectMustang_ios.xcdatamodeld in Sources */,
+				CA5E2E331B3206FC004A9AE0 /* ArticleSectionViewController.m in Sources */,
+				CA5E2E431B3209D3004A9AE0 /* PlacesSectionViewController.m in Sources */,
 				CAD585931AF2AC6A00F77ED7 /* BaseViewController.m in Sources */,
 				CA6335231AFAAC9D009DC83A /* ConfigManager.m in Sources */,
 				B6379F471B1D5A57005C0ADA /* TCPlacesDataModel.m in Sources */,
 				CAD5857A1AF26C7400F77ED7 /* AppDelegate.m in Sources */,
+				CA5E2E391B320868004A9AE0 /* VideoSectionViewController.m in Sources */,
 				B6379F411B1D5A2D005C0ADA /* TCBlogDataModel.m in Sources */,
 				CAD585841AF2715900F77ED7 /* MainMenuViewController.m in Sources */,
 				CAD585801AF26F9400F77ED7 /* NavigationManager.m in Sources */,
 				B6379F441B1D5A41005C0ADA /* TCEventDataModel.m in Sources */,
 				CAD5857B1AF26C7400F77ED7 /* MainViewController.m in Sources */,
 				B6379F3E1B1D5A17005C0ADA /* TCArticleDataModel.m in Sources */,
+				CA5E2E401B320995004A9AE0 /* EventsSectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
