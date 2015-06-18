@@ -10,11 +10,34 @@
 
 @implementation ArticleSectionViewController
 
+
+#pragma mark - View Methods
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     self.title = @"Articles";
-    [self.view setBackgroundColor:[UIColor greenColor]];
+}
+
+#pragma mark - UICollectionViewDataSource Delegate Methods
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+#warning TODO    
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
+    
+#warning TODO
+    return 1;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+#warning TODO
+    UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"FlickrCell " forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor whiteColor];
+    return cell;
+    
 }
 
 @end

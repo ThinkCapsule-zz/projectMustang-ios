@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 
-@interface ArticleSectionViewController : BaseViewController
+@interface ArticleSectionViewController : BaseViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@property (nonatomic, strong) UICollectionView* articleCollectionView;
 
 @end

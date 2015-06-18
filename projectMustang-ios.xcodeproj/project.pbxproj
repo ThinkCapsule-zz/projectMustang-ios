@@ -321,14 +321,14 @@
 		CAD585731AF26C7400F77ED7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CAD585901AF2AC5000F77ED7 /* Base */,
+				CAD585761AF26C7400F77ED7 /* Main */,
+				CAD585811AF2710100F77ED7 /* Navigation */,
 				CA5E2E2C1B320322004A9AE0 /* Articles */,
 				CA5E2E2D1B320322004A9AE0 /* Blogs */,
 				CA5E2E301B320322004A9AE0 /* Videos */,
 				CA5E2E3D1B32097C004A9AE0 /* Events */,
 				CA5E2E2F1B320322004A9AE0 /* Places */,
-				CAD585901AF2AC5000F77ED7 /* Base */,
-				CAD585761AF26C7400F77ED7 /* Main */,
-				CAD585811AF2710100F77ED7 /* Navigation */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";

@@ -99,12 +99,12 @@ CGFloat const kLeftNavHeight = 340.0f;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        cell.backgroundColor = [UIColor clearColor];
-        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
-        cell.textLabel.textColor = [UIColor whiteColor];
+        cell                                = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.backgroundColor                = [UIColor clearColor];
+        cell.textLabel.font                 = [UIFont fontWithName:@"HelveticaNeue" size:21];
+        cell.textLabel.textColor            = [UIColor whiteColor];
         cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
-        cell.selectedBackgroundView = [[UIView alloc] init];
+        cell.selectedBackgroundView         = [[UIView alloc] init];
     }
     
     cell.textLabel.text = self.menuItems[indexPath.row];
