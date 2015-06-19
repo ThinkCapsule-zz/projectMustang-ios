@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
+#import "NavigationManager.h"
 
 @interface MainViewController ()
 
@@ -20,9 +20,12 @@
     
     self.title = @"Home";
  
-    // sample call
-
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    loginButton.center = self.view.center;
+    loginButton.delegate = self;
+    [self.view addSubview:loginButton];
     
+    // sample call
     CDAConfiguration* config = [CDAConfiguration defaultConfiguration];
     config.server = @"preview.contentful.com";
     CDAClient* client = [[CDAClient alloc] initWithSpaceKey:@"1oq1lgnwupsh" accessToken:@"ea40f4d68e1983a625ac5330daaaaee3befeda5a26dc4da674ccee3b5dec4037" configuration: config];
@@ -35,6 +38,19 @@
         NSLog(@"somethings wrong");
     }];
 
+    
+}
+
+#pragma mark - FBSDKLoginButtonDelegate Methods
+
+- (void)  loginButton:(FBSDKLoginButton *)loginButton
+didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
+                error:(NSError *)error {
+    
+}
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
+    
+    [[NavigationManager singletonInstance] showLogin];
     
 }
 

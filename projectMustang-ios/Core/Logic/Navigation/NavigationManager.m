@@ -17,6 +17,10 @@
 #import "VideoSectionViewController.h"
 #import "EventsSectionViewController.h"
 #import "PlacesSectionViewController.h"
+#import "SignOnViewController.h"
+
+/* Onboarding flow */
+#import "TCWalkthroughViewController.h"
 
 @interface NavigationManager ()
 
@@ -43,11 +47,29 @@
     // Do any additional setup after loading the view.
 }
 
+- (void) showLogin {
+    
+    [self setNavigationBarHidden:YES];
+    SignOnViewController* signonVC = [[SignOnViewController alloc] init];
+    [self setViewControllers:@[signonVC] animated:NO];
+}
 
+- (void) showWalkthrough {
+    
+    [self setNavigationBarHidden:YES];
+    TCWalkthroughViewController* wtViewController = [[TCWalkthroughViewController alloc] init];
+    [self setViewControllers:@[wtViewController] animated:NO];
+}
+- (void) goToMainSectionWithAnimation:(BOOL)animated {
+    
+    [self setNavigationBarHidden:NO];
+    MainViewController* mainSectionVC = [[MainViewController alloc] init];
+    [self setViewControllers:@[mainSectionVC] animated:animated];
+}
 - (void) goToMainSection {
     
-    MainViewController* mainSectionVC = [[MainViewController alloc] init];
-    [self setViewControllers:@[mainSectionVC] animated:NO];
+    [self goToMainSectionWithAnimation:NO];
+    
 }
 - (void) goToArticleSection {
     

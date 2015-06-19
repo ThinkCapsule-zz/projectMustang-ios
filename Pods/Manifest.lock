@@ -21,9 +21,28 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - BLKFlexibleHeightBar (1.0.2)
+  - Bolts (1.2.0):
+    - Bolts/AppLinks (= 1.2.0)
+    - Bolts/Tasks (= 1.2.0)
+  - Bolts/AppLinks (1.2.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.2.0)
   - ContentfulDeliveryAPI (1.7.4):
     - AFNetworking (>= 2.5.3)
     - ISO8601DateFormatter
+  - FBSDKCoreKit (4.2.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc (= 4.2.0)
+    - FBSDKCoreKit/no-arc (= 4.2.0)
+  - FBSDKCoreKit/arc (4.2.0):
+    - Bolts (~> 1.1)
+  - FBSDKCoreKit/no-arc (4.2.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc
+  - FBSDKLoginKit (4.2.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.2.0):
+    - FBSDKCoreKit
   - ISO8601DateFormatter (0.7)
   - PKRevealController (2.0.6)
   - RESideMenu (4.0.7)
@@ -32,6 +51,9 @@ PODS:
 DEPENDENCIES:
   - BLKFlexibleHeightBar (~> 1.0.2)
   - ContentfulDeliveryAPI
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
   - PKRevealController
   - RESideMenu (~> 4.0.7)
   - SQTShyNavigationBar
@@ -39,7 +61,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   BLKFlexibleHeightBar: b27572a69633d8e33f1f2bbc486b04d8e86f742d
+  Bolts: d176cb1e0012175589e389a9db49b85e27787576
   ContentfulDeliveryAPI: 84eb58ed01d97fec339844436239c39e999f8092
+  FBSDKCoreKit: 84b3616a361801f190e43a9909caead7bb6087c7
+  FBSDKLoginKit: 57e37106af12c9e264e473dcb75d7decdbb07fe4
+  FBSDKShareKit: 931746fdf8fb95efd6e12310ec14b2b3295e2aec
   ISO8601DateFormatter: ab926648eebe497f4d167c0fd083992f959f1274
   PKRevealController: ffb45a16f5a5032ad90a3d16e5cbb0d8e035bd58
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
