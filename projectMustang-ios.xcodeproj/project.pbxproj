@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		77E3FFED587D2B94B2B73130 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F91D294DF9F5DAC8DA3998 /* libPods.a */; };
+		B60942A11B33BC8400C6E1C7 /* SignOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60942A01B33BC8400C6E1C7 /* SignOnViewController.m */; };
 		B6379F311B1A60A2005C0ADA /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F301B1A60A2005C0ADA /* DataFetcher.m */; };
 		B6379F3E1B1D5A17005C0ADA /* TCArticleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F3D1B1D5A17005C0ADA /* TCArticleDataModel.m */; };
 		B6379F411B1D5A2D005C0ADA /* TCBlogDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F401B1D5A2D005C0ADA /* TCBlogDataModel.m */; };
 		B6379F441B1D5A41005C0ADA /* TCEventDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F431B1D5A41005C0ADA /* TCEventDataModel.m */; };
 		B6379F471B1D5A57005C0ADA /* TCPlacesDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F461B1D5A57005C0ADA /* TCPlacesDataModel.m */; };
 		B6379F4A1B1D5A68005C0ADA /* TCVideoDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F491B1D5A68005C0ADA /* TCVideoDataModel.m */; };
+		B6589A5C1B33A57B00B3754F /* TCWalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6589A5B1B33A57B00B3754F /* TCWalkthroughViewController.m */; };
+		B6589A601B33B45800B3754F /* SystemStatics.m in Sources */ = {isa = PBXBuildFile; fileRef = B6589A5F1B33B45800B3754F /* SystemStatics.m */; };
+		B6CFCF291B33DC72004BCF74 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CFCF281B33DC72004BCF74 /* SettingsViewController.m */; };
 		CA5E2E331B3206FC004A9AE0 /* ArticleSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5E2E321B3206FC004A9AE0 /* ArticleSectionViewController.m */; };
 		CA5E2E361B3207A2004A9AE0 /* BlogSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5E2E351B3207A2004A9AE0 /* BlogSectionViewController.m */; };
 		CA5E2E391B320868004A9AE0 /* VideoSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5E2E381B320868004A9AE0 /* VideoSectionViewController.m */; };
@@ -46,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		1075B1093CE1BFBDF7FD3D0F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B609429F1B33BC8400C6E1C7 /* SignOnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignOnViewController.h; sourceTree = "<group>"; };
+		B60942A01B33BC8400C6E1C7 /* SignOnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignOnViewController.m; sourceTree = "<group>"; };
 		B6379F2F1B1A60A2005C0ADA /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
 		B6379F301B1A60A2005C0ADA /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
 		B6379F3C1B1D5A17005C0ADA /* TCArticleDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCArticleDataModel.h; sourceTree = "<group>"; };
@@ -58,6 +64,12 @@
 		B6379F461B1D5A57005C0ADA /* TCPlacesDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPlacesDataModel.m; sourceTree = "<group>"; };
 		B6379F481B1D5A68005C0ADA /* TCVideoDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCVideoDataModel.h; sourceTree = "<group>"; };
 		B6379F491B1D5A68005C0ADA /* TCVideoDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCVideoDataModel.m; sourceTree = "<group>"; };
+		B6589A5A1B33A57B00B3754F /* TCWalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCWalkthroughViewController.h; sourceTree = "<group>"; };
+		B6589A5B1B33A57B00B3754F /* TCWalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCWalkthroughViewController.m; sourceTree = "<group>"; };
+		B6589A5E1B33B45800B3754F /* SystemStatics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemStatics.h; sourceTree = "<group>"; };
+		B6589A5F1B33B45800B3754F /* SystemStatics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemStatics.m; sourceTree = "<group>"; };
+		B6CFCF271B33DC72004BCF74 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		B6CFCF281B33DC72004BCF74 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		CA5E2E311B3206FC004A9AE0 /* ArticleSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleSectionViewController.h; sourceTree = "<group>"; };
 		CA5E2E321B3206FC004A9AE0 /* ArticleSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleSectionViewController.m; sourceTree = "<group>"; };
 		CA5E2E341B3207A2004A9AE0 /* BlogSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogSectionViewController.h; sourceTree = "<group>"; };
@@ -170,6 +182,26 @@
 				B6379F491B1D5A68005C0ADA /* TCVideoDataModel.m */,
 			);
 			path = Video;
+			sourceTree = "<group>";
+		};
+		B6589A591B33A51900B3754F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B6589A5A1B33A57B00B3754F /* TCWalkthroughViewController.h */,
+				B6589A5B1B33A57B00B3754F /* TCWalkthroughViewController.m */,
+				B609429F1B33BC8400C6E1C7 /* SignOnViewController.h */,
+				B60942A01B33BC8400C6E1C7 /* SignOnViewController.m */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B6CFCF261B33DC44004BCF74 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B6CFCF271B33DC72004BCF74 /* SettingsViewController.h */,
+				B6CFCF281B33DC72004BCF74 /* SettingsViewController.m */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		CA5E2E2C1B320322004A9AE0 /* Articles */ = {
@@ -321,6 +353,7 @@
 		CAD585731AF26C7400F77ED7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B6589A591B33A51900B3754F /* Onboarding */,
 				CAD585901AF2AC5000F77ED7 /* Base */,
 				CAD585761AF26C7400F77ED7 /* Main */,
 				CAD585811AF2710100F77ED7 /* Navigation */,
@@ -329,6 +362,7 @@
 				CA5E2E301B320322004A9AE0 /* Videos */,
 				CA5E2E3D1B32097C004A9AE0 /* Events */,
 				CA5E2E2F1B320322004A9AE0 /* Places */,
+				B6CFCF261B33DC44004BCF74 /* Settings */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -346,6 +380,8 @@
 			isa = PBXGroup;
 			children = (
 				CAD585851AF27C2000F77ED7 /* TCNavigationStatics.h */,
+				B6589A5E1B33B45800B3754F /* SystemStatics.h */,
+				B6589A5F1B33B45800B3754F /* SystemStatics.m */,
 			);
 			path = "Statics and Utilities";
 			sourceTree = "<group>";
@@ -538,17 +574,21 @@
 				CAD585501AF26A5100F77ED7 /* projectMustang_ios.xcdatamodeld in Sources */,
 				CA5E2E331B3206FC004A9AE0 /* ArticleSectionViewController.m in Sources */,
 				CA5E2E431B3209D3004A9AE0 /* PlacesSectionViewController.m in Sources */,
+				B6589A601B33B45800B3754F /* SystemStatics.m in Sources */,
 				CAD585931AF2AC6A00F77ED7 /* BaseViewController.m in Sources */,
 				CA6335231AFAAC9D009DC83A /* ConfigManager.m in Sources */,
 				B6379F471B1D5A57005C0ADA /* TCPlacesDataModel.m in Sources */,
+				B6CFCF291B33DC72004BCF74 /* SettingsViewController.m in Sources */,
 				CAD5857A1AF26C7400F77ED7 /* AppDelegate.m in Sources */,
 				CA5E2E391B320868004A9AE0 /* VideoSectionViewController.m in Sources */,
 				B6379F411B1D5A2D005C0ADA /* TCBlogDataModel.m in Sources */,
 				CAD585841AF2715900F77ED7 /* MainMenuViewController.m in Sources */,
 				CAD585801AF26F9400F77ED7 /* NavigationManager.m in Sources */,
+				B60942A11B33BC8400C6E1C7 /* SignOnViewController.m in Sources */,
 				B6379F441B1D5A41005C0ADA /* TCEventDataModel.m in Sources */,
 				CAD5857B1AF26C7400F77ED7 /* MainViewController.m in Sources */,
 				B6379F3E1B1D5A17005C0ADA /* TCArticleDataModel.m in Sources */,
+				B6589A5C1B33A57B00B3754F /* TCWalkthroughViewController.m in Sources */,
 				CA5E2E401B320995004A9AE0 /* EventsSectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

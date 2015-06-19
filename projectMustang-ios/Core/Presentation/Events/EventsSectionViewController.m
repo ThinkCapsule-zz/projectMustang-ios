@@ -11,6 +11,7 @@
 @implementation EventsSectionViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.title = @"Events";
     [self.view setBackgroundColor:[UIColor brownColor]];

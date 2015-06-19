@@ -7,13 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface NavigationManager : UINavigationController
 
 + (NavigationManager* )singletonInstance;
 
+/* Onboarding */
+- (void) showLogin;
+- (void) showWalkthrough;
+
 /* Sections */
 - (void) goToMainSection;
+- (void) goToMainSectionWithAnimation:(BOOL)animated;
+
 - (void) goToArticleSection;
 - (void) goToBlogSection;
 - (void) goToVideosSection;

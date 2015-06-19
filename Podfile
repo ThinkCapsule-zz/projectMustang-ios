@@ -12,3 +12,8 @@ pod 'BLKFlexibleHeightBar', '~> 1.0.2'
 pod 'ContentfulDeliveryAPI'
 pod 'SQTShyNavigationBar'
 pod 'PKRevealController'
+
+#facebook pods
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'

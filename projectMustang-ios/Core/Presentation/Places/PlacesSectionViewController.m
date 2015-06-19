@@ -11,6 +11,7 @@
 @implementation PlacesSectionViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.title = @"Places";
     [self.view setBackgroundColor:[UIColor purpleColor]];
