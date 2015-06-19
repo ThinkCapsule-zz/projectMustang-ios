@@ -30,20 +30,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    /* Setup left hand nav */
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    NavigationManager* navManager = [NavigationManager singletonInstance];
-    MainViewController* mainVC    = [[MainViewController alloc] init];
+    // Setup left hand nav
+    self.window                    = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    NavigationManager* navManager  = [NavigationManager singletonInstance];
+    MainViewController* mainVC     = [[MainViewController alloc] init];
     [navManager setViewControllers:@[mainVC]];
-    
+
     MainMenuViewController* menuVC = [[MainMenuViewController alloc] init];
     RESideMenu* sideMenuVC         = [[RESideMenu alloc] initWithContentViewController:navManager
-                                                                leftMenuViewController:menuVC rightMenuViewController:nil];
+                                                                leftMenuViewController:menuVC
+                                                               rightMenuViewController:nil];
+    
+    sideMenuVC.backgroundImage = [UIImage imageNamed:@"menu_background"];
     self.window.rootViewController = sideMenuVC;
+
+    BOOL didFinishLaunch           = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                              didFinishLaunchingWithOptions:launchOptions];
     
-    BOOL didFinishLaunch = [[FBSDKApplicationDelegate sharedInstance] application:application
-                                                     didFinishLaunchingWithOptions:launchOptions];
     
+    // Check facebook token
     if ([FBSDKAccessToken currentAccessToken]) {
         [navManager goToMainSection];
     }else{

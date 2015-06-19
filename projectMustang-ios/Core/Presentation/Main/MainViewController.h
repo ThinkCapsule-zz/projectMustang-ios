@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 #import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-@interface MainViewController : BaseViewController <FBSDKLoginButtonDelegate>
+@interface MainViewController : BaseViewController
 
 
 @end

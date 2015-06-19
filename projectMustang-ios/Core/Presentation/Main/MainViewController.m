@@ -16,14 +16,10 @@
 @implementation MainViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     
+    [super viewDidLoad];
     self.title = @"Home";
- 
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.center = self.view.center;
-    loginButton.delegate = self;
-    [self.view addSubview:loginButton];
+    self.view.backgroundColor = [UIColor blackColor];
     
     // sample call
     CDAConfiguration* config = [CDAConfiguration defaultConfiguration];
@@ -41,22 +37,10 @@
     
 }
 
-#pragma mark - FBSDKLoginButtonDelegate Methods
 
-- (void)  loginButton:(FBSDKLoginButton *)loginButton
-didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
-                error:(NSError *)error {
-    
-}
-- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
-    
-    [[NavigationManager singletonInstance] showLogin];
-    
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

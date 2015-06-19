@@ -11,6 +11,7 @@
 @implementation VideoSectionViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.title = @"Videos";
     [self.view setBackgroundColor:[UIColor blueColor]];

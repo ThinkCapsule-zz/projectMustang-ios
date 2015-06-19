@@ -14,8 +14,7 @@
 - (void)viewDidLoad {
 
     [super viewDidLoad];
-    
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     loginButton.center = self.view.center;

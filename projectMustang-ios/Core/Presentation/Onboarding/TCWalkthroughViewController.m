@@ -17,14 +17,16 @@
 @implementation TCWalkthroughViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor redColor];
     
     UIButton* btnGoHome = [[UIButton alloc] initWithFrame:CGRectMake(100, 200, 200, 100)];
     [btnGoHome setTitle:@"gohome" forState:UIControlStateNormal];
     [btnGoHome addTarget:self action:@selector(goToAppContent) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnGoHome];
     
-    self.view.backgroundColor = [UIColor redColor];
+    
 }
 - (void) goToAppContent {
     

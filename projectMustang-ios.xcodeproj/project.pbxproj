@@ -17,6 +17,7 @@
 		B6379F4A1B1D5A68005C0ADA /* TCVideoDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F491B1D5A68005C0ADA /* TCVideoDataModel.m */; };
 		B6589A5C1B33A57B00B3754F /* TCWalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6589A5B1B33A57B00B3754F /* TCWalkthroughViewController.m */; };
 		B6589A601B33B45800B3754F /* SystemStatics.m in Sources */ = {isa = PBXBuildFile; fileRef = B6589A5F1B33B45800B3754F /* SystemStatics.m */; };
+		B6CFCF291B33DC72004BCF74 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CFCF281B33DC72004BCF74 /* SettingsViewController.m */; };
 		CA5E2E331B3206FC004A9AE0 /* ArticleSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5E2E321B3206FC004A9AE0 /* ArticleSectionViewController.m */; };
 		CA5E2E361B3207A2004A9AE0 /* BlogSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5E2E351B3207A2004A9AE0 /* BlogSectionViewController.m */; };
 		CA5E2E391B320868004A9AE0 /* VideoSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5E2E381B320868004A9AE0 /* VideoSectionViewController.m */; };
@@ -67,6 +68,8 @@
 		B6589A5B1B33A57B00B3754F /* TCWalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCWalkthroughViewController.m; sourceTree = "<group>"; };
 		B6589A5E1B33B45800B3754F /* SystemStatics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemStatics.h; sourceTree = "<group>"; };
 		B6589A5F1B33B45800B3754F /* SystemStatics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemStatics.m; sourceTree = "<group>"; };
+		B6CFCF271B33DC72004BCF74 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		B6CFCF281B33DC72004BCF74 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		CA5E2E311B3206FC004A9AE0 /* ArticleSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleSectionViewController.h; sourceTree = "<group>"; };
 		CA5E2E321B3206FC004A9AE0 /* ArticleSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleSectionViewController.m; sourceTree = "<group>"; };
 		CA5E2E341B3207A2004A9AE0 /* BlogSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogSectionViewController.h; sourceTree = "<group>"; };
@@ -190,6 +193,15 @@
 				B60942A01B33BC8400C6E1C7 /* SignOnViewController.m */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B6CFCF261B33DC44004BCF74 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B6CFCF271B33DC72004BCF74 /* SettingsViewController.h */,
+				B6CFCF281B33DC72004BCF74 /* SettingsViewController.m */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		CA5E2E2C1B320322004A9AE0 /* Articles */ = {
@@ -350,6 +362,7 @@
 				CA5E2E301B320322004A9AE0 /* Videos */,
 				CA5E2E3D1B32097C004A9AE0 /* Events */,
 				CA5E2E2F1B320322004A9AE0 /* Places */,
+				B6CFCF261B33DC44004BCF74 /* Settings */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -565,6 +578,7 @@
 				CAD585931AF2AC6A00F77ED7 /* BaseViewController.m in Sources */,
 				CA6335231AFAAC9D009DC83A /* ConfigManager.m in Sources */,
 				B6379F471B1D5A57005C0ADA /* TCPlacesDataModel.m in Sources */,
+				B6CFCF291B33DC72004BCF74 /* SettingsViewController.m in Sources */,
 				CAD5857A1AF26C7400F77ED7 /* AppDelegate.m in Sources */,
 				CA5E2E391B320868004A9AE0 /* VideoSectionViewController.m in Sources */,
 				B6379F411B1D5A2D005C0ADA /* TCBlogDataModel.m in Sources */,

@@ -34,6 +34,8 @@ CGFloat const kLeftNavHeight = 340.0f;
     self.menuItemsTable                  = [[UITableView alloc] initWithFrame:CGRectMake(20, (self.view.frame.size.height - kLeftNavHeight) / 2.0f,
                                                                                          self.view.frame.size.width, kLeftNavHeight)
                                                                         style:UITableViewStylePlain];
+    
+    // Menu Items
     self.menuItemsTable.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
     self.menuItemsTable.delegate         = self;
     self.menuItemsTable.dataSource       = self;
@@ -42,16 +44,24 @@ CGFloat const kLeftNavHeight = 340.0f;
     self.menuItemsTable.backgroundView   = nil;
     self.menuItemsTable.separatorStyle   = UITableViewCellSeparatorStyleNone;
     self.menuItemsTable.bounces          = YES;
-    self.view.backgroundColor            = UIColorFromRGB(0x663366);
-
     [self.view addSubview: self.menuItemsTable];
+    
+    // Settings button
+    UIButton* btnPreferences = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 100, 30)];
+    [btnPreferences setTitle:@"Preferences" forState:UIControlStateNormal];
+    [btnPreferences addTarget:self action:@selector(displaySettings) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnPreferences];
     
     // delegates
     self.menuItemsTable.dataSource = self;
     self.menuItemsTable.delegate   = self;
     
 }
-
+- (void) displaySettings {
+    
+    [[NavigationManager singletonInstance] goToSettings];
+    [self.sideMenuViewController hideMenuViewController];
+}
 #pragma mark - TableViewDelegate methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     

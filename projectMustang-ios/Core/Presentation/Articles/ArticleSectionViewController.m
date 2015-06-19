@@ -16,6 +16,7 @@
     
     [super viewDidLoad];
     self.title = @"Articles";
+    self.view.backgroundColor = [UIColor redColor];
 }
 
 #pragma mark - UICollectionViewDataSource Delegate Methods
