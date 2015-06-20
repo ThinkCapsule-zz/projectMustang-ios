@@ -14,17 +14,39 @@
 - (void)viewDidLoad {
 
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
+    [self.view addSubview:backgroundView];
     
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.center = self.view.center;
-    [self.view addSubview:loginButton];
+    self.loginButton = [[FBSDKLoginButton alloc] init];
+    self.loginButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.loginButton];
     
-    loginButton.delegate = self;
+    self.loginButton.delegate = self;
+    
+    [self setupConstraints];
+}
+
+#pragma mark - Autolayout
+- (void)setupConstraints{
+    
+    NSDictionary *viewsDictionary = @{@"loginButton":self.loginButton};
+    
+    NSArray *loginbutton_POS_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[loginButton]-30-|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:viewsDictionary];
+    
+    NSArray *loginbutton_POS_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-30-[loginButton]-30-|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:viewsDictionary];
+    [self.view addConstraints:loginbutton_POS_V];
+    [self.view addConstraints:loginbutton_POS_H];
+    
 }
 
 #pragma mark - FBSDKLoginButtonDelegate Methods
-- (void)  loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
+- (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                 error:(NSError *)error {
     
     if ([FBSDKAccessToken currentAccessToken]) {
@@ -34,10 +56,6 @@
     
 }
 
-/*!
- @abstract Sent to the delegate when the button was used to logout.
- @param loginButton The button that was clicked.
- */
 - (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
     
     
