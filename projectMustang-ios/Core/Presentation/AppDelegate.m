@@ -42,6 +42,7 @@
                                                                 leftMenuViewController:menuVC
                                                                rightMenuViewController:nil];
     // Customize menu
+    sideMenuVC.panGestureEnabled        = NO;
     sideMenuVC.scaleBackgroundImageView = NO;
     sideMenuVC.scaleMenuView            = NO;
     sideMenuVC.contentViewShadowEnabled = YES;
