@@ -7,7 +7,12 @@
 //
 
 #import "BaseViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-@interface SettingsViewController : BaseViewController
+@interface SettingsViewController : BaseViewController <FBSDKLoginButtonDelegate>
+
+@property (nonatomic, strong
+           ) FBSDKLoginButton* loginButton;
 
 @end
