@@ -61,58 +61,53 @@
     [self setViewControllers:@[wtViewController] animated:NO];
 }
 
-#pragma mark - Main Section Navigation
+#pragma mark - Section Navigation
 - (void) goToMainSectionWithAnimation:(BOOL)animated {
     
     [self setNavigationBarHidden:NO];
     MainViewController* mainSectionVC = [[MainViewController alloc] init];
     [self setViewControllers:@[mainSectionVC] animated:animated];
 }
+
 - (void) goToMainSection {
-    [self goToMainSectionWithAnimation:NO];
+    [self goToMainSectionWithAnimation:YES];
 }
 
-#pragma mark - Article Section Navigation
 - (void) goToArticleSection {
     
     ArticleSectionViewController* articleSectionVC = [[ArticleSectionViewController alloc] init];
-    [self setViewControllers:@[articleSectionVC] animated:NO];
+    [self setViewControllers:@[articleSectionVC] animated:YES];
 }
 
-#pragma mark - Blog Section Navigation
 - (void) goToBlogSection {
     
     BlogSectionViewController* blogSectionVC = [[BlogSectionViewController alloc] init];
-    [self setViewControllers:@[blogSectionVC] animated:NO];
+    [self setViewControllers:@[blogSectionVC] animated:YES];
 }
 
-#pragma mark - Video Section Navigation
 - (void) goToVideosSection {
  
     VideoSectionViewController* videoSectionVC = [[VideoSectionViewController alloc] init];
-    [self setViewControllers:@[videoSectionVC] animated:NO];
+    [self setViewControllers:@[videoSectionVC] animated:YES];
 }
 
-#pragma mark - Events Section Navigation
 - (void) goToEventsSection {
     EventsSectionViewController* eventsSectionVC = [[EventsSectionViewController alloc] init];
-    [self setViewControllers:@[eventsSectionVC] animated:NO];
+    [self setViewControllers:@[eventsSectionVC] animated:YES];
 }
 
-#pragma mark - Places Section Navigation
 - (void) goToPlacesSection {
     PlacesSectionViewController* placesSectionVC = [[PlacesSectionViewController alloc] init];
-    [self setViewControllers:@[placesSectionVC] animated:NO];
+    [self setViewControllers:@[placesSectionVC] animated:YES];
 }
 
-#pragma mark - Settings Section Navigation
 - (void) goToSettings {
     SettingsViewController* settingsVC = [[SettingsViewController alloc] init];
-    [self pushViewController:settingsVC animated:YES];
+    [self setViewControllers:@[settingsVC] animated:YES];
 }
 
 
-
+#pragma mark - Memory
 - (void)didReceiveMeamoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -6,11 +6,8 @@ platform :ios, "7.0"
 # ignore all warnings from all pods
 inhibit_all_warnings!
 
-
 pod 'RESideMenu', '~> 4.0.7'
-pod 'BLKFlexibleHeightBar', '~> 1.0.2'
 pod 'ContentfulDeliveryAPI'
-pod 'SQTShyNavigationBar'
 pod 'PKRevealController'
 
 #facebook pods

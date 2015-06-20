@@ -47,8 +47,10 @@ CGFloat const kLeftNavHeight = 340.0f;
     [self.view addSubview: self.menuItemsTable];
     
     // Settings button
-    UIButton* btnPreferences = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 100, 30)];
-    [btnPreferences setTitle:@"Preferences" forState:UIControlStateNormal];
+    UIImage* pref_icon_image = [UIImage imageNamed:@"pref_icon"];
+    UIButton* btnPreferences = [[UIButton alloc] initWithFrame:CGRectMake(50, 50, 60, 60)];
+    [btnPreferences setImage:pref_icon_image forState:UIControlStateNormal];
+    
     [btnPreferences addTarget:self action:@selector(displaySettings) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnPreferences];
     
@@ -111,7 +113,7 @@ CGFloat const kLeftNavHeight = 340.0f;
     if (cell == nil) {
         cell                                = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.backgroundColor                = [UIColor clearColor];
-        cell.textLabel.font                 = [UIFont fontWithName:@"HelveticaNeue" size:21];
+        cell.textLabel.font                 = [UIFont fontWithName:@"SourceSansPro-ExtraLight" size:21];
         cell.textLabel.textColor            = [UIColor whiteColor];
         cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
         cell.selectedBackgroundView         = [[UIView alloc] init];

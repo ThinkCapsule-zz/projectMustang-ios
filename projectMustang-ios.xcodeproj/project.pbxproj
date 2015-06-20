@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		77E3FFED587D2B94B2B73130 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F91D294DF9F5DAC8DA3998 /* libPods.a */; };
-		B60942A11B33BC8400C6E1C7 /* SignOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60942A01B33BC8400C6E1C7 /* SignOnViewController.m */; };
 		B6379F311B1A60A2005C0ADA /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F301B1A60A2005C0ADA /* DataFetcher.m */; };
 		B6379F3E1B1D5A17005C0ADA /* TCArticleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F3D1B1D5A17005C0ADA /* TCArticleDataModel.m */; };
 		B6379F411B1D5A2D005C0ADA /* TCBlogDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F401B1D5A2D005C0ADA /* TCBlogDataModel.m */; };
@@ -17,7 +16,12 @@
 		B6379F4A1B1D5A68005C0ADA /* TCVideoDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F491B1D5A68005C0ADA /* TCVideoDataModel.m */; };
 		B6589A5C1B33A57B00B3754F /* TCWalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6589A5B1B33A57B00B3754F /* TCWalkthroughViewController.m */; };
 		B6589A601B33B45800B3754F /* SystemStatics.m in Sources */ = {isa = PBXBuildFile; fileRef = B6589A5F1B33B45800B3754F /* SystemStatics.m */; };
+		B6A638501B350AF9005C3D7A /* SignOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A6384F1B350AF9005C3D7A /* SignOnViewController.m */; };
 		B6CFCF291B33DC72004BCF74 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CFCF281B33DC72004BCF74 /* SettingsViewController.m */; };
+		B6CFCF2F1B35059A004BCF74 /* SourceSansPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6CFCF2B1B35059A004BCF74 /* SourceSansPro-ExtraLight.ttf */; };
+		B6CFCF301B35059A004BCF74 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6CFCF2C1B35059A004BCF74 /* SourceSansPro-Light.ttf */; };
+		B6CFCF311B35059A004BCF74 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6CFCF2D1B35059A004BCF74 /* SourceSansPro-Regular.ttf */; };
+		B6CFCF321B35059A004BCF74 /* SourceSansPro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6CFCF2E1B35059A004BCF74 /* SourceSansPro-Semibold.ttf */; };
 		CA5E2E331B3206FC004A9AE0 /* ArticleSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5E2E321B3206FC004A9AE0 /* ArticleSectionViewController.m */; };
 		CA5E2E361B3207A2004A9AE0 /* BlogSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5E2E351B3207A2004A9AE0 /* BlogSectionViewController.m */; };
 		CA5E2E391B320868004A9AE0 /* VideoSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5E2E381B320868004A9AE0 /* VideoSectionViewController.m */; };
@@ -50,8 +54,6 @@
 
 /* Begin PBXFileReference section */
 		1075B1093CE1BFBDF7FD3D0F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		B609429F1B33BC8400C6E1C7 /* SignOnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignOnViewController.h; sourceTree = "<group>"; };
-		B60942A01B33BC8400C6E1C7 /* SignOnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignOnViewController.m; sourceTree = "<group>"; };
 		B6379F2F1B1A60A2005C0ADA /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
 		B6379F301B1A60A2005C0ADA /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
 		B6379F3C1B1D5A17005C0ADA /* TCArticleDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCArticleDataModel.h; sourceTree = "<group>"; };
@@ -68,8 +70,14 @@
 		B6589A5B1B33A57B00B3754F /* TCWalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCWalkthroughViewController.m; sourceTree = "<group>"; };
 		B6589A5E1B33B45800B3754F /* SystemStatics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemStatics.h; sourceTree = "<group>"; };
 		B6589A5F1B33B45800B3754F /* SystemStatics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemStatics.m; sourceTree = "<group>"; };
+		B6A6384E1B350AF9005C3D7A /* SignOnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignOnViewController.h; sourceTree = "<group>"; };
+		B6A6384F1B350AF9005C3D7A /* SignOnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignOnViewController.m; sourceTree = "<group>"; };
 		B6CFCF271B33DC72004BCF74 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		B6CFCF281B33DC72004BCF74 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		B6CFCF2B1B35059A004BCF74 /* SourceSansPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLight.ttf"; sourceTree = "<group>"; };
+		B6CFCF2C1B35059A004BCF74 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		B6CFCF2D1B35059A004BCF74 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		B6CFCF2E1B35059A004BCF74 /* SourceSansPro-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.ttf"; sourceTree = "<group>"; };
 		CA5E2E311B3206FC004A9AE0 /* ArticleSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleSectionViewController.h; sourceTree = "<group>"; };
 		CA5E2E321B3206FC004A9AE0 /* ArticleSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleSectionViewController.m; sourceTree = "<group>"; };
 		CA5E2E341B3207A2004A9AE0 /* BlogSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogSectionViewController.h; sourceTree = "<group>"; };
@@ -189,8 +197,8 @@
 			children = (
 				B6589A5A1B33A57B00B3754F /* TCWalkthroughViewController.h */,
 				B6589A5B1B33A57B00B3754F /* TCWalkthroughViewController.m */,
-				B609429F1B33BC8400C6E1C7 /* SignOnViewController.h */,
-				B60942A01B33BC8400C6E1C7 /* SignOnViewController.m */,
+				B6A6384E1B350AF9005C3D7A /* SignOnViewController.h */,
+				B6A6384F1B350AF9005C3D7A /* SignOnViewController.m */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -202,6 +210,17 @@
 				B6CFCF281B33DC72004BCF74 /* SettingsViewController.m */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		B6CFCF2A1B35059A004BCF74 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B6CFCF2B1B35059A004BCF74 /* SourceSansPro-ExtraLight.ttf */,
+				B6CFCF2C1B35059A004BCF74 /* SourceSansPro-Light.ttf */,
+				B6CFCF2D1B35059A004BCF74 /* SourceSansPro-Regular.ttf */,
+				B6CFCF2E1B35059A004BCF74 /* SourceSansPro-Semibold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		CA5E2E2C1B320322004A9AE0 /* Articles */ = {
@@ -252,6 +271,7 @@
 		CA63351E1AFAAB08009DC83A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B6CFCF2A1B35059A004BCF74 /* Fonts */,
 				CA63351F1AFAAB29009DC83A /* config.plist */,
 			);
 			path = Resources;
@@ -513,8 +533,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6CFCF2F1B35059A004BCF74 /* SourceSansPro-ExtraLight.ttf in Resources */,
+				B6CFCF321B35059A004BCF74 /* SourceSansPro-Semibold.ttf in Resources */,
 				CA6335201AFAAB29009DC83A /* config.plist in Resources */,
 				CAD585561AF26A5100F77ED7 /* Main.storyboard in Resources */,
+				B6CFCF311B35059A004BCF74 /* SourceSansPro-Regular.ttf in Resources */,
+				B6CFCF301B35059A004BCF74 /* SourceSansPro-Light.ttf in Resources */,
 				CAD5855B1AF26A5100F77ED7 /* LaunchScreen.xib in Resources */,
 				CAD585581AF26A5100F77ED7 /* Images.xcassets in Resources */,
 			);
@@ -584,9 +608,9 @@
 				B6379F411B1D5A2D005C0ADA /* TCBlogDataModel.m in Sources */,
 				CAD585841AF2715900F77ED7 /* MainMenuViewController.m in Sources */,
 				CAD585801AF26F9400F77ED7 /* NavigationManager.m in Sources */,
-				B60942A11B33BC8400C6E1C7 /* SignOnViewController.m in Sources */,
 				B6379F441B1D5A41005C0ADA /* TCEventDataModel.m in Sources */,
 				CAD5857B1AF26C7400F77ED7 /* MainViewController.m in Sources */,
+				B6A638501B350AF9005C3D7A /* SignOnViewController.m in Sources */,
 				B6379F3E1B1D5A17005C0ADA /* TCArticleDataModel.m in Sources */,
 				B6589A5C1B33A57B00B3754F /* TCWalkthroughViewController.m in Sources */,
 				CA5E2E401B320995004A9AE0 /* EventsSectionViewController.m in Sources */,

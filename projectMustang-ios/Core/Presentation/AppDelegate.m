@@ -12,7 +12,6 @@
 #import "NavigationManager.h"
 #import "MainMenuViewController.h"
 #import "MainViewController.h"
-#import <SQTShyNavigationBar/SQTShyNavigationBar.h>
 #import <RESideMenu/RESideMenu.h>
 
 // ViewControllers
@@ -30,6 +29,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     // Setup left hand nav
     self.window                    = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     NavigationManager* navManager  = [NavigationManager singletonInstance];
@@ -40,8 +41,13 @@
     RESideMenu* sideMenuVC         = [[RESideMenu alloc] initWithContentViewController:navManager
                                                                 leftMenuViewController:menuVC
                                                                rightMenuViewController:nil];
+    // Customize menu
+    sideMenuVC.scaleBackgroundImageView = NO;
+    sideMenuVC.scaleMenuView            = NO;
+    sideMenuVC.contentViewShadowEnabled = YES;
+    sideMenuVC.backgroundImage          = [UIImage imageNamed:@"background_tinted"];
     
-    sideMenuVC.backgroundImage = [UIImage imageNamed:@"menu_background"];
+    
     self.window.rootViewController = sideMenuVC;
 
     BOOL didFinishLaunch           = [[FBSDKApplicationDelegate sharedInstance] application:application

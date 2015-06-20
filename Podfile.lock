@@ -20,7 +20,6 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - BLKFlexibleHeightBar (1.0.2)
   - Bolts (1.2.0):
     - Bolts/AppLinks (= 1.2.0)
     - Bolts/Tasks (= 1.2.0)
@@ -46,21 +45,17 @@ PODS:
   - ISO8601DateFormatter (0.7)
   - PKRevealController (2.0.6)
   - RESideMenu (4.0.7)
-  - SQTShyNavigationBar (1.0)
 
 DEPENDENCIES:
-  - BLKFlexibleHeightBar (~> 1.0.2)
   - ContentfulDeliveryAPI
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
   - PKRevealController
   - RESideMenu (~> 4.0.7)
-  - SQTShyNavigationBar
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  BLKFlexibleHeightBar: b27572a69633d8e33f1f2bbc486b04d8e86f742d
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
   ContentfulDeliveryAPI: 84eb58ed01d97fec339844436239c39e999f8092
   FBSDKCoreKit: 84b3616a361801f190e43a9909caead7bb6087c7
@@ -69,6 +64,5 @@ SPEC CHECKSUMS:
   ISO8601DateFormatter: ab926648eebe497f4d167c0fd083992f959f1274
   PKRevealController: ffb45a16f5a5032ad90a3d16e5cbb0d8e035bd58
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
-  SQTShyNavigationBar: 9857201cd368499bbdd4fbc67ae6cc442799d065
 
 COCOAPODS: 0.37.1

@@ -18,7 +18,6 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.title = @"Home";
     self.view.backgroundColor = [UIColor blackColor];
     
     // sample call
