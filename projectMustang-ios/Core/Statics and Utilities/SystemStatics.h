@@ -10,4 +10,5 @@
 
 extern NSString* const kUserHasOnboarded;
 extern NSString* const kIsUserSignedIn;
+extern NSString* const kUserHasOnboarded;
 

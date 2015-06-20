@@ -8,6 +8,7 @@
 
 #import "SignOnViewController.h"
 #import "NavigationManager.h"
+#import "SystemStatics.h"
 
 @implementation SignOnViewController
 
@@ -20,7 +21,6 @@
     self.loginButton = [[FBSDKLoginButton alloc] init];
     self.loginButton.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.loginButton];
-    
     self.loginButton.delegate = self;
     
     [self setupConstraints];
@@ -49,8 +49,19 @@
 - (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                 error:(NSError *)error {
     
+    NavigationManager* navManager = [NavigationManager singletonInstance];
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    BOOL alreadyOnboarded = [userDefaults boolForKey:kUserHasOnboarded];
+    
     if ([FBSDKAccessToken currentAccessToken]) {
-        [[NavigationManager singletonInstance] goToMainSection];
+        
+        if (alreadyOnboarded) {
+            [navManager goToMainSection];
+        }else{
+            [navManager showWalkthrough];
+        }
+        
+        
     }
     
     

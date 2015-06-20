@@ -32,7 +32,9 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     // Setup left hand nav
-    self.window                    = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    
+    self.window                    = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen]bounds]];
     NavigationManager* navManager  = [NavigationManager singletonInstance];
     MainViewController* mainVC     = [[MainViewController alloc] init];
     [navManager setViewControllers:@[mainVC]];
@@ -50,6 +52,7 @@
     
     
     self.window.rootViewController = sideMenuVC;
+
 
     BOOL didFinishLaunch           = [[FBSDKApplicationDelegate sharedInstance] application:application
                                                               didFinishLaunchingWithOptions:launchOptions];
