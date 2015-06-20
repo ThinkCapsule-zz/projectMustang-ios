@@ -2,14 +2,12 @@
 //  SettingsViewController.h
 //  projectMustang-ios
 //
-//  Created by Alan Hsu on 2015-06-19.
+//  Created by Alan Hsu on 2015-06-20.
 //  Copyright (c) 2015 Alan Hsu. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "BaseViewController.h"
 
-@interface SettingsViewController : UIViewController <FBSDKLoginButtonDelegate>
+@interface SettingsViewController : BaseViewController
 
 @end
