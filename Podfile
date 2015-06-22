@@ -9,6 +9,7 @@ inhibit_all_warnings!
 pod 'RESideMenu', '~> 4.0.7'
 pod 'ContentfulDeliveryAPI'
 pod 'PKRevealController'
+#pod 'DGActivityIndicatorView'
 
 #facebook pods
 pod 'FBSDKCoreKit'
