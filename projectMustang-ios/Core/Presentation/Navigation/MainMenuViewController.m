@@ -48,7 +48,7 @@ CGFloat const kLeftNavHeight = 340.0f;
     
     // Settings button
     UIImage* pref_icon_image = [UIImage imageNamed:@"pref_icon"];
-    UIButton* btnPreferences = [[UIButton alloc] initWithFrame:CGRectMake(50, 50, 60, 60)];
+    UIButton* btnPreferences = [[UIButton alloc] initWithFrame:CGRectMake(self.menuItemsTable.frame.origin.x, self.menuItemsTable.frame.origin.y + self.menuItemsTable.frame.size.height + 30, 60, 60)];
     [btnPreferences setImage:pref_icon_image forState:UIControlStateNormal];
     
     [btnPreferences addTarget:self action:@selector(displaySettings) forControlEvents:UIControlEventTouchUpInside];

@@ -2,7 +2,7 @@
 //  SettingsViewController.m
 //  projectMustang-ios
 //
-//  Created by Alan Hsu on 2015-06-19.
+//  Created by Alan Hsu on 2015-06-20.
 //  Copyright (c) 2015 Alan Hsu. All rights reserved.
 //
 
@@ -11,30 +11,46 @@
 
 @implementation SettingsViewController
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
     
-    // Set title
-    self.title = @"Settings";
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    // Setup facebook login button
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.center = self.view.center;
-    loginButton.delegate = self;
-    [self.view addSubview:loginButton];
+    self.loginButton = [[FBSDKLoginButton alloc] init];
+    self.loginButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.loginButton];
+    
+    self.loginButton.delegate = self;
+    
+    [self setupConstraints];
 }
 
-#pragma mark - FBSDKLoginButtonDelegate Methods
-- (void)  loginButton:(FBSDKLoginButton *)loginButton
-didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
-                error:(NSError *)error {
-   
-    // Do something after login
+#pragma mark - Autolayout
+- (void)setupConstraints{
+    
+    NSDictionary *viewsDictionary = @{@"loginButton":self.loginButton};
+    
+    NSArray *loginbutton_POS_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[loginButton]-30-|"
+                                                                         options:0
+                                                                         metrics:nil
+                                                                           views:viewsDictionary];
+    
+    NSArray *loginbutton_POS_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-30-[loginButton]-30-|"
+                                                                         options:0
+                                                                         metrics:nil
+                                                                           views:viewsDictionary];
+    [self.view addConstraints:loginbutton_POS_V];
+    [self.view addConstraints:loginbutton_POS_H];
     
 }
-- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
-    
+- (void)  loginButton:(FBSDKLoginButton *)loginButton
+didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
+                error:(NSError *)error{
+
+}
+
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton{
     [[NavigationManager singletonInstance] showLogin];
     
 }
-
 @end

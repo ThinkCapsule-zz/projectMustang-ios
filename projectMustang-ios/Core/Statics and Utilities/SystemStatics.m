@@ -9,5 +9,4 @@
 #import "SystemStatics.h"
 
 NSString* const kUserHasOnboarded = @"kUserHasOnboarded";
-NSString* const kIsUserSignedIn = @"kIsUserSignedIn";
-
+NSString* const kIsUserSignedIn   = @"kIsUserSignedIn";

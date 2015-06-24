@@ -19,11 +19,13 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UIButton* btnGoHome = [[UIButton alloc] initWithFrame:CGRectMake(100, 200, 200, 100)];
-    [btnGoHome setTitle:@"gohome" forState:UIControlStateNormal];
+    [btnGoHome setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btnGoHome setTitle:@"Finish" forState:UIControlStateNormal];
     [btnGoHome addTarget:self action:@selector(goToAppContent) forControlEvents:UIControlEventTouchUpInside];
+    btnGoHome.center = self.view.center;
     [self.view addSubview:btnGoHome];
     
     
