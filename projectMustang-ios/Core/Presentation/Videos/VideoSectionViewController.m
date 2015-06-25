@@ -23,17 +23,38 @@
 
 - (void) startVideoPlayback {
     
-    NSString* videoURLString = @"http://videos.contentful.com/1oq1lgnwupsh/Z64eJTxpq8OM4Ws20GckE/15fbbe2cb432a46f0941dd9dc556886b/Ariana_Grande_-_Break_Free_ft._Zedd.mp4";
+    // sample call
+    CDAConfiguration* config = [CDAConfiguration defaultConfiguration];
+    config.server = @"preview.contentful.com";
+    CDAClient* client = [[CDAClient alloc] initWithSpaceKey:@"1oq1lgnwupsh" accessToken:@"ea40f4d68e1983a625ac5330daaaaee3befeda5a26dc4da674ccee3b5dec4037" configuration: config];
     
-    NSURL *videoURL = [NSURL URLWithString:videoURLString ];
+    [client fetchEntriesMatching:@{ @"content_type": @"5q1GHJZHl6AKOyyIIcaY8s" }
+                         success:^(CDAResponse *response, CDAArray *array) {
+                             
+                             CDAEntry* videoEntry = [array.items firstObject];
+                             NSDictionary* videoDict = [videoEntry fields];
+                             CDAAsset* asset = videoDict[@"url"];
+                             NSURL *videoURL = [asset URL];
+                             
+                             MPMoviePlayerViewController *movie = [[MPMoviePlayerViewController alloc] initWithContentURL:videoURL];
+                             
+                             [[NSNotificationCenter defaultCenter] addObserver:self
+                                                                      selector:@selector(playbackFinishedCallback:)
+                                                                          name:MPMoviePlayerPlaybackDidFinishNotification
+                                                                        object:movie];
+                             
+                             [self presentMoviePlayerViewControllerAnimated:movie];
+                             
+                             
+                         } failure:^(CDAResponse *response, NSError *error) {
+                             
+                             
+                             
+                         }];
     
-    MPMoviePlayerViewController *movie = [[MPMoviePlayerViewController alloc] initWithContentURL:videoURL];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(playbackFinishedCallback:)
-                                                 name:MPMoviePlayerPlaybackDidFinishNotification
-                                               object:movie];
     
-    [self presentMoviePlayerViewControllerAnimated:movie];
+
+    
 }
 @end

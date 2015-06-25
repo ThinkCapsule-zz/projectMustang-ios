@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
 
 @interface VideoSectionViewController : BaseViewController
 
