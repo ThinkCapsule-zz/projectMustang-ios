@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
-@interface EventsSectionViewController : BaseViewController
+@interface EventsSectionViewController : BaseViewController<UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
+{
+    UICollectionViewFlowLayout *eventsFlowLayout;
+    UICollectionView    *eventsCollectionView;
+}
 
 @end

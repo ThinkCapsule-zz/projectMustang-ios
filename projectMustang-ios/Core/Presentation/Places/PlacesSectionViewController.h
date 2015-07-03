@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
-@interface PlacesSectionViewController : BaseViewController
+@interface PlacesSectionViewController : BaseViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+{
+    UICollectionViewFlowLayout *placesFlowLayout;
+    UICollectionView *placesCollectionView;
+}
 
 @end
