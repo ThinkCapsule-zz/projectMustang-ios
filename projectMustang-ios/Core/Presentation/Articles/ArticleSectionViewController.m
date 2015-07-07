@@ -7,59 +7,84 @@
 //
 
 #import "ArticleSectionViewController.h"
+#include "ArticleCell.h"
 
 @implementation ArticleSectionViewController
 
 
 #pragma mark - View Methods
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.title                          = @"Articles";
-    self.view                           = [[UIView alloc]
-    
-    initWithFrame:[[UIScreen mainScreen] bounds]];
-    UICollectionViewFlowLayout *layout  = [[UICollectionViewFlowLayout alloc] init];
-    articleCollectionView                      = [[UICollectionView alloc]
-                                           initWithFrame:self.view.frame collectionViewLayout:layout];
-    [articleCollectionView setDataSource:self];
-    [articleCollectionView setDelegate:self];
-    [articleCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
-    [articleCollectionView setBackgroundColor:[UIColor blueColor]];
-    articleCollectionView.alwaysBounceVertical = YES;
-    [self.view addSubview:articleCollectionView];
+    self.title                  = @"Articles";
+    self.view                   = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self loadPictures];
 
+    
+    self.articleFlow                 = [[UICollectionViewFlowLayout alloc] init];
+    self.articleCollectionView       = [[UICollectionView alloc]initWithFrame:self.view.frame collectionViewLayout:self.articleFlow];
+    
+    [self.articleCollectionView setDataSource:self];
+    [self.articleCollectionView setDelegate:self];
+    
+    [self.articleCollectionView registerClass:[ArticleCell class] forCellWithReuseIdentifier:@"FlickrCell"];
+    
+    [self.articleCollectionView setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.4]];
+    self.articleCollectionView.alwaysBounceVertical  = YES;
+    [self.view addSubview:self.articleCollectionView];
 }
+
+- (void) loadPictures
+{
+    self.sourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"FillPics"];
+    self.articleArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:self.sourcePath error:NULL];
+}
+
 
 #pragma mark - UICollectionViewDataSource Delegate Methods
 
-//should be number of array items (in an array that holds number of article posts) unless it's a large collection, then I guess we can just give it an arbitrary number,t hat can be reloaded when scrolled tot he bottom - like an instagram feed
+//would I be changing the number of collectionviews or the number of sections (based on the number of articles) ?
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 7;
+    return self.articleArray.count;
 }
 
-//number of items in each section ~~~~~~~~~~~~~~~~ WHY DOESN"T THIS WORK?
+//number of sections
 - (NSInteger) numOfSectionsCollectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return 1;
 }
 
-
 //populates each cell with whatever is in the arraycell indexpath
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FlickrCell" forIndexPath:indexPath];
+    //setup cell
+    ArticleCell *cell   = [self.articleCollectionView dequeueReusableCellWithReuseIdentifier:@"FlickrCell" forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor colorWithRed:200/255.0 green:55/255.0 blue:12/255.0 alpha:0.4];
+    //populate with images
+    NSString    *imageName      = [self.articleArray objectAtIndex:indexPath.row];
+    NSString    *filename       = [NSString stringWithFormat:@"%@/%@", self.sourcePath, imageName];
+    UIImage     *image          = [UIImage imageWithContentsOfFile:filename];
+    UIImageView *photoImageView = [[UIImageView alloc] initWithImage:image];
+    
+    //resize image
+
+    photoImageView.frame            = CGRectMake(photoImageView.frame.origin.x, photoImageView.frame.origin.y, self.view.frame.size.width, 190);
+    photoImageView.contentMode      = UIViewContentModeBottomLeft; // This determines position of image
+    photoImageView.clipsToBounds    = YES;
+    [cell addSubview:photoImageView];
+    
+    cell.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
+    cell.label.text = [NSString stringWithFormat:@"Article %ld", (long)indexPath.item];
+    
     return cell;
 }
-
 
 //size of each cell (width x height)
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(self.view.frame.size.width, 100);
+    return CGSizeMake(self.view.frame.size.width, 190);
 }
 
 @end

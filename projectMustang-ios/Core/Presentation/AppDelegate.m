@@ -5,6 +5,7 @@
 //  Created by Alan Hsu on 2015-04-30.
 //  Copyright (c) 2015 Alan Hsu. All rights reserved.
 //
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 #import "AppDelegate.h"
 
@@ -32,8 +33,6 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     // Setup left hand nav
-    
-    
     self.window                    = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen]bounds]];
     NavigationManager* navManager  = [NavigationManager singletonInstance];
     MainViewController* mainVC     = [[MainViewController alloc] init];
@@ -48,7 +47,7 @@
     sideMenuVC.scaleBackgroundImageView = NO;
     sideMenuVC.scaleMenuView            = NO;
     sideMenuVC.contentViewShadowEnabled = YES;
-    sideMenuVC.backgroundImage          = [UIImage imageNamed:@"background_tinted"];
+    sideMenuVC.backgroundImage          = [UIImage imageNamed:@"background"];
     
     
     self.window.rootViewController = sideMenuVC;
@@ -65,7 +64,16 @@
         [navManager showLogin];
     }
     
-    
+    //customize navbarcontroller
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xFF5722)];
+    NSDictionary *attributes = @{
+                                 NSUnderlineStyleAttributeName: @1,
+                                 NSForegroundColorAttributeName : UIColorFromRGB(0xFFFFFF),
+                                 NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:19]
+                                 };
+    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
+
+
     
     return didFinishLaunch;
 }

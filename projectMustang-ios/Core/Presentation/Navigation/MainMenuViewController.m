@@ -34,7 +34,7 @@ CGFloat const kLeftNavHeight = 340.0f;
     self.menuItemsTable                  = [[UITableView alloc] initWithFrame:CGRectMake(20, (self.view.frame.size.height - kLeftNavHeight) / 2.0f,
                                                                                          self.view.frame.size.width, kLeftNavHeight)
                                                                         style:UITableViewStylePlain];
-    
+    self.view.backgroundColor        = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:50/255.0 alpha:0.1];
     // Menu Items
     self.menuItemsTable.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
     self.menuItemsTable.delegate         = self;

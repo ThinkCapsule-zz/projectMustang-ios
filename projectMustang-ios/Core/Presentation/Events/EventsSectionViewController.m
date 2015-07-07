@@ -7,34 +7,42 @@
 //
 
 #import "EventsSectionViewController.h"
+#import "NavigationManager.h"
+#include "EventsCell.h"
 
 @implementation EventsSectionViewController
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.title = @"Events";
-    self.view                           = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    eventsFlowLayout  = [[UICollectionViewFlowLayout alloc] init];
-    eventsCollectionView                = [[UICollectionView alloc]
-                                           initWithFrame:self.view.frame collectionViewLayout:eventsFlowLayout];
+    self.title              = @"Events";
+    self.view               = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    eventsFlowLayout        = [[UICollectionViewFlowLayout alloc] init];
+    eventsCollectionView    = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:eventsFlowLayout];
+    
     [eventsCollectionView setDataSource:self];
     [eventsCollectionView setDelegate:self];
-    [eventsCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
-    eventsCollectionView.backgroundColor = [UIColor brownColor];
-    eventsCollectionView.alwaysBounceVertical = YES;
+    
+    [eventsCollectionView registerClass:[EventsCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+    eventsCollectionView.backgroundColor        = [UIColor colorWithWhite:1.0 alpha:0.4];
+    eventsCollectionView.alwaysBounceVertical   = YES;
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+
     [self.view addSubview:eventsCollectionView];
 }
 
+//this needs to be changed when bill's part is done
+//- (void) loadEvents
 
-//should be number of array items (in an array that holds number of event posts) unless it's in a large collection, then I guess we can just give it an arbitrary number, that can be reloaded when scrolled to the bottom - like an instagram feed
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 7;
+    //this needs to be changed when bill's part is done
+    return 1;
 }
 
-//number of items in each section ~~~~~~~~~~~~~~~~ WHY DOESN"T THIS WORK?
-
+//number of rows in each section
 - (NSInteger) numOfSectionsCollectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return 1;
@@ -44,9 +52,9 @@
 //populates each cell with whatever is in the arraycell indexpath
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    
-    cell.backgroundColor = [UIColor colorWithRed:25/255.0 green:55/255.0 blue:100/255.0 alpha:0.5];
+    EventsCell *cell = [eventsCollectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    cell.label.text = [NSString stringWithFormat:@"Best Party Ever # %ld", (long)indexPath.item+1];
+    cell.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
     return cell;
 }
 

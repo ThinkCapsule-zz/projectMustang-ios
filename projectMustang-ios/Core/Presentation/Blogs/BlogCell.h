@@ -10,4 +10,6 @@
 
 @interface BlogCell : UICollectionViewCell
 
+@property (strong, nonatomic) UILabel *label;
+
 @end

@@ -10,4 +10,6 @@
 
 @interface EventsCell : UICollectionViewCell
 
+@property (strong, nonatomic) UILabel *label;
+
 @end

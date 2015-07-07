@@ -10,7 +10,12 @@
 
 @interface ArticleSectionViewController : BaseViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 {
-    UICollectionViewFlowLayout *articleFlow;
-    UICollectionView *articleCollectionView;
+    
 }
+@property (nonatomic) UICollectionViewFlowLayout    *articleFlow;
+@property (nonatomic) UICollectionView              *articleCollectionView;
+@property (nonatomic) NSArray                       *articleArray;
+@property (nonatomic) NSString                      *sourcePath;
+@property (nonatomic) NSArray                       *eventsArray;
+-(void) loadPictures;
 @end

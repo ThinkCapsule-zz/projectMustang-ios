@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		692208651B4B27400045C279 /* PlacesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 692208641B4B27400045C279 /* PlacesCell.m */; };
+		692208681B4B3C0C0045C279 /* EventsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 692208671B4B3C0C0045C279 /* EventsCell.m */; };
+		6922086B1B4B3C220045C279 /* BlogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922086A1B4B3C220045C279 /* BlogCell.m */; };
+		6922086E1B4B3C300045C279 /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922086D1B4B3C300045C279 /* ArticleCell.m */; };
+		69C9F27A1B4C3081006CCABF /* FillPics in Resources */ = {isa = PBXBuildFile; fileRef = 69C9F2791B4C3081006CCABF /* FillPics */; };
 		77E3FFED587D2B94B2B73130 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F91D294DF9F5DAC8DA3998 /* libPods.a */; };
 		B6379F311B1A60A2005C0ADA /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F301B1A60A2005C0ADA /* DataFetcher.m */; };
 		B6379F3E1B1D5A17005C0ADA /* TCArticleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F3D1B1D5A17005C0ADA /* TCArticleDataModel.m */; };
@@ -54,6 +59,15 @@
 
 /* Begin PBXFileReference section */
 		1075B1093CE1BFBDF7FD3D0F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		692208631B4B27400045C279 /* PlacesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesCell.h; sourceTree = "<group>"; };
+		692208641B4B27400045C279 /* PlacesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesCell.m; sourceTree = "<group>"; };
+		692208661B4B3C0C0045C279 /* EventsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsCell.h; sourceTree = "<group>"; };
+		692208671B4B3C0C0045C279 /* EventsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsCell.m; sourceTree = "<group>"; };
+		692208691B4B3C220045C279 /* BlogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogCell.h; sourceTree = "<group>"; };
+		6922086A1B4B3C220045C279 /* BlogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogCell.m; sourceTree = "<group>"; };
+		6922086C1B4B3C300045C279 /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
+		6922086D1B4B3C300045C279 /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
+		69C9F2791B4C3081006CCABF /* FillPics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FillPics; path = ../../../Downloads/FillPics; sourceTree = "<group>"; };
 		B6379F2F1B1A60A2005C0ADA /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
 		B6379F301B1A60A2005C0ADA /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
 		B6379F3C1B1D5A17005C0ADA /* TCArticleDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCArticleDataModel.h; sourceTree = "<group>"; };
@@ -228,6 +242,8 @@
 			children = (
 				CA5E2E311B3206FC004A9AE0 /* ArticleSectionViewController.h */,
 				CA5E2E321B3206FC004A9AE0 /* ArticleSectionViewController.m */,
+				6922086C1B4B3C300045C279 /* ArticleCell.h */,
+				6922086D1B4B3C300045C279 /* ArticleCell.m */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -237,6 +253,8 @@
 			children = (
 				CA5E2E341B3207A2004A9AE0 /* BlogSectionViewController.h */,
 				CA5E2E351B3207A2004A9AE0 /* BlogSectionViewController.m */,
+				692208691B4B3C220045C279 /* BlogCell.h */,
+				6922086A1B4B3C220045C279 /* BlogCell.m */,
 			);
 			path = Blogs;
 			sourceTree = "<group>";
@@ -246,6 +264,8 @@
 			children = (
 				CA5E2E411B3209D3004A9AE0 /* PlacesSectionViewController.h */,
 				CA5E2E421B3209D3004A9AE0 /* PlacesSectionViewController.m */,
+				692208631B4B27400045C279 /* PlacesCell.h */,
+				692208641B4B27400045C279 /* PlacesCell.m */,
 			);
 			path = Places;
 			sourceTree = "<group>";
@@ -264,6 +284,8 @@
 			children = (
 				CA5E2E3E1B320995004A9AE0 /* EventsSectionViewController.h */,
 				CA5E2E3F1B320995004A9AE0 /* EventsSectionViewController.m */,
+				692208661B4B3C0C0045C279 /* EventsCell.h */,
+				692208671B4B3C0C0045C279 /* EventsCell.m */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -313,6 +335,7 @@
 		CAD585471AF26A5100F77ED7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				69C9F2791B4C3081006CCABF /* FillPics */,
 				CAD585481AF26A5100F77ED7 /* Info.plist */,
 				CAD585491AF26A5100F77ED7 /* main.m */,
 			);
@@ -533,6 +556,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69C9F27A1B4C3081006CCABF /* FillPics in Resources */,
 				B6CFCF2F1B35059A004BCF74 /* SourceSansPro-ExtraLight.ttf in Resources */,
 				B6CFCF321B35059A004BCF74 /* SourceSansPro-Semibold.ttf in Resources */,
 				CA6335201AFAAB29009DC83A /* config.plist in Resources */,
@@ -598,8 +622,10 @@
 				CAD585501AF26A5100F77ED7 /* projectMustang_ios.xcdatamodeld in Sources */,
 				CA5E2E331B3206FC004A9AE0 /* ArticleSectionViewController.m in Sources */,
 				CA5E2E431B3209D3004A9AE0 /* PlacesSectionViewController.m in Sources */,
+				6922086B1B4B3C220045C279 /* BlogCell.m in Sources */,
 				B6589A601B33B45800B3754F /* SystemStatics.m in Sources */,
 				CAD585931AF2AC6A00F77ED7 /* BaseViewController.m in Sources */,
+				692208681B4B3C0C0045C279 /* EventsCell.m in Sources */,
 				CA6335231AFAAC9D009DC83A /* ConfigManager.m in Sources */,
 				B6379F471B1D5A57005C0ADA /* TCPlacesDataModel.m in Sources */,
 				B67759871B36055A00A253F7 /* SettingsViewController.m in Sources */,
@@ -612,8 +638,10 @@
 				CAD5857B1AF26C7400F77ED7 /* MainViewController.m in Sources */,
 				B6A638501B350AF9005C3D7A /* SignOnViewController.m in Sources */,
 				B6379F3E1B1D5A17005C0ADA /* TCArticleDataModel.m in Sources */,
+				6922086E1B4B3C300045C279 /* ArticleCell.m in Sources */,
 				B6589A5C1B33A57B00B3754F /* TCWalkthroughViewController.m in Sources */,
 				CA5E2E401B320995004A9AE0 /* EventsSectionViewController.m in Sources */,
+				692208651B4B27400045C279 /* PlacesCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

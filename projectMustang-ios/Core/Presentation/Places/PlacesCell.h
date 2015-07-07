@@ -10,4 +10,6 @@
 
 @interface PlacesCell : UICollectionViewCell
 
+@property (strong, nonatomic) UILabel *label;
+
 @end
