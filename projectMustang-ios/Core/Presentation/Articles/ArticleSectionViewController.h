@@ -14,8 +14,11 @@
 }
 @property (nonatomic) UICollectionViewFlowLayout    *articleFlow;
 @property (nonatomic) UICollectionView              *articleCollectionView;
-@property (nonatomic) NSArray                       *articleArray;
+@property (nonatomic) NSMutableArray                *articleArray;
 @property (nonatomic) NSString                      *sourcePath;
 @property (nonatomic) NSArray                       *eventsArray;
+-(void) loadCollectionView;
 -(void) loadPictures;
+
+
 @end

@@ -11,7 +11,6 @@
 		692208681B4B3C0C0045C279 /* EventsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 692208671B4B3C0C0045C279 /* EventsCell.m */; };
 		6922086B1B4B3C220045C279 /* BlogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922086A1B4B3C220045C279 /* BlogCell.m */; };
 		6922086E1B4B3C300045C279 /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922086D1B4B3C300045C279 /* ArticleCell.m */; };
-		69C9F27A1B4C3081006CCABF /* FillPics in Resources */ = {isa = PBXBuildFile; fileRef = 69C9F2791B4C3081006CCABF /* FillPics */; };
 		77E3FFED587D2B94B2B73130 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F91D294DF9F5DAC8DA3998 /* libPods.a */; };
 		B6379F311B1A60A2005C0ADA /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F301B1A60A2005C0ADA /* DataFetcher.m */; };
 		B6379F3E1B1D5A17005C0ADA /* TCArticleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F3D1B1D5A17005C0ADA /* TCArticleDataModel.m */; };
@@ -67,7 +66,6 @@
 		6922086A1B4B3C220045C279 /* BlogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogCell.m; sourceTree = "<group>"; };
 		6922086C1B4B3C300045C279 /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
 		6922086D1B4B3C300045C279 /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
-		69C9F2791B4C3081006CCABF /* FillPics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FillPics; path = ../../../Downloads/FillPics; sourceTree = "<group>"; };
 		B6379F2F1B1A60A2005C0ADA /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
 		B6379F301B1A60A2005C0ADA /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
 		B6379F3C1B1D5A17005C0ADA /* TCArticleDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCArticleDataModel.h; sourceTree = "<group>"; };
@@ -110,7 +108,7 @@
 		CAD585491AF26A5100F77ED7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CAD5854F1AF26A5100F77ED7 /* projectMustang_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = projectMustang_ios.xcdatamodel; sourceTree = "<group>"; };
 		CAD585551AF26A5100F77ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CAD585571AF26A5100F77ED7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CAD585571AF26A5100F77ED7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "../../../../../../../../Documents/projectMustang/projectMustang-ios/Images.xcassets"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAD5855A1AF26A5100F77ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CAD585601AF26A5100F77ED7 /* projectMustang-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "projectMustang-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAD585651AF26A5100F77ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -335,7 +333,6 @@
 		CAD585471AF26A5100F77ED7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				69C9F2791B4C3081006CCABF /* FillPics */,
 				CAD585481AF26A5100F77ED7 /* Info.plist */,
 				CAD585491AF26A5100F77ED7 /* main.m */,
 			);
@@ -556,7 +553,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69C9F27A1B4C3081006CCABF /* FillPics in Resources */,
 				B6CFCF2F1B35059A004BCF74 /* SourceSansPro-ExtraLight.ttf in Resources */,
 				B6CFCF321B35059A004BCF74 /* SourceSansPro-Semibold.ttf in Resources */,
 				CA6335201AFAAB29009DC83A /* config.plist in Resources */,

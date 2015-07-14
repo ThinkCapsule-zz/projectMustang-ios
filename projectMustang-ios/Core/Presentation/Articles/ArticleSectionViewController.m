@@ -20,10 +20,13 @@
     self.title                  = @"Articles";
     self.view                   = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self loadPictures];
-
+    [self loadCollectionView];
     
-    self.articleFlow                 = [[UICollectionViewFlowLayout alloc] init];
-    self.articleCollectionView       = [[UICollectionView alloc]initWithFrame:self.view.frame collectionViewLayout:self.articleFlow];
+}
+-(void) loadCollectionView
+{
+    self.articleFlow            = [[UICollectionViewFlowLayout alloc] init];
+    self.articleCollectionView  = [[UICollectionView alloc]initWithFrame:self.view.frame collectionViewLayout:self.articleFlow];
     
     [self.articleCollectionView setDataSource:self];
     [self.articleCollectionView setDelegate:self];
@@ -37,17 +40,26 @@
 
 - (void) loadPictures
 {
-    self.sourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"FillPics"];
-    self.articleArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:self.sourcePath error:NULL];
+    self.articleArray   = [[NSMutableArray alloc]init];
+    for (int i = 0; i<10; i++) {
+        [self.articleArray addObject:@"Nova"];
+    }
+/*
+    //populate with images
+    NSString    *imageName      = [self.articleArray objectAtIndex:indexPath.row];
+    NSString    *filename       = [NSString stringWithFormat:@"%@/%@", self.sourcePath, imageName];
+    UIImage     *image          = [UIImage imageWithContentsOfFile:filename];
+*/
+
 }
+
 
 
 #pragma mark - UICollectionViewDataSource Delegate Methods
 
-//would I be changing the number of collectionviews or the number of sections (based on the number of articles) ?
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.articleArray.count;
+    return 10;
 }
 
 //number of sections
@@ -60,23 +72,25 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //setup cell
+    
     ArticleCell *cell   = [self.articleCollectionView dequeueReusableCellWithReuseIdentifier:@"FlickrCell" forIndexPath:indexPath];
     
-    //populate with images
-    NSString    *imageName      = [self.articleArray objectAtIndex:indexPath.row];
-    NSString    *filename       = [NSString stringWithFormat:@"%@/%@", self.sourcePath, imageName];
-    UIImage     *image          = [UIImage imageWithContentsOfFile:filename];
-    UIImageView *photoImageView = [[UIImageView alloc] initWithImage:image];
     
-    //resize image
+    //populate with images
+    NSString    *imageName          = [self.articleArray objectAtIndex:indexPath.row];
+    //UIImage     *image          = [UIImage imageWithContentsOfFile:imageName ]; ************* WHY CAN'T I USE THIS?
+    UIImage     *image              = [UIImage imageNamed:imageName ];
 
+    UIImageView *photoImageView     = [[UIImageView alloc] init];
     photoImageView.frame            = CGRectMake(photoImageView.frame.origin.x, photoImageView.frame.origin.y, self.view.frame.size.width, 190);
-    photoImageView.contentMode      = UIViewContentModeBottomLeft; // This determines position of image
+    photoImageView.contentMode      = UIViewContentModeScaleAspectFill; // This determines how the image fills the view
     photoImageView.clipsToBounds    = YES;
+    photoImageView.image            = image;
+
     [cell addSubview:photoImageView];
     
-    cell.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
-    cell.label.text = [NSString stringWithFormat:@"Article %ld", (long)indexPath.item];
+    cell.backgroundColor            = [UIColor colorWithWhite:1.0 alpha:0.6];
+    cell.label.text                 = [NSString stringWithFormat:@"Article %ld", (long)indexPath.item];
     
     return cell;
 }
