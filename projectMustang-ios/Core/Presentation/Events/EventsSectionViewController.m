@@ -17,19 +17,33 @@
     [super viewDidLoad];
     self.title              = @"Events";
     self.view               = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    eventsFlowLayout        = [[UICollectionViewFlowLayout alloc] init];
-    eventsCollectionView    = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:eventsFlowLayout];
-    
-    [eventsCollectionView setDataSource:self];
-    [eventsCollectionView setDelegate:self];
-    
-    [eventsCollectionView registerClass:[EventsCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
-    eventsCollectionView.backgroundColor        = [UIColor colorWithWhite:1.0 alpha:0.4];
-    eventsCollectionView.alwaysBounceVertical   = YES;
-    
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    [self loadEventCollectionView];
+    [self loadEventPictures];
+   }
 
-    [self.view addSubview:eventsCollectionView];
+-(void) loadEventCollectionView
+{
+    
+    self.eventsFlowLayout        = [[UICollectionViewFlowLayout alloc] init];
+    self.eventsCollectionView    = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:self.eventsFlowLayout];
+    
+    [self.eventsCollectionView setDataSource:self];
+    [self.eventsCollectionView setDelegate:self];
+    
+    [self.eventsCollectionView registerClass:[EventsCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+    self.eventsCollectionView.backgroundColor        = [UIColor colorWithWhite:1.0 alpha:0.4];
+    self.eventsCollectionView.alwaysBounceVertical   = YES;
+    
+    
+    [self.view addSubview:self.eventsCollectionView];
+}
+-(void) loadEventPictures
+{
+    self.eventsImgArray   = [[NSMutableArray alloc]init];
+    for (NSInteger i = 0; i<10; i++) {
+        [self.eventsImgArray addObject:@"Eve"];
+    }
 }
 
 //this needs to be changed when bill's part is done
@@ -38,8 +52,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    //this needs to be changed when bill's part is done
-    return 1;
+    return 6;
 }
 
 //number of rows in each section
@@ -52,9 +65,11 @@
 //populates each cell with whatever is in the arraycell indexpath
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    EventsCell *cell = [eventsCollectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    cell.label.text = [NSString stringWithFormat:@"Best Party Ever # %ld", (long)indexPath.item+1];
-    cell.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
+    EventsCell *cell = [self.eventsCollectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    
+    [cell loadImages:[self.eventsImgArray objectAtIndex:indexPath.row]];
+    [cell loadLabel: [NSString stringWithFormat:@"Best Party Ever # %ld", (long)indexPath.item+1]];
+
     return cell;
 }
 

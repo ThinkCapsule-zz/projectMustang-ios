@@ -11,7 +11,6 @@
 
 @implementation ArticleSectionViewController
 
-
 #pragma mark - View Methods
 
 - (void)viewDidLoad {
@@ -41,19 +40,10 @@
 - (void) loadPictures
 {
     self.articleArray   = [[NSMutableArray alloc]init];
-    for (int i = 0; i<10; i++) {
-        [self.articleArray addObject:@"Nova"];
+    for (NSInteger i = 0; i<10; i++) {
+        [self.articleArray addObject:@"alchii"];
     }
-/*
-    //populate with images
-    NSString    *imageName      = [self.articleArray objectAtIndex:indexPath.row];
-    NSString    *filename       = [NSString stringWithFormat:@"%@/%@", self.sourcePath, imageName];
-    UIImage     *image          = [UIImage imageWithContentsOfFile:filename];
-*/
-
 }
-
-
 
 #pragma mark - UICollectionViewDataSource Delegate Methods
 
@@ -71,26 +61,10 @@
 //populates each cell with whatever is in the arraycell indexpath
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //setup cell
-    
-    ArticleCell *cell   = [self.articleCollectionView dequeueReusableCellWithReuseIdentifier:@"FlickrCell" forIndexPath:indexPath];
-    
-    
-    //populate with images
-    NSString    *imageName          = [self.articleArray objectAtIndex:indexPath.row];
-    //UIImage     *image          = [UIImage imageWithContentsOfFile:imageName ]; ************* WHY CAN'T I USE THIS?
-    UIImage     *image              = [UIImage imageNamed:imageName ];
-
-    UIImageView *photoImageView     = [[UIImageView alloc] init];
-    photoImageView.frame            = CGRectMake(photoImageView.frame.origin.x, photoImageView.frame.origin.y, self.view.frame.size.width, 190);
-    photoImageView.contentMode      = UIViewContentModeScaleAspectFill; // This determines how the image fills the view
-    photoImageView.clipsToBounds    = YES;
-    photoImageView.image            = image;
-
-    [cell addSubview:photoImageView];
-    
-    cell.backgroundColor            = [UIColor colorWithWhite:1.0 alpha:0.6];
-    cell.label.text                 = [NSString stringWithFormat:@"Article %ld", (long)indexPath.item];
+    ArticleCell *cell   = (ArticleCell*)[self.articleCollectionView dequeueReusableCellWithReuseIdentifier:@"FlickrCell" forIndexPath:indexPath];
+    // [cell   prepareForReuse];             ******   Do I even need this?    *********
+    [cell loadImages:[self.articleArray objectAtIndex:indexPath.row]];
+    [cell loadLabel: [NSString stringWithFormat:@"Article %ld", (long)indexPath.item]];
     
     return cell;
 }

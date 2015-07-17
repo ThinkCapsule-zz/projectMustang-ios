@@ -7,6 +7,7 @@
 //
 
 #import "ArticleCell.h"
+#import "ArticleSectionViewController.h"
 
 @implementation ArticleCell
 
@@ -14,16 +15,52 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.label = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
-        self.label.textAlignment = NSTextAlignmentLeft;
-        self.label.textColor = [UIColor whiteColor];
-        self.label.font = [UIFont fontWithName:@"verdana-bold" size:19 ];
-        self.label.backgroundColor = [UIColor colorWithHue:0.2 saturation:0.4 brightness:0.2 alpha:0.1];
-        [self.contentView addSubview:self.label];
-        
-        //I'm not sure how to align the text to the top left. I've tried sizetofit but failed
+        self.backgroundColor    = [UIColor colorWithWhite:1.0 alpha:0.6];
+        [self setupImages];
+        [self setupLabels];
     }
     return self;
 }
 
+-(void) setupImages
+{
+    self.photoImageView                 = [[UIImageView alloc] init];
+    self.photoImageView.frame           = CGRectMake(self.photoImageView.frame.origin.x, self.photoImageView.frame.origin.y, self.frame.size.width, 190);
+    self.photoImageView.contentMode     = UIViewContentModeScaleAspectFill; // This determines how the image fills the view
+    self.photoImageView.clipsToBounds   = YES;
+    [self.photoImageView setAlpha:0.7];
+    [self addSubview:self.photoImageView];
+}
+
+-(void) setupLabels
+{
+    self.label                  = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, self.frame.size.width, self.frame.size.height)];
+    self.label.backgroundColor  = [UIColor colorWithHue:0.2 saturation:0.4 brightness:0.2 alpha:0.1];
+    self.label.textAlignment    = NSTextAlignmentLeft;
+    self.label.font             = [UIFont fontWithName:@"verdana-bold" size:19 ];
+    self.label.textColor        = [UIColor whiteColor];
+    [self addSubview:self.label];
+}
+
+- (void) loadImages:(NSString*)img
+{
+    UIImage     *image          = [UIImage imageNamed:[NSString stringWithFormat:@"%@", img]];
+    self.photoImageView.image   = image;
+}
+
+- (void) loadLabel:(NSString*)txt
+{
+    self.label.text             = txt;
+}
+/*
+- (void)prepareForReuse {           // ****** Do I even need this?  **********
+    [super prepareForReuse];
+    for(UIView *subview in [self.contentView subviews]) {
+        [self.label removeFromSuperview];
+        [self.photoImageView];
+        if([subview isKindOfClass:[UILabel class]]){
+            [subview removeFromSuperview];
+        }
+    }
+}*/
 @end

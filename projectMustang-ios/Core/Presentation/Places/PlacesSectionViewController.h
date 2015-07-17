@@ -9,9 +9,12 @@
 #import "BaseViewController.h"
 
 @interface PlacesSectionViewController : BaseViewController <UICollectionViewDelegate, UICollectionViewDataSource>
-{
-    UICollectionViewFlowLayout *placesFlowLayout;
-    UICollectionView *placesCollectionView;
-}
+
+@property (nonatomic) UICollectionViewFlowLayout    *placesFlowLayout;
+@property (nonatomic) UICollectionView              *placesCollectionView;
+@property (nonatomic) NSMutableArray                *placesImgArray;
+@property (nonatomic) NSString                      *sourcePath;
+-(void) loadPlacesCollectionView;
+-(void) loadPlacesPictures;
 
 @end

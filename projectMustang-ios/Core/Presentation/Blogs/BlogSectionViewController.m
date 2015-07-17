@@ -17,23 +17,40 @@
     [super viewDidLoad];
     self.title          = @"Blogs";
     self.view           = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    blogFlowLayout      = [[UICollectionViewFlowLayout alloc] init];
-    blogCollectionView  = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:blogFlowLayout];
+    [self loadBlogCollectionView];
+    [self loadBlogPictures];
+    }
+
+
+-(void) loadBlogCollectionView
+{
+    self.blogFlowLayout      = [[UICollectionViewFlowLayout alloc] init];
+    self.blogCollectionView  = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:self.blogFlowLayout];
     
-    [blogCollectionView setDataSource:self];
-    [blogCollectionView setDelegate:self];
+    [self.blogCollectionView setDataSource:self];
+    [self.blogCollectionView setDelegate:self];
     
-    [blogCollectionView registerClass:[BlogCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+    [self.blogCollectionView registerClass:[BlogCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     
-    blogCollectionView.backgroundColor          = [UIColor colorWithWhite:1.0 alpha:0.4];
-    blogCollectionView.alwaysBounceVertical     = YES;
+    self.blogCollectionView.backgroundColor          = [UIColor colorWithWhite:1.0 alpha:0.4];
+    self.blogCollectionView.alwaysBounceVertical     = YES;
     
-    [self.view addSubview:blogCollectionView];
+    [self.view addSubview:self.blogCollectionView];
+}
+
+-(void) loadBlogPictures
+{
+    self.blogImgArray   = [[NSMutableArray alloc]init];
+    for (NSInteger i = 0; i<10; i++) {
+        [self.blogImgArray addObject:@"Miss"];
+    }
 }
 
 #pragma mark - UICollectionViewDataSource Delegate Methods
 //this needs to be changed when bill's part is done
 //- (void) loadEvents
+
+
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -49,10 +66,10 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //setup reusable cell object
-    BlogCell *cell = [blogCollectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    cell.label.text = [NSString stringWithFormat:@"Blog Post #%ld", (long)indexPath.item];
+    BlogCell *cell = [self.blogCollectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
+    [cell loadImages:[self.blogImgArray objectAtIndex:indexPath.row]];
+    [cell loadLabel: [NSString stringWithFormat:@"Blog Post #%ld", (long)indexPath.item+1]];
     return cell;
 }
 

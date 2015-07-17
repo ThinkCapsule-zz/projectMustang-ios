@@ -11,5 +11,10 @@
 @interface EventsCell : UICollectionViewCell
 
 @property (strong, nonatomic) UILabel *label;
+@property (strong, nonatomic) UIImageView *photoImageView;
+-(void) loadImages:(NSString*)img;
+-(void) loadLabel:(NSString*)txt;
+-(void) setupImages;
+-(void) setupLabels;
 
 @end
