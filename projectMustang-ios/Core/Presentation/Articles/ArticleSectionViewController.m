@@ -64,8 +64,9 @@
     ArticleCell *cell   = (ArticleCell*)[self.articleCollectionView dequeueReusableCellWithReuseIdentifier:@"FlickrCell" forIndexPath:indexPath];
     // [cell   prepareForReuse];             ******   Do I even need this?    *********
     [cell loadImages:[self.articleArray objectAtIndex:indexPath.row]];
-    [cell loadLabel: [NSString stringWithFormat:@"Article %ld", (long)indexPath.item]];
-    
+    [cell loadLabels: [NSString stringWithFormat:@"Article %ld", (long)indexPath.item]
+                    : [NSString stringWithFormat:@"A brief, one line summary of the associated article."]
+                    : [NSString stringWithFormat:@"Western Mustang"]];
     return cell;
 }
 

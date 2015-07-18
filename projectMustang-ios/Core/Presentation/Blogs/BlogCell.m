@@ -16,6 +16,7 @@
     if (self) {
         self.backgroundColor    = [UIColor colorWithWhite:1.0 alpha:0.6];
         [self setupImages];
+        [self setupPicOverlay];
         [self setupLabels];
     }
     return self;
@@ -33,14 +34,51 @@
     [self addSubview:self.photoImageView];
 }
 
+-(void) setupPicOverlay //a gradient overlay :)
+{
+    self.overView               = [[UIView alloc] initWithFrame:CGRectMake(self.photoImageView.frame.origin.x, self.photoImageView.frame.origin.y, self.frame.size.width, 190)];
+    CAGradientLayer *gradient   = [CAGradientLayer layer];
+    gradient.frame              = self.bounds;
+    gradient.colors             = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:127.0f/255.0f
+                                                                                 green:140.0f/255.0f
+                                                                                  blue:141.0f/255.0f
+                                                                                 alpha:1.0f] CGColor],
+                                   (id)[[UIColor blackColor] CGColor], nil];
+    [self.layer insertSublayer:gradient atIndex:0];
+}
+
 -(void) setupLabels
 {
-    self.label                  = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, self.frame.size.width, self.frame.size.height)];
-    self.label.backgroundColor  = [UIColor colorWithHue:0.2 saturation:0.4 brightness:0.2 alpha:0.1];
-    self.label.textAlignment    = NSTextAlignmentLeft;
-    self.label.font             = [UIFont fontWithName:@"verdana-bold" size:19 ];
-    self.label.textColor        = [UIColor whiteColor];
-    [self addSubview:self.label];
+    self.titleLabel                  = [[UILabel alloc] initWithFrame:CGRectMake(19.0, 7.0, self.frame.size.width-15, 29.9)];
+    self.titleLabel.textAlignment    = NSTextAlignmentLeft;
+    self.titleLabel.font             = [UIFont fontWithName:@"AvenirNextCondensed-Bold" size:23 ];
+    self.titleLabel.textColor        = [UIColor whiteColor];
+    
+    self.descLabel                  = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 135, self.frame.size.width-15, 30)];
+    self.descLabel.textAlignment    = NSTextAlignmentLeft;
+    self.descLabel.font             = [UIFont fontWithName:@"AvenirNext-Regular" size:14];
+    self.descLabel.textColor        = [UIColor whiteColor];
+    
+    self.authLabel                  = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 160, self.frame.size.width-15, 20.0)];
+    self.authLabel.textAlignment    = NSTextAlignmentLeft;
+    self.authLabel.font             = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:11.5 ];
+    self.authLabel.textColor        = [UIColor whiteColor];
+    
+    [self addSubview:self.titleLabel];
+    [self addSubview:self.descLabel];
+    [self addSubview:self.authLabel];
+    
+    CGRect rect                     = self.descLabel.frame;
+    UIBezierPath *linePath          = [UIBezierPath bezierPath];
+    [linePath moveToPoint:CGPointMake(0, 0)];
+    [linePath addLineToPoint:CGPointMake(rect.size.width-15, 0)];
+    CAShapeLayer * lineLayer        = [CAShapeLayer layer];
+    lineLayer.lineWidth             = 1.0;
+    lineLayer.strokeColor           = [UIColor whiteColor].CGColor;
+    lineLayer.fillColor             = nil;
+    lineLayer.path                  = linePath.CGPath;
+    
+    [self.descLabel.layer addSublayer:lineLayer];
 }
 
 - (void) loadImages:(NSString*)img
@@ -49,10 +87,11 @@
     self.photoImageView.image   = image;
 }
 
-- (void) loadLabel:(NSString*)txt
+- (void) loadLabels:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3
 {
-    self.label.text             = txt;
+    self.titleLabel.text        = txt;
+    self.descLabel.text         = txt2;
+    NSString *uppercasetxt      = [txt3 uppercaseString];
+    self.authLabel.text         = uppercasetxt;
 }
-
-
 @end

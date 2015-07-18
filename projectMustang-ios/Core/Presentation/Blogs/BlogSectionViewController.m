@@ -69,7 +69,9 @@
     BlogCell *cell = [self.blogCollectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
     
     [cell loadImages:[self.blogImgArray objectAtIndex:indexPath.row]];
-    [cell loadLabel: [NSString stringWithFormat:@"Blog Post #%ld", (long)indexPath.item+1]];
+    [cell loadLabels: [NSString stringWithFormat:@"Blog Post #%ld", (long)indexPath.item+1]
+                   : [NSString stringWithFormat:@"A 54 character summary of the associated blog post."]
+                   : [NSString stringWithFormat:@"Western Mustang"]];
     return cell;
 }
 

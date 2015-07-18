@@ -10,11 +10,15 @@
 
 @interface BlogCell : UICollectionViewCell
 
-@property (strong, nonatomic) UILabel *label;
+@property (strong, nonatomic) UILabel *titleLabel;
+@property (strong, nonatomic) UILabel *descLabel;
+@property (strong, nonatomic) UILabel *authLabel;
 @property (strong, nonatomic) UIImageView *photoImageView;
+@property (strong, nonatomic) UIView *overView;
 -(void) loadImages:(NSString*)img;
--(void) loadLabel:(NSString*)txt;
+-(void) loadLabels:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3;
 -(void) setupImages;
 -(void) setupLabels;
+-(void) setupPicOverlay;
 
 @end
