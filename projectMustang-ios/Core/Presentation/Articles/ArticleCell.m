@@ -42,7 +42,7 @@
     gradient.colors             = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:127.0f/255.0f
                                                                                  green:140.0f/255.0f
                                                                                   blue:141.0f/255.0f
-                                                                                 alpha:1.0f] CGColor],
+                                                                                 alpha:1.0] CGColor],
                                                             (id)[[UIColor blackColor] CGColor], nil];
     [self.layer insertSublayer:gradient atIndex:0];
 }

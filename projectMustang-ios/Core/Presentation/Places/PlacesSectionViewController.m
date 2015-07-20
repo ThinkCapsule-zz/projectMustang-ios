@@ -8,6 +8,7 @@
 
 #import "PlacesSectionViewController.h"
 #include "PlacesCell.h"
+#import "PlacesDetailViewController.h"
 
 @implementation PlacesSectionViewController
 
@@ -75,6 +76,12 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return CGSizeMake(self.view.frame.size.width, 190);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    PlacesDetailViewController *detVC = [[PlacesDetailViewController alloc] init];
+    [self.navigationController pushViewController:detVC animated:YES];
 }
 
 

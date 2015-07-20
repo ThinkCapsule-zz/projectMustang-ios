@@ -7,7 +7,9 @@
 //
 
 #import "ArticleSectionViewController.h"
-#include "ArticleCell.h"
+#import "ArticleCell.h"
+#import "ArticlesDetailViewController.h"
+
 
 @implementation ArticleSectionViewController
 
@@ -20,6 +22,9 @@
     self.view                   = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self loadPictures];
     [self loadCollectionView];
+    
+    //detail view if selected
+
     
 }
 -(void) loadCollectionView
@@ -74,6 +79,12 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return CGSizeMake(self.view.frame.size.width, 190);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    ArticlesDetailViewController *detVC = [[ArticlesDetailViewController alloc] init];
+    [self.navigationController pushViewController:detVC animated:YES];
 }
 
 @end

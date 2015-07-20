@@ -9,6 +9,7 @@
 #import "EventsSectionViewController.h"
 #import "NavigationManager.h"
 #include "EventsCell.h"
+#import "EventsDetailViewController.h"
 
 @implementation EventsSectionViewController
 
@@ -77,6 +78,12 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return CGSizeMake(self.view.frame.size.width, 100);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    EventsDetailViewController *detVC = [[EventsDetailViewController alloc] init];
+    [self.navigationController pushViewController:detVC animated:YES];
 }
 
 @end

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		692200121B5ABF79009B2B8A /* ArticlesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692200111B5ABF79009B2B8A /* ArticlesDetailViewController.m */; };
+		692200151B5ABFA1009B2B8A /* BlogsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692200141B5ABFA1009B2B8A /* BlogsDetailViewController.m */; };
+		692200181B5ABFB1009B2B8A /* EventsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692200171B5ABFB1009B2B8A /* EventsDetailViewController.m */; };
+		6922001B1B5ABFC8009B2B8A /* PlacesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922001A1B5ABFC8009B2B8A /* PlacesDetailViewController.m */; };
 		692208651B4B27400045C279 /* PlacesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 692208641B4B27400045C279 /* PlacesCell.m */; };
 		692208681B4B3C0C0045C279 /* EventsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 692208671B4B3C0C0045C279 /* EventsCell.m */; };
 		6922086B1B4B3C220045C279 /* BlogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922086A1B4B3C220045C279 /* BlogCell.m */; };
@@ -58,6 +62,14 @@
 
 /* Begin PBXFileReference section */
 		1075B1093CE1BFBDF7FD3D0F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		692200101B5ABF79009B2B8A /* ArticlesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesDetailViewController.h; sourceTree = "<group>"; };
+		692200111B5ABF79009B2B8A /* ArticlesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesDetailViewController.m; sourceTree = "<group>"; };
+		692200131B5ABFA1009B2B8A /* BlogsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogsDetailViewController.h; sourceTree = "<group>"; };
+		692200141B5ABFA1009B2B8A /* BlogsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogsDetailViewController.m; sourceTree = "<group>"; };
+		692200161B5ABFB1009B2B8A /* EventsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsDetailViewController.h; sourceTree = "<group>"; };
+		692200171B5ABFB1009B2B8A /* EventsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsDetailViewController.m; sourceTree = "<group>"; };
+		692200191B5ABFC8009B2B8A /* PlacesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesDetailViewController.h; sourceTree = "<group>"; };
+		6922001A1B5ABFC8009B2B8A /* PlacesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesDetailViewController.m; sourceTree = "<group>"; };
 		692208631B4B27400045C279 /* PlacesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesCell.h; sourceTree = "<group>"; };
 		692208641B4B27400045C279 /* PlacesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesCell.m; sourceTree = "<group>"; };
 		692208661B4B3C0C0045C279 /* EventsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsCell.h; sourceTree = "<group>"; };
@@ -242,6 +254,8 @@
 				CA5E2E321B3206FC004A9AE0 /* ArticleSectionViewController.m */,
 				6922086C1B4B3C300045C279 /* ArticleCell.h */,
 				6922086D1B4B3C300045C279 /* ArticleCell.m */,
+				692200101B5ABF79009B2B8A /* ArticlesDetailViewController.h */,
+				692200111B5ABF79009B2B8A /* ArticlesDetailViewController.m */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -253,6 +267,8 @@
 				CA5E2E351B3207A2004A9AE0 /* BlogSectionViewController.m */,
 				692208691B4B3C220045C279 /* BlogCell.h */,
 				6922086A1B4B3C220045C279 /* BlogCell.m */,
+				692200131B5ABFA1009B2B8A /* BlogsDetailViewController.h */,
+				692200141B5ABFA1009B2B8A /* BlogsDetailViewController.m */,
 			);
 			path = Blogs;
 			sourceTree = "<group>";
@@ -264,6 +280,8 @@
 				CA5E2E421B3209D3004A9AE0 /* PlacesSectionViewController.m */,
 				692208631B4B27400045C279 /* PlacesCell.h */,
 				692208641B4B27400045C279 /* PlacesCell.m */,
+				692200191B5ABFC8009B2B8A /* PlacesDetailViewController.h */,
+				6922001A1B5ABFC8009B2B8A /* PlacesDetailViewController.m */,
 			);
 			path = Places;
 			sourceTree = "<group>";
@@ -284,6 +302,8 @@
 				CA5E2E3F1B320995004A9AE0 /* EventsSectionViewController.m */,
 				692208661B4B3C0C0045C279 /* EventsCell.h */,
 				692208671B4B3C0C0045C279 /* EventsCell.m */,
+				692200161B5ABFB1009B2B8A /* EventsDetailViewController.h */,
+				692200171B5ABFB1009B2B8A /* EventsDetailViewController.m */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -616,11 +636,14 @@
 				CA5E2E361B3207A2004A9AE0 /* BlogSectionViewController.m in Sources */,
 				B6379F4A1B1D5A68005C0ADA /* TCVideoDataModel.m in Sources */,
 				CAD585501AF26A5100F77ED7 /* projectMustang_ios.xcdatamodeld in Sources */,
+				692200151B5ABFA1009B2B8A /* BlogsDetailViewController.m in Sources */,
 				CA5E2E331B3206FC004A9AE0 /* ArticleSectionViewController.m in Sources */,
 				CA5E2E431B3209D3004A9AE0 /* PlacesSectionViewController.m in Sources */,
 				6922086B1B4B3C220045C279 /* BlogCell.m in Sources */,
 				B6589A601B33B45800B3754F /* SystemStatics.m in Sources */,
 				CAD585931AF2AC6A00F77ED7 /* BaseViewController.m in Sources */,
+				692200121B5ABF79009B2B8A /* ArticlesDetailViewController.m in Sources */,
+				692200181B5ABFB1009B2B8A /* EventsDetailViewController.m in Sources */,
 				692208681B4B3C0C0045C279 /* EventsCell.m in Sources */,
 				CA6335231AFAAC9D009DC83A /* ConfigManager.m in Sources */,
 				B6379F471B1D5A57005C0ADA /* TCPlacesDataModel.m in Sources */,
@@ -630,6 +653,7 @@
 				B6379F411B1D5A2D005C0ADA /* TCBlogDataModel.m in Sources */,
 				CAD585841AF2715900F77ED7 /* MainMenuViewController.m in Sources */,
 				CAD585801AF26F9400F77ED7 /* NavigationManager.m in Sources */,
+				6922001B1B5ABFC8009B2B8A /* PlacesDetailViewController.m in Sources */,
 				B6379F441B1D5A41005C0ADA /* TCEventDataModel.m in Sources */,
 				CAD5857B1AF26C7400F77ED7 /* MainViewController.m in Sources */,
 				B6A638501B350AF9005C3D7A /* SignOnViewController.m in Sources */,

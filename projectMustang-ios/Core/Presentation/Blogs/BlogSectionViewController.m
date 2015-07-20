@@ -8,6 +8,7 @@
 
 #import "BlogSectionViewController.h"
 #include "BlogCell.h"
+#import "BlogsDetailViewController.h"
 
 @implementation BlogSectionViewController
 
@@ -80,5 +81,12 @@
 {
     return CGSizeMake(self.view.frame.size.width, 190);
 }
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+     BlogsDetailViewController *detVC = [[BlogsDetailViewController alloc] init];
+    [self.navigationController pushViewController:detVC animated:YES];
+}
+
 
 @end
