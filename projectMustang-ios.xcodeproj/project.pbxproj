@@ -15,6 +15,7 @@
 		692208681B4B3C0C0045C279 /* EventsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 692208671B4B3C0C0045C279 /* EventsCell.m */; };
 		6922086B1B4B3C220045C279 /* BlogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922086A1B4B3C220045C279 /* BlogCell.m */; };
 		6922086E1B4B3C300045C279 /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922086D1B4B3C300045C279 /* ArticleCell.m */; };
+		69E43DB01B6565390003C244 /* TCArticleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E43DAF1B6565390003C244 /* TCArticleFactory.m */; };
 		77E3FFED587D2B94B2B73130 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F91D294DF9F5DAC8DA3998 /* libPods.a */; };
 		B6379F311B1A60A2005C0ADA /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F301B1A60A2005C0ADA /* DataFetcher.m */; };
 		B6379F3E1B1D5A17005C0ADA /* TCArticleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F3D1B1D5A17005C0ADA /* TCArticleDataModel.m */; };
@@ -78,6 +79,8 @@
 		6922086A1B4B3C220045C279 /* BlogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogCell.m; sourceTree = "<group>"; };
 		6922086C1B4B3C300045C279 /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
 		6922086D1B4B3C300045C279 /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
+		69E43DAE1B6565390003C244 /* TCArticleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCArticleFactory.h; sourceTree = "<group>"; };
+		69E43DAF1B6565390003C244 /* TCArticleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCArticleFactory.m; sourceTree = "<group>"; };
 		B6379F2F1B1A60A2005C0ADA /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
 		B6379F301B1A60A2005C0ADA /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
 		B6379F3C1B1D5A17005C0ADA /* TCArticleDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCArticleDataModel.h; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 		B6379F371B1D59FF005C0ADA /* Article */ = {
 			isa = PBXGroup;
 			children = (
+				69E43DAE1B6565390003C244 /* TCArticleFactory.h */,
+				69E43DAF1B6565390003C244 /* TCArticleFactory.m */,
 				B6379F3C1B1D5A17005C0ADA /* TCArticleDataModel.h */,
 				B6379F3D1B1D5A17005C0ADA /* TCArticleDataModel.m */,
 			);
@@ -631,6 +636,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69E43DB01B6565390003C244 /* TCArticleFactory.m in Sources */,
 				B6379F311B1A60A2005C0ADA /* DataFetcher.m in Sources */,
 				CAD5854A1AF26A5100F77ED7 /* main.m in Sources */,
 				CA5E2E361B3207A2004A9AE0 /* BlogSectionViewController.m in Sources */,
@@ -786,10 +792,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "projectMustang-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -800,10 +808,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "projectMustang-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

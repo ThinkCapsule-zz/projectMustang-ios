@@ -21,13 +21,6 @@
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.view.backgroundColor = [UIColor whiteColor];
     TCArticleDataModel *article = [[TCArticleDataModel alloc]init];
-    
-    [self setupViews];
-    [self setupHorizontalSpacing];
-    [self setupSizeConstraints];
-    [self setupPOSConstraints];
-    
-    [self setupLabels];
 }
 
 
@@ -38,12 +31,13 @@
     self.articleName    = [UILabel new];
     self.articleName.translatesAutoresizingMaskIntoConstraints  = NO;
     self.articleName.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.2];
-    //self.articleName.text = @"2article name";
+    self.articleName.text = self.articleNameStr;
     
     self.authorName     = [[UILabel alloc] init];
     self.authorName.translatesAutoresizingMaskIntoConstraints   = NO;
     self.authorName.backgroundColor = [UIColor blueColor];
     self.authorName.text = @"auth name";
+    
     
     self.photoSource    = [[UILabel alloc] init];
     self.photoSource.translatesAutoresizingMaskIntoConstraints  = NO;
@@ -53,7 +47,8 @@
     self.article        = [[UITextView alloc] init];
     self.article.translatesAutoresizingMaskIntoConstraints      = NO;
     self.article.backgroundColor = [UIColor greenColor];
-    self.article.text = @"hahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahah";
+    self.article.editable = NO;
+    self.article.text = @"hahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhaahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhaahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhaahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahahhahahahahhahahahahah";
     
     self.artImage       = [[UIImageView alloc] init];
     self.artImage.translatesAutoresizingMaskIntoConstraints     = NO;
@@ -224,9 +219,7 @@
     self.article.font             = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:13 ];
     self.article.textColor        = [UIColor blackColor];
     
-    [self.view addSubview:self.articleName];
-    [self.view addSubview:self.authorName];
-    [self.view addSubview:self.photoSource];
+
 }
 
 -(void) setupImage
@@ -240,20 +233,21 @@
 - (void) loadData:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3 :(NSString*)txt4 :(NSString*)img
 {
     
+    self.articleNameStr = txt;
     [self.articleName setText:txt];
-    //txt;
     self.authorName.text    = txt2;
     self.photoSource.text   = txt3;
     self.article.text       = txt4;
     UIImage     *image      = [UIImage imageNamed:[NSString stringWithFormat:@"%@", img]];
     self.artImage.image     = image;
     
-    //WHY DOES IT PASS AS NULL???
-    NSLog(@"\n\n\narticle Name = %@\n author Name = %@\n photoSource = %@\n img name = %@ \n article txt = %@", txt, txt2, txt3, img, txt4);
-    NSLog(@"\n\n\n*******************\nName = %@\n author = %@\n photoSource = %@\n article = %@", self.articleName.text, self.authorName.text , self.photoSource.text, self.article.text);
-    
-    
+    [self setupViews];
+    [self setupHorizontalSpacing];
+    [self setupSizeConstraints];
+    [self setupPOSConstraints];
+    [self setupLabels];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

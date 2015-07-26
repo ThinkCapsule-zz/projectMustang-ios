@@ -19,6 +19,12 @@
 @property (nonatomic, strong) NSDictionary  *viewsDictionary;
 @property (nonatomic, strong) NSDictionary  *metrics;
 
+@property (nonatomic, strong) NSString *articleNameStr;
+@property (nonatomic, strong) NSString *authNameStr;
+@property (nonatomic, strong) NSString *photoSourceStr;
+@property (nonatomic, strong) NSString *articleStr;
+@property (nonatomic, strong) NSString *photoStr;
+
 -(void) setupViews;
 -(void) setupHorizontalSpacing;
 -(void) setupSizeConstraints;

@@ -43,7 +43,9 @@
     [client fetchEntriesMatching:@{ @"content_type": @"1or7CAktokKiIUogkmU8O4"}
                          success:^(CDAResponse *response, CDAArray *entries){
                              self.array = entries.items;
-                             NSLog(@"%@", self.array);
+                             CDAEntry *temp = [self.array firstObject];
+                             NSString *temp2 = temp.fields[@"articleId"];
+                             //NSLog(@"%@", self.array);
                          }
                          failure:^(CDAResponse *response, NSError *error){
                              NSLog(@"%@", error);
