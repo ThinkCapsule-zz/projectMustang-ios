@@ -7,14 +7,83 @@
 //
 
 #import "EventsSectionViewController.h"
+#import "NavigationManager.h"
+#include "EventsCell.h"
+#import "EventsDetailViewController.h"
 
 @implementation EventsSectionViewController
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.title = @"Events";
-    [self.view setBackgroundColor:[UIColor brownColor]];
+    self.title              = @"Events";
+    self.view               = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    [self loadEventCollectionView];
+    [self loadEventPictures];
+   }
+
+-(void) loadEventCollectionView
+{
+    
+    self.eventsFlowLayout        = [[UICollectionViewFlowLayout alloc] init];
+    self.eventsCollectionView    = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:self.eventsFlowLayout];
+    
+    [self.eventsCollectionView setDataSource:self];
+    [self.eventsCollectionView setDelegate:self];
+    
+    [self.eventsCollectionView registerClass:[EventsCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+    self.eventsCollectionView.backgroundColor        = [UIColor colorWithWhite:1.0 alpha:0.4];
+    self.eventsCollectionView.alwaysBounceVertical   = YES;
+    
+    
+    [self.view addSubview:self.eventsCollectionView];
+}
+-(void) loadEventPictures
+{
+    self.eventsImgArray   = [[NSMutableArray alloc]init];
+    for (NSInteger i = 0; i<10; i++) {
+        [self.eventsImgArray addObject:@"Eve"];
+    }
+}
+
+//this needs to be changed when bill's part is done
+//- (void) loadEvents
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 6;
+}
+
+//number of rows in each section
+- (NSInteger) numOfSectionsCollectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+
+//populates each cell with whatever is in the arraycell indexpath
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    EventsCell *cell = [self.eventsCollectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    
+    [cell loadImages:[self.eventsImgArray objectAtIndex:indexPath.row]];
+    [cell loadLabel: [NSString stringWithFormat:@"Best Party Ever # %ld", (long)indexPath.item+1]];
+
+    return cell;
+}
+
+//size of each cell (width x height)
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(self.view.frame.size.width, 100);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    EventsDetailViewController *detVC = [[EventsDetailViewController alloc] init];
+    [self.navigationController pushViewController:detVC animated:YES];
 }
 
 @end

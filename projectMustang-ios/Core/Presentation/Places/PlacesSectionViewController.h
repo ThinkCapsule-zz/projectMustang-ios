@@ -8,6 +8,13 @@
 
 #import "BaseViewController.h"
 
-@interface PlacesSectionViewController : BaseViewController
+@interface PlacesSectionViewController : BaseViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (nonatomic) UICollectionViewFlowLayout    *placesFlowLayout;
+@property (nonatomic) UICollectionView              *placesCollectionView;
+@property (nonatomic) NSMutableArray                *placesImgArray;
+@property (nonatomic) NSString                      *sourcePath;
+-(void) loadPlacesCollectionView;
+-(void) loadPlacesPictures;
 
 @end

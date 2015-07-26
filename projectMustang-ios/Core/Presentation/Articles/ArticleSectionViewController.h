@@ -10,6 +10,10 @@
 
 @interface ArticleSectionViewController : BaseViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic, strong) UICollectionView* articleCollectionView;
-
+@property (nonatomic) UICollectionViewFlowLayout    *articleFlow;
+@property (nonatomic) UICollectionView              *articleCollectionView;
+@property (nonatomic) NSMutableArray                *articleArray;
+@property (nonatomic) NSString                      *sourcePath;
+-(void) loadCollectionView;
+-(void) loadPictures;
 @end

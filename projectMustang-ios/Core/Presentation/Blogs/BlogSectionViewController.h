@@ -8,6 +8,13 @@
 
 #import "BaseViewController.h"
 
-@interface BlogSectionViewController : BaseViewController
+@interface BlogSectionViewController : BaseViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@property (nonatomic) UICollectionViewFlowLayout    *blogFlowLayout;
+@property (nonatomic) UICollectionView              *blogCollectionView;
+@property (nonatomic) NSMutableArray                *blogImgArray;
+@property (nonatomic) NSString                      *sourcePath;
+-(void) loadBlogCollectionView;
+-(void) loadBlogPictures;
 
 @end
