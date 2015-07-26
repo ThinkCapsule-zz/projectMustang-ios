@@ -10,4 +10,17 @@
 
 @interface BlogsDetailViewController : UIViewController
 
+@property (nonatomic) UILabel       *blogPostName;
+@property (nonatomic) UILabel       *authorName;
+@property (nonatomic) UILabel       *photoSource;
+@property (nonatomic) UITextView    *blogPost;
+@property (nonatomic) UIImageView   *blogPostImage;
+@property (nonatomic) NSDictionary  *viewsDictionary;
+@property (nonatomic) NSDictionary  *metrics;
+
+-(void)setupViews;
+-(void) setupHorizontalSpacing;
+-(void) setupSizeConstraints;
+-(void) setupPOSConstraints;
+
 @end

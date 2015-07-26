@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DataFetcher.h"
 
 @interface TCArticleDataModel : NSObject
 

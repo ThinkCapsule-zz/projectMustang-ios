@@ -65,11 +65,13 @@
     }
     
     //customize navbarcontroller
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xFF5722)];
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xFFFFFF)];
+    [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0xFF5722)];
+
     NSDictionary *attributes = @{
                                  NSUnderlineStyleAttributeName: @1,
-                                 NSForegroundColorAttributeName : UIColorFromRGB(0xFFFFFF),
-                                 NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:19]
+                                 NSForegroundColorAttributeName : UIColorFromRGB(0x000000),
+                                 NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:17]
                                  };
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
 

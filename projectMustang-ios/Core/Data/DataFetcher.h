@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
+#import "TCArticleDataModel.h"
+#import "TCBlogDataModel.h"
 
 @interface DataFetcher : NSObject
 
 @property (nonatomic, strong) CDAClient* fetchClient;
+@property (nonatomic, strong) NSArray* array;
 
 +(DataFetcher*)singletonInstance;
 
+- (void) fetchWithId;
 @end
