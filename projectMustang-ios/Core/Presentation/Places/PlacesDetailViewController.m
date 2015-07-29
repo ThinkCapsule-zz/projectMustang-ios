@@ -9,14 +9,9 @@
 #import "PlacesDetailViewController.h"
 
 @interface PlacesDetailViewController ()
-
 @end
 
 @implementation PlacesDetailViewController
-
-
-//COPIED AND PASTED FOR NOW, OBVI IT WILL CHANGE WHEN I GET A WIRE FRAME!!! **********
-
 
 
 
@@ -68,7 +63,8 @@
                              @"eventDeets": self.eventDeets,
                              @"photoImage": self.photoImage};
     self.metrics = @{@"vSpacing":@70,
-                     @"hSpacing":@5,
+                     @"hSpacing":@15,
+                     @"hSpacing1":@1,
                      @"eventNameSize":@36};
     
 }
@@ -96,7 +92,7 @@
                                                                          options:0
                                                                          metrics:self.metrics
                                                                            views:self.viewsDictionary];
-    NSArray *constraint_POS_H4 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing-[photoImage]-hSpacing-|"
+    NSArray *constraint_POS_H4 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing1-[photoImage]-hSpacing1-|"
                                                                          options:0
                                                                          metrics:self.metrics
                                                                            views:self.viewsDictionary];

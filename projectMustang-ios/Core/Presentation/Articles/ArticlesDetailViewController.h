@@ -24,6 +24,7 @@
 @property (nonatomic, strong) NSString *photoSourceStr;
 @property (nonatomic, strong) NSString *articleStr;
 @property (nonatomic, strong) NSString *photoStr;
+@property (nonatomic, strong) NSMutableAttributedString *by;
 
 -(void) setupViews;
 -(void) setupHorizontalSpacing;
@@ -32,6 +33,5 @@
 -(void) setupLabels;
 -(void) loadData:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3 :(NSString*)txt4 :(NSString*)img;
 -(void) setupImage;
-
 
 @end

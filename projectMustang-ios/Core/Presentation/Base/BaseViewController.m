@@ -23,7 +23,7 @@
     
     // Customize navigation bar
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    self.navigationController.navigationBar.barStyle          = UIBarStyleBlackTranslucent;
+    self.navigationController.navigationBar.barStyle          = UIStatusBarStyleDefault;
     UIImage *image                                            = [UIImage imageNamed:@"navbar_logo"];
     UIImageView *imageView                                    = [[UIImageView alloc] initWithImage:image];
     self.navigationController.navigationBar.topItem.titleView = imageView;

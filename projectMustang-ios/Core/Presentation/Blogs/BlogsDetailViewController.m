@@ -7,9 +7,10 @@
 //
 
 #import "BlogsDetailViewController.h"
+#import "BlogSectionViewController.h"
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface BlogsDetailViewController ()
-
 @end
 
 @implementation BlogsDetailViewController
@@ -19,36 +20,39 @@
     // Do any additional setup after loading the view.
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    [self setupViews];
-    [self setupHorizontalSpacing];
-    [self setupSizeConstraints];
-    [self setupPOSConstraints];
-    
 }
 
 #pragma AutoLayout Positioning Methods
 - (void)setupViews
 {
-    self.blogPostName    = [UILabel new];
-    self.blogPostName.translatesAutoresizingMaskIntoConstraints  = NO;
-    self.blogPostName.backgroundColor = [UIColor redColor];
+    self.blogPostName                   = [UILabel new];
+    self.blogPostName.backgroundColor   = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.2];
+    self.blogPostName.text              = self.blogPostNameStr;
+    self.blogPostName.translatesAutoresizingMaskIntoConstraints = NO;
+
     
-    self.authorName     = [[UILabel alloc] init];
+    NSString *hihi  = [NSString stringWithFormat:@"By %@", self.authNameStr];
+    self.by         = [[NSMutableAttributedString alloc] initWithString:hihi];
+    [self.by addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xFF5722) range:[hihi rangeOfString:self.authNameStr]];
+    [self.by addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0x7f8c8d) range:NSMakeRange(0,2)];
+
+    self.authorName                 = [[UILabel alloc] init];
+    self.authorName.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.2];
+    self.authorName.attributedText  = self.by;
     self.authorName.translatesAutoresizingMaskIntoConstraints   = NO;
-    self.authorName.backgroundColor = [UIColor blueColor];
-    
-    self.photoSource    = [[UILabel alloc] init];
+
+    self.photoSource                    = [[UILabel alloc] init];
+    self.photoSource.backgroundColor    = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.2];
+    self.photoSource.text               = self.photoSourceStr;
     self.photoSource.translatesAutoresizingMaskIntoConstraints  = NO;
-    self.photoSource.backgroundColor = [UIColor yellowColor];
-    
-    self.blogPost        = [[UITextView alloc] init];
-    self.blogPost.translatesAutoresizingMaskIntoConstraints      = NO;
-    self.blogPost.backgroundColor = [UIColor greenColor];
-    
-    self.blogPostImage       = [[UIImageView alloc] init];
-    self.blogPostImage.translatesAutoresizingMaskIntoConstraints     = NO;
-    self.blogPostImage.backgroundColor = [UIColor grayColor];
+
+    self.blogPost                   = [[UITextView alloc] init];
+    self.blogPost.backgroundColor   = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.2];
+    self.blogPost.text              = self.blogPostStr;
+    self.blogPost.translatesAutoresizingMaskIntoConstraints     = NO;
+
+    self.blogPostImage  = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.photoStr]];
+    self.blogPostImage.translatesAutoresizingMaskIntoConstraints= NO;
     
     [self.view addSubview:self.blogPostName];
     [self.view addSubview:self.authorName];
@@ -62,9 +66,9 @@
                              @"blogPost": self.blogPost,
                              @"postImage": self.blogPostImage};
     self.metrics = @{@"vSpacing":@70,
-                     @"hSpacing":@5,
+                     @"hSpacing1":@1,
+                     @"hSpacing2":@13,
                      @"postNameSize":@36};
-    
 }
 
 -(void) setupHorizontalSpacing
@@ -74,23 +78,23 @@
                                                                         metrics:self.metrics
                                                                           views:self.viewsDictionary];
     
-    NSArray *constraint_POS_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing-[postName]-hSpacing-|"
+    NSArray *constraint_POS_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[postName]-hSpacing2-|"
                                                                         options:0
                                                                         metrics:self.metrics
                                                                           views:self.viewsDictionary];
-    NSArray *constraint_POS_H1 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing-[authorName]-hSpacing-|"
+    NSArray *constraint_POS_H1 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[authorName]-hSpacing2-|"
                                                                          options:0
                                                                          metrics:self.metrics
                                                                            views:self.viewsDictionary];
-    NSArray *constraint_POS_H2 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing-[photoSource]-hSpacing-|"
+    NSArray *constraint_POS_H2 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[photoSource]-hSpacing2-|"
                                                                          options:0
                                                                          metrics:self.metrics
                                                                            views:self.viewsDictionary];
-    NSArray *constraint_POS_H3 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing-[blogPost]-hSpacing-|"
+    NSArray *constraint_POS_H3 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[blogPost]-hSpacing2-|"
                                                                          options:0
                                                                          metrics:self.metrics
                                                                            views:self.viewsDictionary];
-    NSArray *constraint_POS_H4 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing-[postImage]-hSpacing-|"
+    NSArray *constraint_POS_H4 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing1-[postImage]-hSpacing1-|"
                                                                          options:0
                                                                          metrics:self.metrics
                                                                            views:self.viewsDictionary];
@@ -136,8 +140,7 @@
                               multiplier:0.5
                               constant:0.0]];
     
-    //article ********** Definitely have to fix this since the view needs to be scrollable/adjustable to size of article content
-    
+    //article
     [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:self.blogPost
                               attribute:NSLayoutAttributeHeight
@@ -192,6 +195,52 @@
                               attribute:NSLayoutAttributeBottom
                               multiplier:1.0
                               constant:13.0]];
+}
+
+#pragma populating and appearance methods
+
+-(void) setupLabels
+{
+    self.blogPostName.textAlignment = NSTextAlignmentLeft;
+    self.blogPostName.font          = [UIFont fontWithName:@"AvenirNext-Medium"
+                                                      size:24 ];
+    self.blogPostName.textColor     = UIColorFromRGB(0x3f3f3f);
+    
+    self.authorName.textAlignment   = NSTextAlignmentLeft;
+    self.authorName.font            = [UIFont fontWithName:@"Avenir-Roman"
+                                                      size:13];
+    
+    self.photoSource.textAlignment  = NSTextAlignmentLeft;
+    self.photoSource.font           = [UIFont fontWithName:@"Avenir-Roman"
+                                                      size:11.5 ];
+    self.photoSource.textColor      = UIColorFromRGB(0x7f8c8d);
+    
+    self.blogPost.textAlignment     = NSTextAlignmentLeft;
+    self.blogPost.font              = [UIFont fontWithName:@"Avenir-Roman"
+                                                      size:13 ];
+    self.blogPost.textColor         = [UIColor blackColor];
+}
+
+-(void) setupImage
+{
+    self.blogPostImage.contentMode     = UIViewContentModeScaleAspectFill;
+    self.blogPostImage.clipsToBounds   = YES;
+}
+
+- (void) loadData:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3 :(NSString*)txt4 :(NSString*)img
+{
+    self.blogPostNameStr = txt;
+    self.authNameStr    = txt2;
+    self.photoSourceStr = txt3;
+    self.blogPostStr     = txt4;
+    self.photoStr       = img;
+
+    [self setupViews];
+    [self setupHorizontalSpacing];
+    [self setupSizeConstraints];
+    [self setupPOSConstraints];
+    [self setupLabels];
+    [self setupImage];
 }
 
 
