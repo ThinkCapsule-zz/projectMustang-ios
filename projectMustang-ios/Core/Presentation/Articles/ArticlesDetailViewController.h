@@ -27,7 +27,7 @@
 @property (nonatomic, strong) NSMutableAttributedString *by;
 
 -(void) setupViews;
--(void) setupHorizontalSpacing;
+-(void) setupSpacing;
 -(void) setupSizeConstraints;
 -(void) setupPOSConstraints;
 -(void) setupLabels;

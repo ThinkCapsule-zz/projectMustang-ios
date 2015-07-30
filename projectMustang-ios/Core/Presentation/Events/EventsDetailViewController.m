@@ -18,6 +18,7 @@
     
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
+    
     [self setupViews];
     [self setupSpacing];
     [self setupSizeConstraints];
@@ -32,13 +33,16 @@
     self.locIcon        = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"locimg"]];
     self.dateIcon       = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dateimg"]];
     self.backView       = [[UIView alloc] init];
-    
+
     self.locInfo        = [[UITextView alloc] init];
     self.locInfo.text   = @"location info\n123 whoknows way\nBR,ON";
     
     self.dateInfo       = [[UITextView alloc] init];
     self.dateInfo.text  = @"July 24-26\n7:00AM-2:00PM";
     
+    self.timeBar        = [[UILabel alloc] init];
+    self.timeBar.text   = @"The event will start in 15 minutes";
+
     
     //Event Details
     
@@ -72,6 +76,7 @@
     self.dateInfo.translatesAutoresizingMaskIntoConstraints         = NO;
     self.eventDeets.translatesAutoresizingMaskIntoConstraints       = NO;
     self.eventOrganizers.translatesAutoresizingMaskIntoConstraints  = NO;
+    self.timeBar.translatesAutoresizingMaskIntoConstraints  = NO;
     
     [self.view addSubview:self.backView];
     [self.view addSubview:self.photoImage];
@@ -81,6 +86,7 @@
     [self.view addSubview:self.dateInfo];
     [self.view addSubview:self.eventDeets];
     [self.view addSubview:self.eventOrganizers];
+    [self.view addSubview:self.timeBar];
 }
 
 -(void) setupSpacing
@@ -170,6 +176,26 @@
                               attribute:NSLayoutAttributeHeight
                               multiplier:1.0
                               constant:0.0]];
+    //bottom bar
+    
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.timeBar
+                              attribute:NSLayoutAttributeWidth
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.photoImage
+                              attribute:NSLayoutAttributeWidth
+                              multiplier:1.0
+                              constant:0.0]];
+    
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.timeBar
+                              attribute:NSLayoutAttributeHeight
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.view
+                              attribute:NSLayoutAttributeHeight
+                              multiplier:0.05
+                              constant:0.0]];
+    
 }
 
 -(void) setupPOSConstraints
@@ -248,6 +274,15 @@
                               attribute:NSLayoutAttributeBottom
                               multiplier:1.0
                               constant:1.0]];
+    
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.timeBar
+                              attribute:NSLayoutAttributeBottom
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.view
+                              attribute:NSLayoutAttributeBottom
+                              multiplier:1.0
+                              constant:1.0]];
 }
 
 
@@ -288,6 +323,12 @@
     self.eventOrganizers.editable       = NO;
     self.eventOrganizers.scrollEnabled  = NO;
     self.eventOrganizers.backgroundColor= [UIColor colorWithRed:0.0 green:0.1 blue:0.0 alpha:0.025];
+
+    self.timeBar.backgroundColor    = UIColorFromRGB(0xFF5722);
+    self.timeBar.textColor      = [UIColor whiteColor];
+    self.timeBar.font               = [UIFont fontWithName:@"Avenir-Roman" size:13];
+    self.timeBar.textAlignment      = NSTextAlignmentCenter;
+
 
 }
 

@@ -19,7 +19,12 @@
     [super viewDidLoad];
     self.title              = @"Places";
     self.view               = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
+    UIBarButtonItem *newBackButton =
+    [[UIBarButtonItem alloc] initWithTitle:@""
+                                     style:UIBarButtonItemStylePlain
+                                    target:nil
+                                    action:nil];
+    [[self navigationItem] setBackBarButtonItem:newBackButton];
     [self loadPlacesCollectionView];
     [self loadPlacesPictures];
 }

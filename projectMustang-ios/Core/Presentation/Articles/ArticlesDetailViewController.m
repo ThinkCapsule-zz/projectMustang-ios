@@ -30,7 +30,6 @@
 {
     self.articleName                = [UILabel new];
     self.articleName.text           = self.articleNameStr;
-    self.articleName.backgroundColor= [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.2];
     
     NSString *hihi  = [NSString stringWithFormat:@"By %@", self.authNameStr];
     self.by         = [[NSMutableAttributedString alloc] initWithString:hihi];
@@ -43,16 +42,12 @@
     
     self.authorName                 = [[UILabel alloc] init];
     self.authorName.attributedText  = self.by;
-    self.authorName.backgroundColor = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:0.2];
     
     self.photoSource                = [[UILabel alloc] init];
     self.photoSource.text           = self.photoSourceStr;
-    self.photoSource.backgroundColor= [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:0.2];
     
     self.article                    = [[UITextView alloc] init];
     self.article.text               = self.articleStr;
-    self.article.editable           = NO;
-    self.article.backgroundColor    = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.2];
     
     self.artImage                   = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.photoStr]];
     
@@ -68,6 +63,12 @@
     [self.view addSubview:self.article];
     [self.view addSubview:self.artImage];
     
+
+    
+}
+
+-(void) setupSpacing
+{
     self.viewsDictionary = @{@"articleName": self.articleName,
                              @"authorName": self.authorName,
                              @"photoSource": self.photoSource,
@@ -79,10 +80,6 @@
                      @"hSpacing2":@13,
                      @"artNameSize":@36};
     
-}
-
--(void) setupHorizontalSpacing
-{
     NSArray *constraint_POS_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-vSpacing-[articleName(artNameSize)]-|"
                                                                         options:0
                                                                         metrics:self.metrics
@@ -212,20 +209,25 @@
 
 -(void) setupLabels
 {
-    self.articleName.textAlignment    = NSTextAlignmentLeft;
-    self.articleName.font             = [UIFont fontWithName:@"AvenirNext-Medium" size:24 ];
-    self.articleName.textColor        = UIColorFromRGB(0x3f3f3f);
-    
-    self.authorName.textAlignment    = NSTextAlignmentLeft;
-    self.authorName.font             = [UIFont fontWithName:@"Avenir-Roman" size:13];
-    
-    self.photoSource.textAlignment    = NSTextAlignmentLeft;
-    self.photoSource.font             = [UIFont fontWithName:@"Avenir-Roman" size:11.5 ];
-    self.photoSource.textColor        = UIColorFromRGB(0x7f8c8d);
-    
-    self.article.textAlignment    = NSTextAlignmentLeft;
-    self.article.font             = [UIFont fontWithName:@"Avenir-Roman" size:13 ];
-    self.article.textColor        = [UIColor blackColor];
+    self.articleName.textAlignment      = NSTextAlignmentLeft;
+    self.articleName.font               = [UIFont fontWithName:@"AvenirNext-Medium" size:24 ];
+    self.articleName.textColor          = UIColorFromRGB(0x3f3f3f);
+    self.articleName.backgroundColor    = [UIColor colorWithRed:0.5 green:0.0 blue:0.0 alpha:0.1];
+
+    self.authorName.textAlignment       = NSTextAlignmentLeft;
+    self.authorName.font                = [UIFont fontWithName:@"Avenir-Roman" size:13];
+    self.authorName.backgroundColor     = [UIColor colorWithRed:0.0 green:0.5 blue:0.0 alpha:0.1];
+
+    self.photoSource.textAlignment      = NSTextAlignmentLeft;
+    self.photoSource.font               = [UIFont fontWithName:@"Avenir-Roman" size:11.5 ];
+    self.photoSource.textColor          = UIColorFromRGB(0x7f8c8d);
+    self.photoSource.backgroundColor    = [UIColor colorWithRed:0.0 green:0.0 blue:0.5 alpha:0.1];
+
+    self.article.textAlignment      = NSTextAlignmentLeft;
+    self.article.font               = [UIFont fontWithName:@"Avenir-Roman" size:13 ];
+    self.article.textColor          = [UIColor blackColor];
+    self.article.backgroundColor    = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.1];
+    self.article.editable           = NO;
 }
 
 -(void) setupImage
@@ -243,7 +245,7 @@
     self.photoStr       = img;
     
     [self setupViews];
-    [self setupHorizontalSpacing];
+    [self setupSpacing];
     [self setupSizeConstraints];
     [self setupPOSConstraints];
     [self setupLabels];

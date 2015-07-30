@@ -19,6 +19,12 @@
     self.title              = @"Events";
     self.view               = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    UIBarButtonItem *newBackButton =
+    [[UIBarButtonItem alloc] initWithTitle:@""
+                                     style:UIBarButtonItemStylePlain
+                                    target:nil
+                                    action:nil];
+    [[self navigationItem] setBackBarButtonItem:newBackButton];
     [self loadEventCollectionView];
     [self loadEventPictures];
    }

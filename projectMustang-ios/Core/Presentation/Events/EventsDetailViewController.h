@@ -18,6 +18,7 @@
 @property (nonatomic) UITextView    *eventOrganizers;
 @property (nonatomic) UITextView    *eventDeets;
 @property (nonatomic) UIView        *backView;
+@property (nonatomic) UILabel       *timeBar;
 
 @property (nonatomic) NSDictionary  *viewsDictionary;
 @property (nonatomic) NSDictionary  *metrics;
