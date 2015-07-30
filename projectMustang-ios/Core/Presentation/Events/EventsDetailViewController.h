@@ -12,24 +12,25 @@
 
 @property (nonatomic) UIImageView   *photoImage;
 @property (nonatomic) UIImageView   *locIcon;
-@property (nonatomic) UITextView       *locInfo;
 @property (nonatomic) UIImageView   *dateIcon;
-@property (nonatomic) UITextView       *dateInfo;
-
+@property (nonatomic) UITextView    *locInfo;
+@property (nonatomic) UITextView    *dateInfo;
 @property (nonatomic) UITextView    *eventOrganizers;
 @property (nonatomic) UITextView    *eventDeets;
+@property (nonatomic) UIView        *backView;
+
 @property (nonatomic) NSDictionary  *viewsDictionary;
 @property (nonatomic) NSDictionary  *metrics;
 
 @property (nonatomic) NSString *eventName;
 @property (nonatomic) NSString *eventDetails;
-
 @property (nonatomic) NSString *organizerDeets;
+
 -(void) setupViews;
--(void) setupHorizontalSpacing;
+-(void) setupSpacing;
 -(void) setupSizeConstraints;
 -(void) setupPOSConstraints;
--(void) setupLabels;
--(void) setupImage;
+-(void) setupText;
+-(void) setupImages;
 
 @end
