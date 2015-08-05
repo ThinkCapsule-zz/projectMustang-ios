@@ -58,7 +58,7 @@
     
     [self setNavigationBarHidden:YES];
     TCWalkthroughViewController* wtViewController = [[TCWalkthroughViewController alloc] init];
-    [self setViewControllers:@[wtViewController] animated:NO];
+    [self presentViewController:wtViewController animated:YES completion:nil];
 }
 
 #pragma mark - Section Navigation

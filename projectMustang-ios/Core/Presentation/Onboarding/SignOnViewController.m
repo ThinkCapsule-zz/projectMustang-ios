@@ -52,6 +52,9 @@
     NavigationManager* navManager = [NavigationManager singletonInstance];
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
     BOOL alreadyOnboarded = [userDefaults boolForKey:kUserHasOnboarded];
+#warning WalkThrough Testing
+    
+    alreadyOnboarded = NO ;
     
     if ([FBSDKAccessToken currentAccessToken]) {
         

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TCWalkthroughViewController : UIViewController
+@interface TCWalkthroughViewController : UIViewController <UIPageViewControllerDataSource>
+
+@property(strong,nonatomic)UIPageViewController *walkThroughPageController;
+
 
 @end

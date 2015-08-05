@@ -52,18 +52,21 @@
     
     
     self.window.rootViewController = sideMenuVC;
+    [navManager showWalkthrough];
 
 
-    BOOL didFinishLaunch           = [[FBSDKApplicationDelegate sharedInstance] application:application
-                                                              didFinishLaunchingWithOptions:launchOptions];
+    BOOL didFinishLaunch           = YES;
+    
+//    [[FBSDKApplicationDelegate sharedInstance] application:application
+//                                                              didFinishLaunchingWithOptions:launchOptions];
     
     
-    // Check facebook token
-    if ([FBSDKAccessToken currentAccessToken]) {
-        [navManager goToMainSection];
-    }else{
-        [navManager showLogin];
-    }
+//    // Check facebook token
+//    if ([FBSDKAccessToken currentAccessToken]) {
+//        [navManager goToMainSection];
+//    }else{
+//        [navManager showLogin];
+//    }
     
     
     

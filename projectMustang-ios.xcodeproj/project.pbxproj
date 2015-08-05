@@ -40,6 +40,7 @@
 		CAD585801AF26F9400F77ED7 /* NavigationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD5857F1AF26F9400F77ED7 /* NavigationManager.m */; };
 		CAD585841AF2715900F77ED7 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585831AF2715900F77ED7 /* MainMenuViewController.m */; };
 		CAD585931AF2AC6A00F77ED7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585921AF2AC6A00F77ED7 /* BaseViewController.m */; };
+		F2B931251B680F06007018CD /* TCWalkthroughStroyBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B931241B680F06007018CD /* TCWalkthroughStroyBoard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		CAD585921AF2AC6A00F77ED7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		D2F91D294DF9F5DAC8DA3998 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79FF135A583509834B12298 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F2B931241B680F06007018CD /* TCWalkthroughStroyBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TCWalkthroughStroyBoard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			children = (
 				B6589A5A1B33A57B00B3754F /* TCWalkthroughViewController.h */,
 				B6589A5B1B33A57B00B3754F /* TCWalkthroughViewController.m */,
+				F2B931241B680F06007018CD /* TCWalkthroughStroyBoard.storyboard */,
 				B6A6384E1B350AF9005C3D7A /* SignOnViewController.h */,
 				B6A6384F1B350AF9005C3D7A /* SignOnViewController.m */,
 			);
@@ -535,6 +538,7 @@
 			files = (
 				B6CFCF2F1B35059A004BCF74 /* SourceSansPro-ExtraLight.ttf in Resources */,
 				B6CFCF321B35059A004BCF74 /* SourceSansPro-Semibold.ttf in Resources */,
+				F2B931251B680F06007018CD /* TCWalkthroughStroyBoard.storyboard in Resources */,
 				CA6335201AFAAB29009DC83A /* config.plist in Resources */,
 				CAD585561AF26A5100F77ED7 /* Main.storyboard in Resources */,
 				B6CFCF311B35059A004BCF74 /* SourceSansPro-Regular.ttf in Resources */,
