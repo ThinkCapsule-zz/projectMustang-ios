@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface PlacesSectionViewController : BaseViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface PlacesSectionViewController : BaseViewController <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate, UISearchControllerDelegate>
 
 @property (nonatomic) UICollectionViewFlowLayout    *placesFlowLayout;
 @property (nonatomic) UICollectionView              *placesCollectionView;

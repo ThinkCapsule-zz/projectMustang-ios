@@ -18,40 +18,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view                   = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.view.backgroundColor   = [UIColor whiteColor];
 }
 
 #pragma AutoLayout Positioning Methods
 - (void)setupViews
 {
     self.blogPostName                   = [UILabel new];
-    self.blogPostName.backgroundColor   = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.2];
     self.blogPostName.text              = self.blogPostNameStr;
-    self.blogPostName.translatesAutoresizingMaskIntoConstraints = NO;
 
+    
+    //Author Name
     
     NSString *hihi  = [NSString stringWithFormat:@"By %@", self.authNameStr];
     self.by         = [[NSMutableAttributedString alloc] initWithString:hihi];
-    [self.by addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0xFF5722) range:[hihi rangeOfString:self.authNameStr]];
-    [self.by addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0x7f8c8d) range:NSMakeRange(0,2)];
-
+    [self.by addAttribute:NSForegroundColorAttributeName
+                    value:UIColorFromRGB(0xFF5722)
+                    range:[hihi rangeOfString:self.authNameStr]];
+    [self.by addAttribute:NSForegroundColorAttributeName
+                    value:UIColorFromRGB(0x7f8c8d)
+                    range:NSMakeRange(0,2)];
     self.authorName                 = [[UILabel alloc] init];
-    self.authorName.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.2];
     self.authorName.attributedText  = self.by;
+
+    
+    self.photoSource        = [[UILabel alloc] init];
+    self.photoSource.text   = self.photoSourceStr;
+
+    self.blogPost           = [[UITextView alloc] init];
+    self.blogPost.text      = self.blogPostStr;
+
+    self.blogPostImage      = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.photoStr]];
+
+    
+    self.blogPostName.translatesAutoresizingMaskIntoConstraints = NO;
     self.authorName.translatesAutoresizingMaskIntoConstraints   = NO;
-
-    self.photoSource                    = [[UILabel alloc] init];
-    self.photoSource.backgroundColor    = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.2];
-    self.photoSource.text               = self.photoSourceStr;
     self.photoSource.translatesAutoresizingMaskIntoConstraints  = NO;
-
-    self.blogPost                   = [[UITextView alloc] init];
-    self.blogPost.backgroundColor   = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.2];
-    self.blogPost.text              = self.blogPostStr;
     self.blogPost.translatesAutoresizingMaskIntoConstraints     = NO;
-
-    self.blogPostImage  = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.photoStr]];
     self.blogPostImage.translatesAutoresizingMaskIntoConstraints= NO;
     
     [self.view addSubview:self.blogPostName];
@@ -59,7 +63,10 @@
     [self.view addSubview:self.photoSource];
     [self.view addSubview:self.blogPost];
     [self.view addSubview:self.blogPostImage];
-    
+}
+
+-(void) setupHorizontalSpacing
+{
     self.viewsDictionary = @{@"postName": self.blogPostName,
                              @"authorName": self.authorName,
                              @"photoSource": self.photoSource,
@@ -69,10 +76,6 @@
                      @"hSpacing1":@1,
                      @"hSpacing2":@13,
                      @"postNameSize":@36};
-}
-
--(void) setupHorizontalSpacing
-{
     NSArray *constraint_POS_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-vSpacing-[postName(postNameSize)]-|"
                                                                         options:0
                                                                         metrics:self.metrics
@@ -201,24 +204,31 @@
 
 -(void) setupLabels
 {
-    self.blogPostName.textAlignment = NSTextAlignmentLeft;
-    self.blogPostName.font          = [UIFont fontWithName:@"AvenirNext-Medium"
+    self.blogPostName.textAlignment     = NSTextAlignmentLeft;
+    self.blogPostName.font              = [UIFont fontWithName:@"AvenirNext-Medium"
                                                       size:24 ];
-    self.blogPostName.textColor     = UIColorFromRGB(0x3f3f3f);
+    self.blogPostName.textColor         = UIColorFromRGB(0x3f3f3f);
+    self.blogPostName.backgroundColor   = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.2];
+
     
     self.authorName.textAlignment   = NSTextAlignmentLeft;
     self.authorName.font            = [UIFont fontWithName:@"Avenir-Roman"
                                                       size:13];
+    self.authorName.backgroundColor = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:0.2];
+
     
     self.photoSource.textAlignment  = NSTextAlignmentLeft;
     self.photoSource.font           = [UIFont fontWithName:@"Avenir-Roman"
                                                       size:11.5 ];
     self.photoSource.textColor      = UIColorFromRGB(0x7f8c8d);
+    self.photoSource.backgroundColor= [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:0.2];
+
     
     self.blogPost.textAlignment     = NSTextAlignmentLeft;
     self.blogPost.font              = [UIFont fontWithName:@"Avenir-Roman"
                                                       size:13 ];
     self.blogPost.textColor         = [UIColor blackColor];
+    self.blogPost.backgroundColor   = [UIColor colorWithRed:0.0 green:0.5 blue:0.5 alpha:0.2];
 }
 
 -(void) setupImage
@@ -229,11 +239,11 @@
 
 - (void) loadData:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3 :(NSString*)txt4 :(NSString*)img
 {
-    self.blogPostNameStr = txt;
-    self.authNameStr    = txt2;
-    self.photoSourceStr = txt3;
-    self.blogPostStr     = txt4;
-    self.photoStr       = img;
+    self.blogPostNameStr    = txt;
+    self.authNameStr        = txt2;
+    self.photoSourceStr     = txt3;
+    self.blogPostStr        = txt4;
+    self.photoStr           = img;
 
     [self setupViews];
     [self setupHorizontalSpacing];
