@@ -25,6 +25,7 @@
 		B6379F4A1B1D5A68005C0ADA /* TCVideoDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F491B1D5A68005C0ADA /* TCVideoDataModel.m */; };
 		B6589A5C1B33A57B00B3754F /* TCWalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6589A5B1B33A57B00B3754F /* TCWalkthroughViewController.m */; };
 		B6589A601B33B45800B3754F /* SystemStatics.m in Sources */ = {isa = PBXBuildFile; fileRef = B6589A5F1B33B45800B3754F /* SystemStatics.m */; };
+		B65C79E21B76980300F9BB07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65C79E11B76980300F9BB07 /* Images.xcassets */; };
 		B67759871B36055A00A253F7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B67759861B36055A00A253F7 /* SettingsViewController.m */; };
 		B6A638501B350AF9005C3D7A /* SignOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A6384F1B350AF9005C3D7A /* SignOnViewController.m */; };
 		B6CFCF2F1B35059A004BCF74 /* SourceSansPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6CFCF2B1B35059A004BCF74 /* SourceSansPro-ExtraLight.ttf */; };
@@ -41,7 +42,6 @@
 		CAD5854A1AF26A5100F77ED7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585491AF26A5100F77ED7 /* main.m */; };
 		CAD585501AF26A5100F77ED7 /* projectMustang_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAD5854E1AF26A5100F77ED7 /* projectMustang_ios.xcdatamodeld */; };
 		CAD585561AF26A5100F77ED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD585541AF26A5100F77ED7 /* Main.storyboard */; };
-		CAD585581AF26A5100F77ED7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAD585571AF26A5100F77ED7 /* Images.xcassets */; };
 		CAD5855B1AF26A5100F77ED7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD585591AF26A5100F77ED7 /* LaunchScreen.xib */; };
 		CAD585671AF26A5100F77ED7 /* projectMustang_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585661AF26A5100F77ED7 /* projectMustang_iosTests.m */; };
 		CAD5857A1AF26C7400F77ED7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585751AF26C7400F77ED7 /* AppDelegate.m */; };
@@ -97,6 +97,7 @@
 		B6589A5B1B33A57B00B3754F /* TCWalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCWalkthroughViewController.m; sourceTree = "<group>"; };
 		B6589A5E1B33B45800B3754F /* SystemStatics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemStatics.h; sourceTree = "<group>"; };
 		B6589A5F1B33B45800B3754F /* SystemStatics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemStatics.m; sourceTree = "<group>"; };
+		B65C79E11B76980300F9BB07 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B67759851B36055A00A253F7 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		B67759861B36055A00A253F7 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B6A6384E1B350AF9005C3D7A /* SignOnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignOnViewController.h; sourceTree = "<group>"; };
@@ -123,7 +124,6 @@
 		CAD585491AF26A5100F77ED7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CAD5854F1AF26A5100F77ED7 /* projectMustang_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = projectMustang_ios.xcdatamodel; sourceTree = "<group>"; };
 		CAD585551AF26A5100F77ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CAD585571AF26A5100F77ED7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "../../../../../../../../Documents/projectMustang/projectMustang-ios/Images.xcassets"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAD5855A1AF26A5100F77ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CAD585601AF26A5100F77ED7 /* projectMustang-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "projectMustang-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAD585651AF26A5100F77ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -345,9 +345,9 @@
 		CAD585461AF26A5100F77ED7 /* projectMustang-ios */ = {
 			isa = PBXGroup;
 			children = (
+				B65C79E11B76980300F9BB07 /* Images.xcassets */,
 				CAD585701AF26C7400F77ED7 /* Core */,
 				CAD585541AF26A5100F77ED7 /* Main.storyboard */,
-				CAD585571AF26A5100F77ED7 /* Images.xcassets */,
 				CAD585591AF26A5100F77ED7 /* LaunchScreen.xib */,
 				CAD5854E1AF26A5100F77ED7 /* projectMustang_ios.xcdatamodeld */,
 				CAD585471AF26A5100F77ED7 /* Supporting Files */,
@@ -579,13 +579,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6CFCF2F1B35059A004BCF74 /* SourceSansPro-ExtraLight.ttf in Resources */,
+				B65C79E21B76980300F9BB07 /* Images.xcassets in Resources */,
 				B6CFCF321B35059A004BCF74 /* SourceSansPro-Semibold.ttf in Resources */,
 				CA6335201AFAAB29009DC83A /* config.plist in Resources */,
 				CAD585561AF26A5100F77ED7 /* Main.storyboard in Resources */,
 				B6CFCF311B35059A004BCF74 /* SourceSansPro-Regular.ttf in Resources */,
 				B6CFCF301B35059A004BCF74 /* SourceSansPro-Light.ttf in Resources */,
 				CAD5855B1AF26A5100F77ED7 /* LaunchScreen.xib in Resources */,
-				CAD585581AF26A5100F77ED7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
