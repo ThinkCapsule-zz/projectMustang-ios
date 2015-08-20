@@ -15,8 +15,14 @@
 
 @property (nonatomic, strong) CDAClient* fetchClient;
 @property (nonatomic, strong) NSArray* array;
+@property (nonatomic, strong) NSMutableArray* articleArray;
+@property (nonatomic, strong) NSMutableArray* fetchArticle;
+
+
+typedef void (^myCompletionBlock)(BOOL success, NSMutableArray *articles, NSError *error);
 
 +(DataFetcher*)singletonInstance;
 
-- (void) fetchWithId;
+- (void) fetchWithId:(myCompletionBlock)completionBlock;
+
 @end

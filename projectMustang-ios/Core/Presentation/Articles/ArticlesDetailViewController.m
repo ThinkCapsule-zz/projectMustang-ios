@@ -20,9 +20,14 @@
     // Do any additional setup after loading the view.
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.view.backgroundColor = [UIColor whiteColor];
-    TCArticleDataModel *article = [[TCArticleDataModel alloc]init];
+    
+    
+    
 }
-
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    
+}
 
 #pragma AutoLayout Positioning Methods
 
