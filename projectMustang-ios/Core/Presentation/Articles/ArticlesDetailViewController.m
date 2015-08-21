@@ -20,8 +20,8 @@
     // Do any additional setup after loading the view.
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.scr_view = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    [self.scr_view addSubview: self.upview];
+    //self.scr_view = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    //[self.scr_view addSubview: self.upview];
     
     //TCArticleDataModel *article = [[TCArticleDataModel alloc]init];
 }
@@ -59,19 +59,19 @@
     [self.photoSource   setTranslatesAutoresizingMaskIntoConstraints: NO];
     [self.article       setTranslatesAutoresizingMaskIntoConstraints: NO];
     [self.artImage      setTranslatesAutoresizingMaskIntoConstraints: NO];
-    
+    /*
     [self.upview addSubview:self.articleName];
     [self.upview addSubview:self.authorName];
     [self.upview addSubview:self.photoSource];
     [self.upview addSubview:self.article];
     [self.upview addSubview:self.artImage];
-    /*
+    */
     [self.view addSubview:self.articleName];
     [self.view addSubview:self.authorName];
     [self.view addSubview:self.photoSource];
     [self.view addSubview:self.article];
     [self.view addSubview:self.artImage];
-     */
+    
 }
 
 -(void) setupSpacing
@@ -112,27 +112,27 @@
                                                                          options:0
                                                                          metrics:self.metrics
                                                                            views:self.viewsDictionary];
-    [self.upview addConstraints:constraint_POS_V];
+    /*[self.upview addConstraints:constraint_POS_V];
     [self.upview addConstraints:constraint_POS_H];
     [self.upview addConstraints:constraint_POS_H1];
     [self.upview addConstraints:constraint_POS_H2];
     [self.upview addConstraints:constraint_POS_H3];
     [self.upview addConstraints:constraint_POS_H4];
-    /*
+    */
     [self.view addConstraints:constraint_POS_V];
     [self.view addConstraints:constraint_POS_H];
     [self.view addConstraints:constraint_POS_H1];
     [self.view addConstraints:constraint_POS_H2];
     [self.view addConstraints:constraint_POS_H3];
     [self.view addConstraints:constraint_POS_H4];
-    */
+    
 }
 
 -(void) setupSizeConstraints
 {
     //author name
     
-    [self.upview addConstraint:[NSLayoutConstraint
+    [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:self.authorName
                               attribute:NSLayoutAttributeHeight
                               relatedBy:NSLayoutRelationEqual
@@ -142,7 +142,7 @@
                               constant:1.0]];
     //article Image
     
-    [self.upview addConstraint:[NSLayoutConstraint
+    [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:self.artImage
                               attribute:NSLayoutAttributeHeight
                               relatedBy:NSLayoutRelationEqual
@@ -152,7 +152,7 @@
                               constant:0.0]];
     //PhotoSource
     
-    [self.upview addConstraint:[NSLayoutConstraint
+    [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:self.photoSource
                               attribute:NSLayoutAttributeHeight
                               relatedBy:NSLayoutRelationEqual
@@ -166,7 +166,7 @@
 {
     //author name
     
-    [self.upview addConstraint:[NSLayoutConstraint
+    [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:self.authorName
                               attribute:NSLayoutAttributeTop
                               relatedBy:NSLayoutRelationEqual
@@ -177,7 +177,7 @@
     
     //article Image
     
-    [self.upview addConstraint:[NSLayoutConstraint
+    [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:self.artImage
                               attribute:NSLayoutAttributeTop
                               relatedBy:NSLayoutRelationEqual
@@ -188,7 +188,7 @@
     
     //PhotoSource
     
-    [self.upview addConstraint:[NSLayoutConstraint
+    [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:self.photoSource
                               attribute:NSLayoutAttributeTop
                               relatedBy:NSLayoutRelationEqual
@@ -198,7 +198,7 @@
                               constant:0.0]];
     //article
     
-    [self.upview addConstraint:[NSLayoutConstraint
+    [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:self.article
                               attribute:NSLayoutAttributeTop
                               relatedBy:NSLayoutRelationEqual
@@ -207,7 +207,7 @@
                               multiplier:1.0
                               constant:13.0]];
     
-    self.scr_view.contentSize    =  CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
+    //self.scr_view.contentSize    =  CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
 }
 
 
