@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
-#import "TCArticleDataModel.h"
+#import "ArticleDataModel.h"
 #import "TCBlogDataModel.h"
 
 @interface DataFetcher : NSObject

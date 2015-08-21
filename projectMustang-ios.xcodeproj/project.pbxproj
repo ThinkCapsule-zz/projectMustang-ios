@@ -19,7 +19,7 @@
 		77E3FFED587D2B94B2B73130 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F91D294DF9F5DAC8DA3998 /* libPods.a */; };
 		A9CE473D1B7A686C003E852D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9CE473C1B7A686C003E852D /* Images.xcassets */; };
 		B6379F311B1A60A2005C0ADA /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F301B1A60A2005C0ADA /* DataFetcher.m */; };
-		B6379F3E1B1D5A17005C0ADA /* TCArticleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F3D1B1D5A17005C0ADA /* TCArticleDataModel.m */; };
+		B6379F3E1B1D5A17005C0ADA /* ArticleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F3D1B1D5A17005C0ADA /* ArticleDataModel.m */; };
 		B6379F411B1D5A2D005C0ADA /* TCBlogDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F401B1D5A2D005C0ADA /* TCBlogDataModel.m */; };
 		B6379F441B1D5A41005C0ADA /* TCEventDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F431B1D5A41005C0ADA /* TCEventDataModel.m */; };
 		B6379F471B1D5A57005C0ADA /* TCPlacesDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6379F461B1D5A57005C0ADA /* TCPlacesDataModel.m */; };
@@ -84,8 +84,8 @@
 		A9CE473C1B7A686C003E852D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B6379F2F1B1A60A2005C0ADA /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
 		B6379F301B1A60A2005C0ADA /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
-		B6379F3C1B1D5A17005C0ADA /* TCArticleDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCArticleDataModel.h; sourceTree = "<group>"; };
-		B6379F3D1B1D5A17005C0ADA /* TCArticleDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCArticleDataModel.m; sourceTree = "<group>"; };
+		B6379F3C1B1D5A17005C0ADA /* ArticleDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDataModel.h; sourceTree = "<group>"; };
+		B6379F3D1B1D5A17005C0ADA /* ArticleDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDataModel.m; sourceTree = "<group>"; };
 		B6379F3F1B1D5A2D005C0ADA /* TCBlogDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCBlogDataModel.h; sourceTree = "<group>"; };
 		B6379F401B1D5A2D005C0ADA /* TCBlogDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCBlogDataModel.m; sourceTree = "<group>"; };
 		B6379F421B1D5A41005C0ADA /* TCEventDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCEventDataModel.h; sourceTree = "<group>"; };
@@ -179,8 +179,8 @@
 			children = (
 				69E43DAE1B6565390003C244 /* TCArticleFactory.h */,
 				69E43DAF1B6565390003C244 /* TCArticleFactory.m */,
-				B6379F3C1B1D5A17005C0ADA /* TCArticleDataModel.h */,
-				B6379F3D1B1D5A17005C0ADA /* TCArticleDataModel.m */,
+				B6379F3C1B1D5A17005C0ADA /* ArticleDataModel.h */,
+				B6379F3D1B1D5A17005C0ADA /* ArticleDataModel.m */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -663,7 +663,7 @@
 				B6379F441B1D5A41005C0ADA /* TCEventDataModel.m in Sources */,
 				CAD5857B1AF26C7400F77ED7 /* MainViewController.m in Sources */,
 				B6A638501B350AF9005C3D7A /* SignOnViewController.m in Sources */,
-				B6379F3E1B1D5A17005C0ADA /* TCArticleDataModel.m in Sources */,
+				B6379F3E1B1D5A17005C0ADA /* ArticleDataModel.m in Sources */,
 				6922086E1B4B3C300045C279 /* ArticleCell.m in Sources */,
 				B6589A5C1B33A57B00B3754F /* TCWalkthroughViewController.m in Sources */,
 				CA5E2E401B320995004A9AE0 /* EventsSectionViewController.m in Sources */,

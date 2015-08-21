@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DataFetcher.h"
 
-@interface TCArticleDataModel : NSObject
+@interface ArticleDataModel : NSObject
 
 @property (nonatomic, strong) NSString* contentType;
 @property (nonatomic, strong) NSString* articleId;
@@ -25,6 +24,6 @@
 #pragma mark -
 #pragma mark Class Methods
 
-- (id)initWithContentType: (NSString*)cType andArticleId: (NSString*)aId andHeadline: (NSString *)hline andSubtitle: (NSString *)stitle andAuthor: (NSString *)athor andBody: (NSString *)bdy andPublishDate: (NSDate *)pDate andThumbnails: (NSArray *)tNails andTags: (NSString *)tgs;
+-(id)initWithContentType: (NSString*)cType andArticleId: (NSString*)aId andHeadline: (NSString *)hline andSubtitle: (NSString *)stitle andAuthor: (NSString *)athor andBody: (NSString *)bdy andPublishDate: (NSDate *)pDate andThumbnails: (NSArray *)tNails andTags: (NSString *)tgs;
 
 @end

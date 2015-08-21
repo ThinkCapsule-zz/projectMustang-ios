@@ -10,7 +10,7 @@
 #import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
 
 @implementation DataFetcher
-@synthesize articleArray, fetchArticle;
+
 
 - (instancetype)init {
     
@@ -44,12 +44,13 @@
 
 - (void) fetchWithId:(myCompletionBlock)completionBlock{
     CDAClient *client = [DataFetcher singletonInstance].fetchClient;
+    
     [client fetchEntriesMatching:@{ @"content_type": @"1or7CAktokKiIUogkmU8O4"}
                          success:^(CDAResponse *response, CDAArray *entries){
                              self.array = entries.items;
                              NSMutableArray *array = [[NSMutableArray alloc]initWithArray:self.array];
-                             articleArray = [[NSMutableArray alloc]init];
                              
+                             self.articleArray = [[NSMutableArray alloc]init];
                              for (int i = 0; i < array.count; i++){
                                  CDAEntry *temp = [array objectAtIndex:i];
                                  NSString *type = temp.fields[@"contentType"];
@@ -62,15 +63,17 @@
                                  NSArray *thumb = temp.fields[@"thumbnails"];
                                  NSString *tags = temp.fields[@"tags"];
                                  
-                                 [articleArray addObject:[[TCArticleDataModel alloc]initWithContentType:type andArticleId:art andHeadline:head andSubtitle:sub andAuthor:aut andBody:bod andPublishDate:date andThumbnails:thumb andTags:tags]];
+                                 ArticleDataModel *articleModel = [[ArticleDataModel alloc]initWithContentType:type andArticleId:art andHeadline:head andSubtitle:sub andAuthor:aut andBody:bod andPublishDate:date andThumbnails:thumb andTags:tags];
                                  
+                                 [self.articleArray addObject:articleModel];
+                            
                              }
                              
-                             NSMutableArray *temp = [articleArray objectAtIndex:0];
+                             NSMutableArray *temp = [self.articleArray objectAtIndex:0];
                              if (!temp) {
                                  completionBlock(NO, nil, nil);
                              }else{
-                                 completionBlock(YES, articleArray, nil);
+                                 completionBlock(YES, self.articleArray, nil);
                              }
                              
                          }
