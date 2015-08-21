@@ -59,9 +59,9 @@
     
     // Check facebook token
     if ([FBSDKAccessToken currentAccessToken]) {
-        [navManager goToMainSection];
+        [navManager showWalkthrough];
     }else{
-        [navManager showLogin];
+        [navManager showWalkthrough];
     }
     
     //customize navbarcontroller
