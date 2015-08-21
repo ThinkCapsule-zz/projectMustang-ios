@@ -12,6 +12,9 @@
 
 @interface ArticlesDetailViewController : UIViewController
 
+@property (strong, nonatomic) UIScrollView *scr_view;
+@property (strong, nonatomic) UIView *upview;
+
 @property (nonatomic, strong) UILabel       *articleName;
 @property (nonatomic, strong) UILabel       *authorName;
 @property (nonatomic, strong) UILabel       *photoSource;
@@ -25,14 +28,14 @@
 @property (nonatomic, strong) NSString *photoSourceStr;
 @property (nonatomic, strong) NSString *articleStr;
 @property (nonatomic, strong) NSString *photoStr;
+@property (nonatomic, strong) NSMutableAttributedString *by;
 
 -(void) setupViews;
--(void) setupHorizontalSpacing;
+-(void) setupSpacing;
 -(void) setupSizeConstraints;
 -(void) setupPOSConstraints;
 -(void) setupLabels;
 -(void) loadData:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3 :(NSString*)txt4 :(NSString*)img;
 -(void) setupImage;
-
 
 @end

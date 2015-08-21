@@ -304,10 +304,10 @@
 			isa = PBXGroup;
 			children = (
 				CA5E2E3E1B320995004A9AE0 /* EventsSectionViewController.h */,
-				CA5E2E3F1B320995004A9AE0 /* EventsSectionViewController.m */,
 				692208661B4B3C0C0045C279 /* EventsCell.h */,
-				692208671B4B3C0C0045C279 /* EventsCell.m */,
+				CA5E2E3F1B320995004A9AE0 /* EventsSectionViewController.m */,
 				692200161B5ABFB1009B2B8A /* EventsDetailViewController.h */,
+				692208671B4B3C0C0045C279 /* EventsCell.m */,
 				692200171B5ABFB1009B2B8A /* EventsDetailViewController.m */,
 			);
 			path = Events;

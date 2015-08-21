@@ -18,7 +18,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"main"]];
+    CALayer *layer = self.view.layer;
+    layer.contents = (id)[UIImage imageNamed:@"main"].CGImage;
     
     
 }

@@ -49,10 +49,10 @@
 
 -(void) setupLabels
 {
-    self.titleLabel                  = [[UILabel alloc] initWithFrame:CGRectMake(19.0, 7.0, self.frame.size.width-15, 29.9)];
-    self.titleLabel.textAlignment    = NSTextAlignmentLeft;
-    self.titleLabel.font             = [UIFont fontWithName:@"AvenirNextCondensed-Bold" size:23 ];
-    self.titleLabel.textColor        = [UIColor whiteColor];
+    self.titleLabel                 = [[UILabel alloc] initWithFrame:CGRectMake(19.0, 7.0, self.frame.size.width-15, 29.9)];
+    self.titleLabel.textAlignment   = NSTextAlignmentLeft;
+    self.titleLabel.font            = [UIFont fontWithName:@"AvenirNextCondensed-Bold" size:25 ];
+    self.titleLabel.textColor       = [UIColor whiteColor];
     
     self.descLabel                  = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 135, self.frame.size.width-15, 30)];
     self.descLabel.textAlignment    = NSTextAlignmentLeft;
