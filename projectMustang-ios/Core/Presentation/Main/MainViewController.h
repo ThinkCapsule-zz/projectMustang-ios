@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
 
 @interface MainViewController : BaseViewController
 

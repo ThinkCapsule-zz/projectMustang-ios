@@ -8,6 +8,7 @@
 
 #import "MainMenuViewController.h"
 #import "ConfigManager.h"
+#import "NavigationManager.h"
 
 #define UIColorFromRGB(rgbValue) \
 [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
@@ -33,6 +34,8 @@ CGFloat const kLeftNavHeight = 340.0f;
     self.menuItemsTable                  = [[UITableView alloc] initWithFrame:CGRectMake(20, (self.view.frame.size.height - kLeftNavHeight) / 2.0f,
                                                                                          self.view.frame.size.width, kLeftNavHeight)
                                                                         style:UITableViewStylePlain];
+    self.view.backgroundColor        = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:50/255.0 alpha:0.1];
+    // Menu Items
     self.menuItemsTable.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
     self.menuItemsTable.delegate         = self;
     self.menuItemsTable.dataSource       = self;
@@ -41,34 +44,49 @@ CGFloat const kLeftNavHeight = 340.0f;
     self.menuItemsTable.backgroundView   = nil;
     self.menuItemsTable.separatorStyle   = UITableViewCellSeparatorStyleNone;
     self.menuItemsTable.bounces          = YES;
-    self.view.backgroundColor            = UIColorFromRGB(0x663366);
-
     [self.view addSubview: self.menuItemsTable];
+    
+    // Settings button
+    UIImage* pref_icon_image = [UIImage imageNamed:@"pref_icon"];
+    UIButton* btnPreferences = [[UIButton alloc] initWithFrame:CGRectMake(self.menuItemsTable.frame.origin.x, self.menuItemsTable.frame.origin.y + self.menuItemsTable.frame.size.height + 30, 60, 60)];
+    [btnPreferences setImage:pref_icon_image forState:UIControlStateNormal];
+    
+    [btnPreferences addTarget:self action:@selector(displaySettings) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnPreferences];
     
     // delegates
     self.menuItemsTable.dataSource = self;
     self.menuItemsTable.delegate   = self;
     
 }
-
+- (void) displaySettings {
+    
+    [[NavigationManager singletonInstance] goToSettings];
+    [self.sideMenuViewController hideMenuViewController];
+}
 #pragma mark - TableViewDelegate methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    NavigationManager* navManager = [NavigationManager singletonInstance];
+    
     switch (indexPath.row) {
+        case kMainSection:
+            [navManager goToMainSection];
+            break;
         case kArticleSection:
-            NSLog(@"article section");
+            [navManager goToArticleSection];
             break;
         case kBlogSection:
-            NSLog(@"blog section");
+            [navManager goToBlogSection];
             break;
         case kVideosSection:
-            NSLog(@"videos section");
+            [navManager goToVideosSection];
             break;
         case kPlacesSection:
-            NSLog(@"places section");
+            [navManager goToPlacesSection];
             break;
         case kEventsSection:
-            NSLog(@"events section");
+            [navManager goToEventsSection];
             break;
         default:
             break;
@@ -93,12 +111,12 @@ CGFloat const kLeftNavHeight = 340.0f;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        cell.backgroundColor = [UIColor clearColor];
-        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
-        cell.textLabel.textColor = [UIColor whiteColor];
+        cell                                = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.backgroundColor                = [UIColor clearColor];
+        cell.textLabel.font                 = [UIFont fontWithName:@"SourceSansPro-ExtraLight" size:21];
+        cell.textLabel.textColor            = [UIColor whiteColor];
         cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
-        cell.selectedBackgroundView = [[UIView alloc] init];
+        cell.selectedBackgroundView         = [[UIView alloc] init];
     }
     
     cell.textLabel.text = self.menuItems[indexPath.row];

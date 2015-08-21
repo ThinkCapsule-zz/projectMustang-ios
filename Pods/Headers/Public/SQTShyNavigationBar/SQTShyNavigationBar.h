@@ -1,1 +1,0 @@
-../../../SQTShyNavigationBar/Pod/SQTShyNavigationBar.h

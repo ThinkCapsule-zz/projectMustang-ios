@@ -5,6 +5,7 @@
 //  Created by Alan Hsu on 2015-04-30.
 //  Copyright (c) 2015 Alan Hsu. All rights reserved.
 //
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 #import "AppDelegate.h"
 
@@ -12,8 +13,13 @@
 #import "NavigationManager.h"
 #import "MainMenuViewController.h"
 #import "MainViewController.h"
-#import <SQTShyNavigationBar/SQTShyNavigationBar.h>
 #import <RESideMenu/RESideMenu.h>
+
+// ViewControllers
+#import "TCWalkthroughViewController.h"
+
+// Statics
+#import "SystemStatics.h"
 
 @interface AppDelegate ()
 
@@ -24,46 +30,87 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    /* Setup left hand nav */
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithNavigationBarClass:[SQTShyNavigationBar class] toolbarClass:nil];
-    MainViewController* mainVC = [[MainViewController alloc] init];
-    [navigationController setViewControllers:@[mainVC]];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    // Setup left hand nav
+    self.window                    = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen]bounds]];
+    NavigationManager* navManager  = [NavigationManager singletonInstance];
+    MainViewController* mainVC     = [[MainViewController alloc] init];
+    [navManager setViewControllers:@[mainVC]];
+
+    MainMenuViewController* menuVC = [[MainMenuViewController alloc] init];
+    RESideMenu* sideMenuVC         = [[RESideMenu alloc] initWithContentViewController:navManager
+                                                                leftMenuViewController:menuVC
+                                                               rightMenuViewController:nil];
+    // Customize menu
+    sideMenuVC.panGestureEnabled        = NO;
+    sideMenuVC.scaleBackgroundImageView = NO;
+    sideMenuVC.scaleMenuView            = NO;
+    sideMenuVC.contentViewShadowEnabled = YES;
+    sideMenuVC.backgroundImage          = [UIImage imageNamed:@"background"];
     
     
-    MainMenuViewController* menuVC               = [[MainMenuViewController alloc] init];
-    RESideMenu* sideMenuVC                       = [[RESideMenu alloc] initWithContentViewController:navigationController
-                                                                              leftMenuViewController:menuVC
-                                                                             rightMenuViewController:nil];
+    self.window.rootViewController = sideMenuVC;
 
-    self.window.rootViewController               = sideMenuVC;
 
-    return YES;
+    BOOL didFinishLaunch           = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                              didFinishLaunchingWithOptions:launchOptions];
+    
+    
+    // Check facebook token
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [navManager goToMainSection];
+    }else{
+        [navManager showLogin];
+    }
+    
+    //customize navbarcontroller
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xFFFFFF)];
+    [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0xFF5722)];
+
+    NSDictionary *attributes = @{
+                                 NSUnderlineStyleAttributeName: @1,
+                                 NSForegroundColorAttributeName : UIColorFromRGB(0x000000),
+                                 NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:17]
+                                 };
+    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
+
+
+    
+    return didFinishLaunch;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [FBSDKAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    // Saves changes in the application's managed object context before the application terminates.
+   
     [self saveContext];
 }
-
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
 #pragma mark - Core Data stack
 
 @synthesize managedObjectContext = _managedObjectContext;

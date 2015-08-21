@@ -10,4 +10,12 @@
 
 @implementation TCArticleDataModel
 
+@synthesize contentType, articleId, headline, subtitle, author, body, publishDate, thumbnails, tags;
+
+- (instancetype) init {
+    DataFetcher *fetch = [[DataFetcher alloc]init];
+    [fetch fetchWithId];
+    return self;
+}
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
+#import "NavigationManager.h"
 
 @interface MainViewController ()
 
@@ -16,35 +16,17 @@
 @implementation MainViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    
-    self.title = @"Home";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:self
-                                                                            action:@selector(presentLeftMenuViewController:)];
- 
-    // sample call
-
-    
-    CDAConfiguration* config = [CDAConfiguration defaultConfiguration];
-    config.server = @"preview.contentful.com";
-    CDAClient* client = [[CDAClient alloc] initWithSpaceKey:@"1oq1lgnwupsh" accessToken:@"ea40f4d68e1983a625ac5330daaaaee3befeda5a26dc4da674ccee3b5dec4037" configuration: config];
-    
-    [client fetchEntriesWithSuccess:^(CDAResponse *response, CDAArray *array) {
-        
-        NSArray* items = array.items;
-        
-    } failure:^(CDAResponse *response, NSError *error) {
-        NSLog(@"somethings wrong");
-    }];
-
+    CALayer *layer = self.view.layer;
+    layer.contents = (id)[UIImage imageNamed:@"main"].CGImage;
     
 }
 
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
