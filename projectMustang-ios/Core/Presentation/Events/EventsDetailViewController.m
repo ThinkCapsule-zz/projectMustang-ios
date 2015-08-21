@@ -30,7 +30,7 @@
 - (void)setupViews
 {
     self.photoImage     = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Eve"]];
-    self.locIcon        = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"locimg"]];
+    self.locIcon        = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"loc_img"]];
     self.dateIcon       = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dateimg"]];
     self.backView       = [[UIView alloc] init];
 

@@ -11,6 +11,9 @@
 
 @interface ArticlesDetailViewController : UIViewController
 
+@property (strong, nonatomic) UIScrollView *scr_view;
+@property (strong, nonatomic) UIView *upview;
+
 @property (nonatomic, strong) UILabel       *articleName;
 @property (nonatomic, strong) UILabel       *authorName;
 @property (nonatomic, strong) UILabel       *photoSource;
