@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "DataFetcher.h"
 
 @interface TCArticleFactory: NSObject
+@property (nonatomic, strong) NSMutableArray* articleArray;
+@property (nonatomic, strong) NSMutableArray* articles;
+
+-(NSMutableArray*) returnData;
 
 @end
