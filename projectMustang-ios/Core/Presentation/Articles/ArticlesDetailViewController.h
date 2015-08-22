@@ -12,8 +12,8 @@
 
 @interface ArticlesDetailViewController : UIViewController
 
-//@property (strong, nonatomic) UIScrollView *scr_view;
-//@property (strong, nonatomic) UIView *upview;
+@property (strong, nonatomic) UIScrollView *scr_view;
+@property (strong, nonatomic) UIView *upview;
 
 @property (nonatomic, strong) UILabel       *articleName;
 @property (nonatomic, strong) UILabel       *authorName;
@@ -35,7 +35,10 @@
 -(void) setupSizeConstraints;
 -(void) setupPOSConstraints;
 -(void) setupLabels;
--(void) loadData:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3 :(NSString*)txt4 :(NSString*)img;
+
 -(void) setupImage;
+
+@property (nonatomic, strong)ArticleDataModel  *dataModel;
+-(id)initWithData:(ArticleDataModel*)data;
 
 @end

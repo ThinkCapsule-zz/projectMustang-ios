@@ -63,6 +63,8 @@
                                  NSArray *thumb = temp.fields[@"thumbnails"];
                                  NSString *tags = temp.fields[@"tags"];
                                  
+                                 
+                                 
                                  ArticleDataModel *articleModel = [[ArticleDataModel alloc]initWithContentType:type andArticleId:art andHeadline:head andSubtitle:sub andAuthor:aut andBody:bod andPublishDate:date andThumbnails:thumb andTags:tags];
                                  
                                  [self.articleArray addObject:articleModel];

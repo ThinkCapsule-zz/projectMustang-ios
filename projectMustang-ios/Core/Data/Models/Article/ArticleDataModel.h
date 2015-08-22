@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
 
 @interface ArticleDataModel : NSObject
 

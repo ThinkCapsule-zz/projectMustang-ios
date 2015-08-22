@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		692200121B5ABF79009B2B8A /* ArticlesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692200111B5ABF79009B2B8A /* ArticlesDetailViewController.m */; };
 		692200151B5ABFA1009B2B8A /* BlogsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692200141B5ABFA1009B2B8A /* BlogsDetailViewController.m */; };
 		692200181B5ABFB1009B2B8A /* EventsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692200171B5ABFB1009B2B8A /* EventsDetailViewController.m */; };
 		6922001B1B5ABFC8009B2B8A /* PlacesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922001A1B5ABFC8009B2B8A /* PlacesDetailViewController.m */; };
@@ -49,6 +48,7 @@
 		CAD585801AF26F9400F77ED7 /* NavigationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD5857F1AF26F9400F77ED7 /* NavigationManager.m */; };
 		CAD585841AF2715900F77ED7 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585831AF2715900F77ED7 /* MainMenuViewController.m */; };
 		CAD585931AF2AC6A00F77ED7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD585921AF2AC6A00F77ED7 /* BaseViewController.m */; };
+		EB523F091B890F3E00F3C727 /* ArticlesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB523F081B890F3E00F3C727 /* ArticlesDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,6 @@
 /* Begin PBXFileReference section */
 		1075B1093CE1BFBDF7FD3D0F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		692200101B5ABF79009B2B8A /* ArticlesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesDetailViewController.h; sourceTree = "<group>"; };
-		692200111B5ABF79009B2B8A /* ArticlesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesDetailViewController.m; sourceTree = "<group>"; };
 		692200131B5ABFA1009B2B8A /* BlogsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogsDetailViewController.h; sourceTree = "<group>"; };
 		692200141B5ABFA1009B2B8A /* BlogsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogsDetailViewController.m; sourceTree = "<group>"; };
 		692200161B5ABFB1009B2B8A /* EventsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsDetailViewController.h; sourceTree = "<group>"; };
@@ -141,6 +140,7 @@
 		CAD585921AF2AC6A00F77ED7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		D2F91D294DF9F5DAC8DA3998 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79FF135A583509834B12298 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EB523F081B890F3E00F3C727 /* ArticlesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,7 +260,7 @@
 				6922086C1B4B3C300045C279 /* ArticleCell.h */,
 				6922086D1B4B3C300045C279 /* ArticleCell.m */,
 				692200101B5ABF79009B2B8A /* ArticlesDetailViewController.h */,
-				692200111B5ABF79009B2B8A /* ArticlesDetailViewController.m */,
+				EB523F081B890F3E00F3C727 /* ArticlesDetailViewController.m */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -638,6 +638,7 @@
 			files = (
 				69E43DB01B6565390003C244 /* TCArticleFactory.m in Sources */,
 				B6379F311B1A60A2005C0ADA /* DataFetcher.m in Sources */,
+				EB523F091B890F3E00F3C727 /* ArticlesDetailViewController.m in Sources */,
 				CAD5854A1AF26A5100F77ED7 /* main.m in Sources */,
 				CA5E2E361B3207A2004A9AE0 /* BlogSectionViewController.m in Sources */,
 				B6379F4A1B1D5A68005C0ADA /* TCVideoDataModel.m in Sources */,
@@ -648,7 +649,6 @@
 				6922086B1B4B3C220045C279 /* BlogCell.m in Sources */,
 				B6589A601B33B45800B3754F /* SystemStatics.m in Sources */,
 				CAD585931AF2AC6A00F77ED7 /* BaseViewController.m in Sources */,
-				692200121B5ABF79009B2B8A /* ArticlesDetailViewController.m in Sources */,
 				692200181B5ABFB1009B2B8A /* EventsDetailViewController.m in Sources */,
 				692208681B4B3C0C0045C279 /* EventsCell.m in Sources */,
 				CA6335231AFAAC9D009DC83A /* ConfigManager.m in Sources */,

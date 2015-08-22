@@ -20,194 +20,77 @@
     // Do any additional setup after loading the view.
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.view.backgroundColor = [UIColor whiteColor];
-    //self.scr_view = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    //[self.scr_view addSubview: self.upview];
+    self.scr_view = [[UIScrollView alloc] initWithFrame:self.view.frame];
+   // self.upview = [[UIView alloc] initWithFrame:self.scr_view.frame];
     
+    [self.view addSubview: self.scr_view];
+
+    [self setupViews];
+    [self setupLabels];
+    [self setupImage];
+    
+    [self.scr_view setContentSize:CGSizeMake(self.view.frame.size.width, self.articleName.frame.size.height+self.authorName.frame.size.height+self.artImage.frame.size.height+self.photoSource.frame.size.height+self.article.frame.size.height)];
     //TCArticleDataModel *article = [[TCArticleDataModel alloc]init];
 }
 
+-(id)initWithData:(ArticleDataModel *)data{
+    self = [super init];
+    if(self){
+        self.dataModel = data;
+    }
+    return self;
+}
 
 #pragma AutoLayout Positioning Methods
 
 - (void)setupViews
 {
-    self.articleName                = [UILabel new];
-    self.articleName.text           = self.articleNameStr;
+    self.articleName                = [[UILabel alloc]initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, 36.0)];
+    self.articleName.text           = [NSString stringWithFormat:@"%@", self.dataModel.headline];
     
-    NSString *hihi  = [NSString stringWithFormat:@"By %@", self.authNameStr];
-    self.by         = [[NSMutableAttributedString alloc] initWithString:hihi];
+    NSString *attr_str  = [NSString stringWithFormat:@"By %@", [NSString stringWithFormat:@"%@", self.dataModel.author]];
+    self.by         = [[NSMutableAttributedString alloc] initWithString:attr_str];
     [self.by addAttribute:NSForegroundColorAttributeName
                     value:UIColorFromRGB(0xFF5722)
-                    range:[hihi rangeOfString:self.authNameStr]];
+                    range:[attr_str rangeOfString:self.dataModel.author]];
     [self.by addAttribute:NSForegroundColorAttributeName
                     value:UIColorFromRGB(0x7f8c8d)
                     range:NSMakeRange(0,2)];
     
-    self.authorName                 = [[UILabel alloc] init];
+    self.authorName                 = [[UILabel alloc] initWithFrame:CGRectMake(0.0, self.articleName.frame.origin.y+36.0, self.view.frame.size.width, 36.0)];
     self.authorName.attributedText  = self.by;
     
-    self.photoSource                = [[UILabel alloc] init];
-    self.photoSource.text           = self.photoSourceStr;
+    CDAAsset *asset = self.dataModel.thumbnails[0];
+    UIImage *pic = [UIImage imageWithData:[NSData dataWithContentsOfURL:asset.URL]];
     
-    self.article                    = [[UITextView alloc] init];
-    self.article.text               = self.articleStr;
+    self.artImage = [[UIImageView alloc] initWithImage:pic];
+    [self.artImage setFrame:CGRectMake(0.0, self.authorName.frame.origin.y+36.0, self.view.frame.size.width, 190.0)];
+
+    self.photoSource                = [[UILabel alloc] initWithFrame:CGRectMake(0.0, self.artImage.frame.origin.y+190.0, self.view.frame.size.width, 36.0)];
+    self.photoSource.text           = [NSString stringWithFormat:@"%@", self.dataModel.subtitle];
     
-    self.artImage                   = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.photoStr]];
+    self.article                    = [[UITextView alloc] initWithFrame:CGRectMake(0.0, self.photoSource.frame.origin.y+36, self.view.frame.size.width, 1000)];
+    self.article.text               = [NSString stringWithFormat:@"%@", self.dataModel.body];
     
+    /*
     [self.articleName   setTranslatesAutoresizingMaskIntoConstraints: NO];
     [self.authorName    setTranslatesAutoresizingMaskIntoConstraints: NO];
     [self.photoSource   setTranslatesAutoresizingMaskIntoConstraints: NO];
     [self.article       setTranslatesAutoresizingMaskIntoConstraints: NO];
     [self.artImage      setTranslatesAutoresizingMaskIntoConstraints: NO];
-    /*
+    
     [self.upview addSubview:self.articleName];
     [self.upview addSubview:self.authorName];
     [self.upview addSubview:self.photoSource];
     [self.upview addSubview:self.article];
     [self.upview addSubview:self.artImage];
     */
-    [self.view addSubview:self.articleName];
-    [self.view addSubview:self.authorName];
-    [self.view addSubview:self.photoSource];
-    [self.view addSubview:self.article];
-    [self.view addSubview:self.artImage];
+    [self.scr_view addSubview:self.articleName];
+    [self.scr_view addSubview:self.authorName];
+    [self.scr_view addSubview:self.photoSource];
+    [self.scr_view addSubview:self.article];
+    [self.scr_view addSubview:self.artImage];
     
-}
-
--(void) setupSpacing
-{
-    self.viewsDictionary = @{@"articleName": self.articleName,
-                             @"authorName": self.authorName,
-                             @"photoSource": self.photoSource,
-                             @"article": self.article,
-                             @"artImage": self.artImage};
-    
-    self.metrics = @{@"vSpacing":@70,
-                     @"hSpacing1":@1,
-                     @"hSpacing2":@13,
-                     @"artNameSize":@36};
-    
-    NSArray *constraint_POS_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-vSpacing-[articleName(artNameSize)]-|"
-                                                                        options:0
-                                                                        metrics:self.metrics
-                                                                          views:self.viewsDictionary];
-    
-    NSArray *constraint_POS_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[articleName]-hSpacing2-|"
-                                                                        options:0
-                                                                        metrics:self.metrics
-                                                                          views:self.viewsDictionary];
-    NSArray *constraint_POS_H1 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[authorName]-hSpacing2-|"
-                                                                         options:0
-                                                                         metrics:self.metrics
-                                                                           views:self.viewsDictionary];
-    NSArray *constraint_POS_H2 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[photoSource]-hSpacing2-|"
-                                                                         options:0
-                                                                         metrics:self.metrics
-                                                                           views:self.viewsDictionary];
-    NSArray *constraint_POS_H3 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[article]-hSpacing2-|"
-                                                                         options:0
-                                                                         metrics:self.metrics
-                                                                           views:self.viewsDictionary];
-    NSArray *constraint_POS_H4 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing1-[artImage]-hSpacing1-|"
-                                                                         options:0
-                                                                         metrics:self.metrics
-                                                                           views:self.viewsDictionary];
-    /*[self.upview addConstraints:constraint_POS_V];
-    [self.upview addConstraints:constraint_POS_H];
-    [self.upview addConstraints:constraint_POS_H1];
-    [self.upview addConstraints:constraint_POS_H2];
-    [self.upview addConstraints:constraint_POS_H3];
-    [self.upview addConstraints:constraint_POS_H4];
-    */
-    [self.view addConstraints:constraint_POS_V];
-    [self.view addConstraints:constraint_POS_H];
-    [self.view addConstraints:constraint_POS_H1];
-    [self.view addConstraints:constraint_POS_H2];
-    [self.view addConstraints:constraint_POS_H3];
-    [self.view addConstraints:constraint_POS_H4];
-    
-}
-
--(void) setupSizeConstraints
-{
-    //author name
-    
-    [self.view addConstraint:[NSLayoutConstraint
-                              constraintWithItem:self.authorName
-                              attribute:NSLayoutAttributeHeight
-                              relatedBy:NSLayoutRelationEqual
-                              toItem:self.articleName
-                              attribute:NSLayoutAttributeHeight
-                              multiplier:0.6
-                              constant:1.0]];
-    //article Image
-    
-    [self.view addConstraint:[NSLayoutConstraint
-                              constraintWithItem:self.artImage
-                              attribute:NSLayoutAttributeHeight
-                              relatedBy:NSLayoutRelationEqual
-                              toItem:self.view
-                              attribute:NSLayoutAttributeHeight
-                              multiplier:0.33
-                              constant:0.0]];
-    //PhotoSource
-    
-    [self.view addConstraint:[NSLayoutConstraint
-                              constraintWithItem:self.photoSource
-                              attribute:NSLayoutAttributeHeight
-                              relatedBy:NSLayoutRelationEqual
-                              toItem:self.articleName
-                              attribute:NSLayoutAttributeHeight
-                              multiplier:0.5
-                              constant:0.0]];
-}
-
--(void) setupPOSConstraints
-{
-    //author name
-    
-    [self.view addConstraint:[NSLayoutConstraint
-                              constraintWithItem:self.authorName
-                              attribute:NSLayoutAttributeTop
-                              relatedBy:NSLayoutRelationEqual
-                              toItem:self.articleName
-                              attribute:NSLayoutAttributeBottom
-                              multiplier:1.0
-                              constant:0.0]];
-    
-    //article Image
-    
-    [self.view addConstraint:[NSLayoutConstraint
-                              constraintWithItem:self.artImage
-                              attribute:NSLayoutAttributeTop
-                              relatedBy:NSLayoutRelationEqual
-                              toItem:self.authorName
-                              attribute:NSLayoutAttributeBottom
-                              multiplier:1.0
-                              constant:5.0]];
-    
-    //PhotoSource
-    
-    [self.view addConstraint:[NSLayoutConstraint
-                              constraintWithItem:self.photoSource
-                              attribute:NSLayoutAttributeTop
-                              relatedBy:NSLayoutRelationEqual
-                              toItem:self.artImage
-                              attribute:NSLayoutAttributeBottom
-                              multiplier:1.0
-                              constant:0.0]];
-    //article
-    
-    [self.view addConstraint:[NSLayoutConstraint
-                              constraintWithItem:self.article
-                              attribute:NSLayoutAttributeTop
-                              relatedBy:NSLayoutRelationEqual
-                              toItem:self.photoSource
-                              attribute:NSLayoutAttributeBottom
-                              multiplier:1.0
-                              constant:13.0]];
-    
-    //self.scr_view.contentSize    =  CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
 }
 
 
@@ -241,23 +124,6 @@
 {
     self.artImage.contentMode     = UIViewContentModeScaleAspectFill;
     self.artImage.clipsToBounds   = YES;
-}
-
-- (void) loadData:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3 :(NSString*)txt4 :(NSString*)img
-{
-    self.articleNameStr = txt;
-    self.authNameStr    = txt2;
-    self.photoSourceStr = txt3;
-    self.articleStr     = txt4;
-    self.photoStr       = img;
-    
-    [self setupViews];
-    [self setupSpacing];
-    [self setupLabels];
-
-    [self setupSizeConstraints];
-    [self setupPOSConstraints];
-    [self setupImage];
 }
 
 - (void)didReceiveMemoryWarning {
