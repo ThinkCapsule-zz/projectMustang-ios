@@ -3,16 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "retina4_Fotor.png"
+      "filename" : "retinanun.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "2x_Fotor.jpeg"
+      "filename" : "2xlaunchnun.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "kapnun.png"
     }
   ],
   "info" : {

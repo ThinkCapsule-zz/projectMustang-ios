@@ -20,6 +20,12 @@
     [super viewDidLoad];
     self.title                  = @"Articles";
     self.view                   = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIBarButtonItem *newBackButton =
+    [[UIBarButtonItem alloc] initWithTitle:@""
+                                     style:UIBarButtonItemStylePlain
+                                    target:nil
+                                    action:nil];
+    [[self navigationItem] setBackBarButtonItem:newBackButton];
     [self loadPictures];
     [self loadCollectionView];
     
@@ -86,7 +92,7 @@
     [detVC loadData:[NSString stringWithFormat:@"Article %ld", (long)indexPath.item]
                    :[NSString stringWithFormat:@"Western Mustang"]
                    :[NSString stringWithFormat:@"photo by xxxxx"]
-                   :[NSString stringWithFormat:@" SO like something something fets cheese and gross stuff but like yeah and wine and chocolate but like also this and that and things and stuff. so like how could he!!!! couldn't freaking believe this. shouldn't I just not do this ever and stuff but liek typing is loud and annoying people is my FORTE @&&@ fbajfb ahihihihi justin timerlake. turtle remixes like trippy turtle. turtles have hard shells and shit. they get old and stuff, like I'm tlaking ancientttt. but not really ancient because that would be a lot older than what they actually live until. 'what do yo think?' 'I LIKE TURTLES!'"]
+                   :[NSString stringWithFormat:@"SO like something something fets cheese and gross stuff but like yeah and wine and chocolate but like also this and that and things and stuff. so like how could he!!!! couldn't freaking believe this. shouldn't I just not do this ever and stuff but liek typing is loud and annoying people is my FORTE @&&@ fbajfb ahihihihi justin timerlake. turtle remixes like trippy turtle. turtles have hard shells and shit. they get old and stuff, like I'm tlaking ancientttt. but not really ancient because that would be a lot older than what they actually live until. 'what do yo think?' 'I LIKE TURTLES!'ajhahahahhahahahahahahahahahahhahahahahahahahahahahahahahhahahahahahahahhahahahahahhahahhahahahahhahahahahhahahahahahhahaha'what do yo think?' 'I LIKE TURTLES!'ajhahahahhahahahahahahahahahahhahahahahahahahahahahahahahhahahahahahahahhahahahahahhahahhahahahahhahahahahhahahahahahhahaha'what do yo think?' 'I LIKE TURTLES!'ajhahahahhahahahahahahahahahahhahahahahahahahahahahahahahhahahahahahahahhahahahahahhahahhahahahahhahahahahhahahahahahhahaha'what do yo think?' 'I LIKE TURTLES!'ajhahahahhahahahahahahahahahahhahahahahahahahahahahahahahhahahahahahahahhahahahahahhahahhahahahahhahahahahhahahahahahhahaha'what do yo think?' 'I LIKE TURTLES!'ajhahahahhahahahahahahahahahahhahahahahahahahahahahahahahhahahahahahahahhahahahahahhahahhahahahahhahahahahhahahahahahhahaha'what do yo think?' 'I LIKE TURTLES!'ajhahahahhahahahahahahahahahahhahahahahahahahahahahahahahhahahahahahahahhahahahahahhahahhahahahahhahahahahhahahahahahhahaha'what do yo think?' 'I LIKE TURTLES!'ajhahahahhahahahahahahahahahahhahahahahahahahahahahahahahhahahahahahahahhahahahahahhahahhahahahahhahahahahhahahahahahhahaha'what do yo think?' 'I LIKE TURTLES!'ajhahahahhahahahahahahahahahahhahahahahahahahahahahahahahhahahahahahahahhahahahahahhahahhahahahahhahahahahhahahahahahhahaha'what do yo think?' 'I LIKE TURTLES!'ajhahahahhahahahahahahahahahahhahahahahahahahahahahahahahhahahahahahahahhahahahahahhahahhahahahahhahahahahhahahahahahhahaha'what do yo think?' 'I LIKE TURTLES!'ajhahahahhahahahahahahahahahahhahahahahahahahahahahahahahhahahahahahahahhahahahahahhahahhahahahahhahahahahhahahahahahhahaha'what do yo think?' 'I LIKE TURTLES!'ajhahahahhahahahahahahahahahahhahahahahahahahahahahahahahhahahahahahahahhahahahahahhahahhahahahahhahahahahhahahahahahhahaha'what do yo think?' 'I LIKE TURTLES!'ajhahahahhahahahahahahahahahahhahahahahahahahahahahahahahhahahahahahahahhahahahahahhahahhahahahahhahahahahhahahahahahhahaha'what do yo think?' 'I LIKE TURTLES!'ajhahahahhahahahahahahahahahahhahahahahahahahahahahahahahhahahahahahahahhahahahahahhahahhahahahahhahahahahhahahahahahhahaha'what do yo think?' 'I LIKE TURTLES!'ajhahahahhahahahahahahahahahahhahahahahahahahahahahahahahhahahahahahahahhahahahahahhahahhahahahahhahahahahhahahahahahhahaha"]
                    :[self.articleArray objectAtIndex:indexPath.row]];
 }
 

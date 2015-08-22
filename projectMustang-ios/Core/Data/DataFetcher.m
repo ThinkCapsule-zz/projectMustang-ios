@@ -11,6 +11,7 @@
 
 @implementation DataFetcher
 
+
 - (instancetype)init {
     
     self = [super init];
@@ -38,18 +39,52 @@
     return singleton;
 }
 
-- (void) fetchWithId{
+#pragma mark -
+#pragma mark Fetch Methods
+
+- (void) fetchWithId:(myCompletionBlock)completionBlock{
     CDAClient *client = [DataFetcher singletonInstance].fetchClient;
+    
     [client fetchEntriesMatching:@{ @"content_type": @"1or7CAktokKiIUogkmU8O4"}
                          success:^(CDAResponse *response, CDAArray *entries){
                              self.array = entries.items;
-                             CDAEntry *temp = [self.array firstObject];
-                             NSString *temp2 = temp.fields[@"articleId"];
-                             //NSLog(@"%@", self.array);
+                             NSMutableArray *array = [[NSMutableArray alloc]initWithArray:self.array];
+                             
+                             self.articleArray = [[NSMutableArray alloc]init];
+                             for (int i = 0; i < array.count; i++){
+                                 CDAEntry *temp = [array objectAtIndex:i];
+                                 NSString *type = temp.fields[@"contentType"];
+                                 NSString *art = temp.fields[@"articleId"];
+                                 NSString *head = temp.fields[@"headline"];
+                                 NSString *sub = temp.fields[@"subtitle"];
+                                 NSString *aut = temp.fields[@"author"];
+                                 NSString *bod = temp.fields[@"body"];
+                                 NSDate *date = temp.fields[@"publishDate"];
+                                 NSArray *thumb = temp.fields[@"thumbnails"];
+                                 NSString *tags = temp.fields[@"tags"];
+                                 
+                                 ArticleDataModel *articleModel = [[ArticleDataModel alloc]initWithContentType:type andArticleId:art andHeadline:head andSubtitle:sub andAuthor:aut andBody:bod andPublishDate:date andThumbnails:thumb andTags:tags];
+                                 
+                                 [self.articleArray addObject:articleModel];
+                            
+                             }
+                             
+                             NSMutableArray *temp = [self.articleArray objectAtIndex:0];
+                             if (!temp) {
+                                 completionBlock(NO, nil, nil);
+                             }else{
+                                 completionBlock(YES, self.articleArray, nil);
+                             }
+                             
                          }
                          failure:^(CDAResponse *response, NSError *error){
                              NSLog(@"%@", error);
-                         }];
+                             completionBlock(NO, nil, error);
+                         }
+     ];
+    
 }
+
+
 
 @end

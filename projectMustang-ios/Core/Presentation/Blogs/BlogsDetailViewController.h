@@ -18,9 +18,19 @@
 @property (nonatomic) NSDictionary  *viewsDictionary;
 @property (nonatomic) NSDictionary  *metrics;
 
+@property (nonatomic, strong) NSString *blogPostNameStr;
+@property (nonatomic, strong) NSString *authNameStr;
+@property (nonatomic, strong) NSString *photoSourceStr;
+@property (nonatomic, strong) NSString *blogPostStr;
+@property (nonatomic, strong) NSString *photoStr;
+@property (nonatomic, strong) NSMutableAttributedString *by;
+
 -(void)setupViews;
 -(void) setupHorizontalSpacing;
 -(void) setupSizeConstraints;
 -(void) setupPOSConstraints;
+-(void) setupImage;
+-(void) setupLabels;
+-(void) loadData:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3 :(NSString*)txt4 :(NSString*)img;
 
 @end
