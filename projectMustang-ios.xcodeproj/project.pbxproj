@@ -498,9 +498,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CAD585431AF26A5100F77ED7 /* projectMustang-ios */ = {
+		CAD585431AF26A5100F77ED7 /* Kapacino */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CAD5856A1AF26A5100F77ED7 /* Build configuration list for PBXNativeTarget "projectMustang-ios" */;
+			buildConfigurationList = CAD5856A1AF26A5100F77ED7 /* Build configuration list for PBXNativeTarget "Kapacino" */;
 			buildPhases = (
 				853A5633C24D2E8BEE651AC1 /* Check Pods Manifest.lock */,
 				CAD585401AF26A5100F77ED7 /* Sources */,
@@ -512,14 +512,14 @@
 			);
 			dependencies = (
 			);
-			name = "projectMustang-ios";
+			name = Kapacino;
 			productName = "projectMustang-ios";
 			productReference = CAD585441AF26A5100F77ED7 /* projectMustang-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CAD5855F1AF26A5100F77ED7 /* projectMustang-iosTests */ = {
+		CAD5855F1AF26A5100F77ED7 /* KapacinoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CAD5856D1AF26A5100F77ED7 /* Build configuration list for PBXNativeTarget "projectMustang-iosTests" */;
+			buildConfigurationList = CAD5856D1AF26A5100F77ED7 /* Build configuration list for PBXNativeTarget "KapacinoTests" */;
 			buildPhases = (
 				CAD5855C1AF26A5100F77ED7 /* Sources */,
 				CAD5855D1AF26A5100F77ED7 /* Frameworks */,
@@ -530,7 +530,7 @@
 			dependencies = (
 				CAD585621AF26A5100F77ED7 /* PBXTargetDependency */,
 			);
-			name = "projectMustang-iosTests";
+			name = KapacinoTests;
 			productName = "projectMustang-iosTests";
 			productReference = CAD585601AF26A5100F77ED7 /* projectMustang-iosTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -567,8 +567,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CAD585431AF26A5100F77ED7 /* projectMustang-ios */,
-				CAD5855F1AF26A5100F77ED7 /* projectMustang-iosTests */,
+				CAD585431AF26A5100F77ED7 /* Kapacino */,
+				CAD5855F1AF26A5100F77ED7 /* KapacinoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -684,7 +684,7 @@
 /* Begin PBXTargetDependency section */
 		CAD585621AF26A5100F77ED7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CAD585431AF26A5100F77ED7 /* projectMustang-ios */;
+			target = CAD585431AF26A5100F77ED7 /* Kapacino */;
 			targetProxy = CAD585611AF26A5100F77ED7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -865,7 +865,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CAD5856A1AF26A5100F77ED7 /* Build configuration list for PBXNativeTarget "projectMustang-ios" */ = {
+		CAD5856A1AF26A5100F77ED7 /* Build configuration list for PBXNativeTarget "Kapacino" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CAD5856B1AF26A5100F77ED7 /* Debug */,
@@ -874,7 +874,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CAD5856D1AF26A5100F77ED7 /* Build configuration list for PBXNativeTarget "projectMustang-iosTests" */ = {
+		CAD5856D1AF26A5100F77ED7 /* Build configuration list for PBXNativeTarget "KapacinoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CAD5856E1AF26A5100F77ED7 /* Debug */,

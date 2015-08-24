@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CAD585431AF26A5100F77ED7"
-               BuildableName = "projectMustang-ios.app"
-               BlueprintName = "projectMustang-ios"
+               BuildableName = "Kapacino.app"
+               BlueprintName = "Kapacino"
                ReferencedContainer = "container:projectMustang-ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CAD5855F1AF26A5100F77ED7"
-               BuildableName = "projectMustang-iosTests.xctest"
-               BlueprintName = "projectMustang-iosTests"
+               BuildableName = "KapacinoTests.xctest"
+               BlueprintName = "KapacinoTests"
                ReferencedContainer = "container:projectMustang-ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CAD5855F1AF26A5100F77ED7"
-               BuildableName = "projectMustang-iosTests.xctest"
-               BlueprintName = "projectMustang-iosTests"
+               BuildableName = "KapacinoTests.xctest"
+               BlueprintName = "KapacinoTests"
                ReferencedContainer = "container:projectMustang-ios.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAD585431AF26A5100F77ED7"
-            BuildableName = "projectMustang-ios.app"
-            BlueprintName = "projectMustang-ios"
+            BuildableName = "Kapacino.app"
+            BlueprintName = "Kapacino"
             ReferencedContainer = "container:projectMustang-ios.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,8 +77,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAD585431AF26A5100F77ED7"
-            BuildableName = "projectMustang-ios.app"
-            BlueprintName = "projectMustang-ios"
+            BuildableName = "Kapacino.app"
+            BlueprintName = "Kapacino"
             ReferencedContainer = "container:projectMustang-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -96,8 +96,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAD585431AF26A5100F77ED7"
-            BuildableName = "projectMustang-ios.app"
-            BlueprintName = "projectMustang-ios"
+            BuildableName = "Kapacino.app"
+            BlueprintName = "Kapacino"
             ReferencedContainer = "container:projectMustang-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
