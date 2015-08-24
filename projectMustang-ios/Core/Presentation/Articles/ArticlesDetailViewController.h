@@ -13,30 +13,21 @@
 @interface ArticlesDetailViewController : UIViewController
 
 @property (strong, nonatomic) UIScrollView *scr_view;
-@property (strong, nonatomic) UIView *upview;
-
-@property (nonatomic, strong) UILabel       *articleName;
+@property (nonatomic, strong) UITextView    *articleName;
 @property (nonatomic, strong) UILabel       *authorName;
-@property (nonatomic, strong) UILabel       *photoSource;
+@property (nonatomic, strong) UITextView    *article_description;
 @property (nonatomic, strong) UITextView    *article;
 @property (nonatomic, strong) UIImageView   *artImage;
 @property (nonatomic, strong) NSDictionary  *viewsDictionary;
 @property (nonatomic, strong) NSDictionary  *metrics;
 
-@property (nonatomic, strong) NSString *articleNameStr;
-@property (nonatomic, strong) NSString *authNameStr;
-@property (nonatomic, strong) NSString *photoSourceStr;
-@property (nonatomic, strong) NSString *articleStr;
 @property (nonatomic, strong) NSString *photoStr;
 @property (nonatomic, strong) NSMutableAttributedString *by;
 
--(void) setupViews;
--(void) setupSpacing;
--(void) setupSizeConstraints;
--(void) setupPOSConstraints;
--(void) setupLabels;
-
--(void) setupImage;
+-(void) setupTextViews;
+-(void) setupImageViews;
+-(void) adjustAttributes;
+-(void) adjustContentSizes;
 
 @property (nonatomic, strong)ArticleDataModel  *dataModel;
 -(id)initWithData:(ArticleDataModel*)data;

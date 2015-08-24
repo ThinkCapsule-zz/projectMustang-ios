@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ArticleDataModel.h"
 @interface ArticleCell : UICollectionViewCell
 
 @property (strong, nonatomic) UILabel *titleLabel;
@@ -15,12 +15,13 @@
 @property (strong, nonatomic) UILabel *authLabel;
 @property (strong, nonatomic) UIImageView *photoImageView;
 @property (strong, nonatomic) UIView *overView;
--(void) loadImages:(NSString*)img;
--(void) loadLabels:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3;
-//- (void)prepareForReuse;
+-(void) loadImages;
 -(void) setupImages;
 -(void) setupLabels;
 -(void) setupPicOverlay;
+-(void) addBrLine;
 
+@property (nonatomic, strong)ArticleDataModel  *dataModel;
+-(void)initWithData:(ArticleDataModel*)data;
 
 @end

@@ -19,16 +19,26 @@
         self.backgroundColor    = [UIColor colorWithWhite:1.0 alpha:0.6];
         [self setupImages];
         [self setupPicOverlay];
-        [self setupLabels];
     }
     return self;
+}
+
+-(void)initWithData:(ArticleDataModel *)data
+{
+    if(self)
+    {
+        self.dataModel = data;
+        [self setupLabels];
+        [self loadImages];
+        [self addBrLine];
+    }
 }
 
 -(void) setupImages
 {
     self.photoImageView                 = [[UIImageView alloc] init];
     self.photoImageView.frame           = CGRectMake(self.photoImageView.frame.origin.x, self.photoImageView.frame.origin.y, self.frame.size.width, 190);
-    self.photoImageView.contentMode     = UIViewContentModeScaleAspectFill; // This determines how the image fills the view
+    self.photoImageView.contentMode     = UIViewContentModeScaleAspectFill;
     self.photoImageView.clipsToBounds   = YES;
     [self.photoImageView setAlpha:0.7];
     [self addSubview:self.photoImageView];
@@ -53,21 +63,36 @@
     self.titleLabel.textAlignment   = NSTextAlignmentLeft;
     self.titleLabel.font            = [UIFont fontWithName:@"AvenirNextCondensed-Bold" size:25 ];
     self.titleLabel.textColor       = [UIColor whiteColor];
+    //    self.titleLabel.editable        = NO;
+    //    self.titleLabel.scrollEnabled   = NO;
+    self.titleLabel.text            = self.dataModel.headline;
     
     self.descLabel                  = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 135, self.frame.size.width-15, 30)];
     self.descLabel.textAlignment    = NSTextAlignmentLeft;
     self.descLabel.font             = [UIFont fontWithName:@"AvenirNext-Regular" size:14];
     self.descLabel.textColor        = [UIColor whiteColor];
-
+    self.descLabel.text             = self.dataModel.subtitle;
+    
     self.authLabel                  = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 160, self.frame.size.width-15, 20.0)];
     self.authLabel.textAlignment    = NSTextAlignmentLeft;
     self.authLabel.font             = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:11.5 ];
     self.authLabel.textColor        = [UIColor whiteColor];
+    NSString *uppercasetxt      = [self.dataModel.author uppercaseString];
+    self.authLabel.text         = uppercasetxt;
     
     [self addSubview:self.titleLabel];
     [self addSubview:self.descLabel];
     [self addSubview:self.authLabel];
-    
+}
+
+- (void) loadImages
+{
+    UIImage     *image          = [UIImage imageNamed:[NSString stringWithFormat:@"alchii"]];
+    self.photoImageView.image   = image;
+}
+
+-(void) addBrLine
+{
     CGRect rect                     = self.descLabel.frame;
     UIBezierPath *linePath          = [UIBezierPath bezierPath];
     [linePath moveToPoint:CGPointMake(0, 0)];
@@ -80,30 +105,5 @@
     
     [self.descLabel.layer addSublayer:lineLayer];
 }
-
-- (void) loadImages:(NSString*)img
-{
-    UIImage     *image          = [UIImage imageNamed:[NSString stringWithFormat:@"%@", img]];
-    self.photoImageView.image   = image;
-}
-
-- (void) loadLabels:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3
-{
-    self.titleLabel.text        = txt;
-    self.descLabel.text         = txt2;
-    NSString *uppercasetxt      = [txt3 uppercaseString];
-    self.authLabel.text         = uppercasetxt;
-}
-/*
-- (void)prepareForReuse {           // ****** Do I even need this?  **********
-    [super prepareForReuse];
-    for(UIView *subview in [self.contentView subviews]) {
-        [self.label removeFromSuperview];
-        [self.photoImageView];
-        if([subview isKindOfClass:[UILabel class]]){
-            [subview removeFromSuperview];
-        }
-    }
-}*/
 
 @end

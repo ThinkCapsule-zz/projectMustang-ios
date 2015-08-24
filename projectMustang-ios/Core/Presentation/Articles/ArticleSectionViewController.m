@@ -91,11 +91,7 @@
 {
     ArticleDataModel *model = self.gatherData[indexPath.row];
     ArticleCell *cell   = (ArticleCell*)[self.articleCollectionView dequeueReusableCellWithReuseIdentifier:@"FlickrCell" forIndexPath:indexPath];
-    // [cell   prepareForReuse];             ******   Do I even need this?    *********
-    [cell loadImages:[self.articleArray objectAtIndex:indexPath.row]];
-    [cell loadLabels: [NSString stringWithFormat:@"%@", model.headline]
-                    : [NSString stringWithFormat:@"%@", model.subtitle]
-                    : [NSString stringWithFormat:@"%@", model.author]];
+    [cell initWithData:model];
     return cell;
 }
 
@@ -110,12 +106,6 @@
     ArticleDataModel *model = self.gatherData[indexPath.row];
     ArticlesDetailViewController *detVC = [[ArticlesDetailViewController alloc] initWithData:model];
     [self.navigationController pushViewController:detVC animated:YES];
-    
-//    [detVC loadData:[NSString stringWithFormat:@"%@", model.headline]
-//                   :[NSString stringWithFormat:@"%@", model.author]
-//                   :[NSString stringWithFormat:@"%@", model.subtitle]
-//                   :[NSString stringWithFormat:@"%@", model.body]
-//                   :[self.articleArray objectAtIndex:indexPath.row]];
 }
 
 @end
