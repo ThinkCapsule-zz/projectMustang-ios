@@ -10,6 +10,7 @@
 
 @interface BlogsDetailViewController : UIViewController
 
+@property (nonatomic,strong) UIScrollView  *scr_view;
 @property (nonatomic) UILabel       *blogPostName;
 @property (nonatomic) UILabel       *authorName;
 @property (nonatomic) UILabel       *photoSource;

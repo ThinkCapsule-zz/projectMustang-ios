@@ -10,6 +10,7 @@
 
 @interface EventsDetailViewController : UIViewController
 
+@property (nonatomic,strong) UIScrollView  *scr_view;
 @property (nonatomic) UIImageView   *photoImage;
 @property (nonatomic) UIImageView   *locIcon;
 @property (nonatomic) UIImageView   *dateIcon;

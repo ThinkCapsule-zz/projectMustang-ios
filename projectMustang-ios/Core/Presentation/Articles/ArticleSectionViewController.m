@@ -18,9 +18,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
-        self.edgesForExtendedLayout = UIRectEdgeBottom;
-    self.title                  = @"Articles";
+//    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+//        self.edgesForExtendedLayout = UIRectEdgeBottom;
     self.view                   = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIBarButtonItem *newBackButton =
     [[UIBarButtonItem alloc] initWithTitle:@""
@@ -62,7 +61,7 @@
     
     [self.articleCollectionView registerClass:[ArticleCell class] forCellWithReuseIdentifier:@"FlickrCell"];
     
-    [self.articleCollectionView setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.4]];
+    [self.articleCollectionView setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:1.0]];
     self.articleCollectionView.alwaysBounceVertical  = YES;
     [self.view addSubview:self.articleCollectionView];
 }

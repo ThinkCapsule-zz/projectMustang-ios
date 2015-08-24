@@ -16,7 +16,6 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.title          = @"Blogs";
     self.view           = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIBarButtonItem *newBackButton =
     [[UIBarButtonItem alloc] initWithTitle:@""
@@ -39,7 +38,7 @@
     
     [self.blogCollectionView registerClass:[BlogCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     
-    self.blogCollectionView.backgroundColor          = [UIColor colorWithWhite:1.0 alpha:0.4];
+    self.blogCollectionView.backgroundColor          = [UIColor colorWithWhite:1.0 alpha:1.0];
     self.blogCollectionView.alwaysBounceVertical     = YES;
     
     [self.view addSubview:self.blogCollectionView];

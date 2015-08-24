@@ -39,7 +39,7 @@
     [self.eventsCollectionView setDelegate:self];
     
     [self.eventsCollectionView registerClass:[EventsCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
-    self.eventsCollectionView.backgroundColor        = [UIColor colorWithWhite:1.0 alpha:0.4];
+    self.eventsCollectionView.backgroundColor        = [UIColor colorWithWhite:1.0 alpha:1.0];
     self.eventsCollectionView.alwaysBounceVertical   = YES;
     
     
