@@ -10,7 +10,7 @@
 #import "ArticleDataModel.h"
 @interface ArticleCell : UICollectionViewCell
 
-@property (strong, nonatomic) UILabel *titleLabel;
+@property (strong, nonatomic) UITextView *titleLabel;
 @property (strong, nonatomic) UILabel *descLabel;
 @property (strong, nonatomic) UILabel *authLabel;
 @property (strong, nonatomic) UIImageView *photoImageView;

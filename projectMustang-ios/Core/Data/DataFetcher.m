@@ -51,23 +51,26 @@
                              NSMutableArray *array = [[NSMutableArray alloc]initWithArray:self.array];
                              
                              self.articleArray = [[NSMutableArray alloc]init];
-                             for (int i = 0; i < array.count; i++){
-                                 CDAEntry *temp = [array objectAtIndex:i];
-                                 NSString *type = temp.fields[@"contentType"];
-                                 NSString *art = temp.fields[@"articleId"];
-                                 NSString *head = temp.fields[@"headline"];
-                                 NSString *sub = temp.fields[@"subtitle"];
-                                 NSString *aut = temp.fields[@"author"];
-                                 NSString *bod = temp.fields[@"body"];
-                                 NSDate *date = temp.fields[@"publishDate"];
-                                 NSArray *thumb = temp.fields[@"thumbnails"];
-                                 NSString *tags = temp.fields[@"tags"];
-                                 
-                                 
+                             for (NSInteger i = array.count-1; i >=0; i--){
+                                 CDAEntry   *temp   = [array objectAtIndex:i];
+
+                                 if (temp.fields[@"headline"])
+                                 {
+                                 NSString   *type   = temp.fields[@"contentType"];
+                                 NSString   *art    = temp.fields[@"articleId"];
+                                 NSString   *head   = temp.fields[@"headline"];
+                                 NSString   *sub    = temp.fields[@"subtitle"];
+                                 NSString   *aut    = temp.fields[@"author"];
+                                 NSString   *bod    = temp.fields[@"body"];
+                                 NSDate     *date   = temp.fields[@"publishDate"];
+                                 NSArray    *thumb  = temp.fields[@"thumbnails"];
+                                 NSString   *tags   = temp.fields[@"tags"];
                                  
                                  ArticleDataModel *articleModel = [[ArticleDataModel alloc]initWithContentType:type andArticleId:art andHeadline:head andSubtitle:sub andAuthor:aut andBody:bod andPublishDate:date andThumbnails:thumb andTags:tags];
                                  
                                  [self.articleArray addObject:articleModel];
+                                 }
+                                 
                             
                              }
                              
