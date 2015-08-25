@@ -18,8 +18,9 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-//    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
-//        self.edgesForExtendedLayout = UIRectEdgeBottom;
+    self.navigationController.navigationBar.translucent = NO;
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view                   = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIBarButtonItem *newBackButton =
     [[UIBarButtonItem alloc] initWithTitle:@""
@@ -61,7 +62,7 @@
     
     [self.articleCollectionView registerClass:[ArticleCell class] forCellWithReuseIdentifier:@"FlickrCell"];
     
-    [self.articleCollectionView setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:1.0]];
+    [self.articleCollectionView setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.95]];
     self.articleCollectionView.alwaysBounceVertical  = YES;
     [self.view addSubview:self.articleCollectionView];
 }
@@ -99,7 +100,7 @@
 //size of each cell (width x height)
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(self.view.frame.size.width, 210);
+    return CGSizeMake(self.view.frame.size.width, 180);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

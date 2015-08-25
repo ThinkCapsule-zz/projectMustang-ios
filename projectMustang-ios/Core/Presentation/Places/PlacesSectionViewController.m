@@ -46,7 +46,7 @@
     [self.placesCollectionView setDelegate:self];
     [self.placesCollectionView registerClass:[PlacesCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     self.placesCollectionView.alwaysBounceVertical  = YES;
-    self.placesCollectionView.backgroundColor       = [UIColor colorWithWhite:1.0 alpha:0.8];
+    self.placesCollectionView.backgroundColor       = [UIColor colorWithWhite:1.0 alpha:0.97];
     [self.view addSubview:self.placesCollectionView];
 }
 

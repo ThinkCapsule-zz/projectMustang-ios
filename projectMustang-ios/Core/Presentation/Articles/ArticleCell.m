@@ -9,6 +9,7 @@
 #import "ArticleCell.h"
 #import "ArticleSectionViewController.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @implementation ArticleCell
 
@@ -16,7 +17,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor    = [UIColor clearColor];
+        self.backgroundColor    = [UIColor whiteColor];
         [self setupImages];
         [self setupPicOverlay];
     }
@@ -30,6 +31,7 @@
         self.dataModel = data;
         [self setupLabels];
         [self loadImages];
+        [self fixFrameSizes];
         [self addBrLine];
     }
 }
@@ -37,61 +39,66 @@
 -(void) setupImages
 {
     self.photoImageView                 = [[UIImageView alloc] init];
-    self.photoImageView.frame           = CGRectMake(self.photoImageView.frame.origin.x, self.photoImageView.frame.origin.y, self.frame.size.width, 210);
+    self.photoImageView.frame           = CGRectMake(self.photoImageView.frame.origin.x, self.photoImageView.frame.origin.y, self.frame.size.width, 180);
     self.photoImageView.contentMode     = UIViewContentModeScaleAspectFill;
     self.photoImageView.clipsToBounds   = YES;
-    [self.photoImageView setAlpha:0.7];
     [self addSubview:self.photoImageView];
 }
 
--(void) setupPicOverlay //a gradient overlay :)
+-(void) setupPicOverlay
 {
-    self.overView               = [[UIView alloc] initWithFrame:CGRectMake(self.photoImageView.frame.origin.x, self.photoImageView.frame.origin.y, self.frame.size.width, 210)];
-    CAGradientLayer *gradient   = [CAGradientLayer layer];
-    gradient.frame              = self.bounds;
-    gradient.colors             = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:127.0f/255.0f
-                                                                                 green:140.0f/255.0f
-                                                                                  blue:141.0f/255.0f
-                                                                                 alpha:1.0] CGColor],
-                                                            (id)[[UIColor blackColor] CGColor], nil];
-    [self.layer insertSublayer:gradient atIndex:0];
+    self.whiteView                  = [[UIView alloc] initWithFrame:CGRectMake(0.0,
+                                                                               self.titleLabel.frame.origin.y+10,
+                                                                               self.frame.size.width,
+                                                                               self.titleLabel.frame.size.height+self.authLabel.frame.size.height+self.descLabel.frame.size.height-10)];
+    self.whiteView.backgroundColor  = [UIColor whiteColor];
+    [self addSubview:self.whiteView];
 }
 
 -(void) setupLabels
 {
-    self.descLabel                  = [[UILabel alloc] initWithFrame:CGRectMake(10.0, self.frame.size.height-26.0, self.frame.size.width-20.0, 26.0)];
+    self.descLabel                  = [[UILabel alloc] initWithFrame:CGRectMake(10.0, self.frame.size.height-24.0, self.frame.size.width-20.0, 24.0)];
     self.descLabel.textAlignment    = NSTextAlignmentLeft;
-    self.descLabel.font             = [UIFont fontWithName:@"AvenirNext-Medium" size:13];
-    self.descLabel.textColor        = [UIColor whiteColor];
+    self.descLabel.font             = [UIFont fontWithName:@"Avenir-Light" size:11];
+    self.descLabel.textColor        = [UIColor blackColor];
     self.descLabel.text             = self.dataModel.subtitle;
     
-    self.authLabel                  = [[UILabel alloc] initWithFrame:CGRectMake(10.0, self.descLabel.frame.origin.y-20.0, self.frame.size.width-10.0, 15.0)];
+    self.authLabel                  = [[UILabel alloc] initWithFrame:CGRectMake(10.0, self.descLabel.frame.origin.y-10.0, self.frame.size.width-20.0, 10.0)];
     self.authLabel.textAlignment    = NSTextAlignmentLeft;
-    self.authLabel.font             = [UIFont fontWithName:@"AvenirNext-Medium" size:10 ];
-    self.authLabel.textColor        = [UIColor whiteColor];
+    self.authLabel.font             = [UIFont fontWithName:@"Avenir-Roman" size:8];
+    self.authLabel.textColor        = [UIColor grayColor];
     NSString *uppercasetxt          = [self.dataModel.author uppercaseString];
     self.authLabel.text             = uppercasetxt;
     
-    self.titleLabel                 = [[UITextView alloc] initWithFrame:CGRectMake(10.0, self.authLabel.frame.origin.y-20.0, self.frame.size.width-10.0, 20.0)];
-    self.titleLabel.textAlignment   = NSTextAlignmentLeft;
-    self.titleLabel.font            = [UIFont fontWithName:@"AvenirNext-Medium" size:18];
-    self.titleLabel.textColor       = [UIColor redColor];
-    self.backgroundColor            = [UIColor clearColor];
-    self.titleLabel.editable        = NO;
-    self.titleLabel.scrollEnabled   = NO;
-    self.titleLabel.text            = self.dataModel.headline;
+    [self.authLabel sizeToFit];
     
+    self.dateLabel  = [[UILabel alloc] initWithFrame:CGRectMake(self.authLabel.frame.size.width+self.authLabel.frame.origin.x+10.0, self.authLabel.frame.origin.y, 55.0, 10.0)];
+    self.dateLabel.textAlignment    = NSTextAlignmentLeft;
+    self.dateLabel.font             = [UIFont fontWithName:@"Avenir-Roman" size:8];
+    self.dateLabel.textColor        = UIColorFromRGB(0xFF3E0C);
+    NSDateFormatter *dateformatter1 = [[NSDateFormatter alloc] init];
+    [dateformatter1 setDateStyle:NSDateFormatterLongStyle];
+    self.dateLabel.text             = [[dateformatter1 stringFromDate:self.dataModel.publishDate] uppercaseString];
+
+    self.titleLabel                     = [[UITextView alloc] initWithFrame:CGRectMake(8.0, self.authLabel.frame.origin.y-20.0, self.frame.size.width-16.0, 20.0)];
+    self.titleLabel.textAlignment       = NSTextAlignmentLeft;
+    NSMutableParagraphStyle *linestyle  = [[NSMutableParagraphStyle alloc] init];
+    //linestyle.lineHeightMultiple        = 0.75f;
+    linestyle.maximumLineHeight         = 17.0f;
+    NSDictionary *attdic                = @{ NSParagraphStyleAttributeName: linestyle,};
+    self.titleLabel.attributedText      = [[NSAttributedString alloc]initWithString:self.dataModel.headline attributes:attdic];
+    self.titleLabel.font                = [UIFont fontWithName:@"Avenir-Roman" size:15];
+    self.titleLabel.textColor           = [UIColor blackColor];
+    self.titleLabel.backgroundColor     = [UIColor clearColor];
+    self.titleLabel.editable            = NO;
+    self.titleLabel.scrollEnabled       = NO;
+    
+
     [self addSubview:self.descLabel];
     [self addSubview:self.authLabel];
     [self addSubview:self.titleLabel];
+    [self addSubview:self.dateLabel];
     
-    
-// is there a way to change the padding around the text so that minimal space is taken between text and other labels?
-    CGFloat fixedWidth1 = self.titleLabel.frame.size.width;
-    CGSize newSize1     = [self.titleLabel sizeThatFits:CGSizeMake(fixedWidth1, INFINITY)];
-    CGRect newFrame1    = CGRectMake(self.titleLabel.frame.origin.x, self.authLabel.frame.origin.y-newSize1.height, self.titleLabel.frame.size.width, newSize1.height-25.0);
-    newFrame1.size      = CGSizeMake(fmaxf(newSize1.width, fixedWidth1), newSize1.height);
-    self.titleLabel.frame = newFrame1;
 }
 
 - (void) loadImages
@@ -103,18 +110,36 @@
     {
         pic = [UIImage imageNamed:[NSString stringWithFormat:@"alchii"]];
     }
-     self.photoImageView.image   = pic;
+    self.photoImageView.image   = pic;
+}
+
+-(void) fixFrameSizes
+{
+    CGFloat titleTopMargin = 8.0;
+    CGFloat fixedWidth1 = self.titleLabel.frame.size.width;
+    CGSize newSize1     = [self.titleLabel sizeThatFits:CGSizeMake(fixedWidth1, INFINITY)];
+    CGRect newFrame1    = CGRectMake(self.titleLabel.frame.origin.x,
+                                     self.authLabel.frame.origin.y-newSize1.height+titleTopMargin,
+                                     self.titleLabel.frame.size.width,
+                                     newSize1.height);
+    newFrame1.size      = CGSizeMake(fmaxf(newSize1.width, fixedWidth1), newSize1.height);
+    self.titleLabel.frame   = newFrame1;
+    
+    self.whiteView.frame    = CGRectMake(0.0,
+                                      self.titleLabel.frame.origin.y,
+                                      self.frame.size.width,
+                                      self.titleLabel.frame.size.height+self.authLabel.frame.size.height+self.descLabel.frame.size.height-titleTopMargin);
 }
 
 -(void) addBrLine
 {
     CGRect rect                     = self.descLabel.frame;
     UIBezierPath *linePath          = [UIBezierPath bezierPath];
-    [linePath moveToPoint:CGPointMake(0, 0)];
-    [linePath addLineToPoint:CGPointMake(rect.size.width-15, 0)];
+    [linePath moveToPoint:CGPointMake(0.0, 2.0)];
+    [linePath addLineToPoint:CGPointMake(rect.size.width, 2.0)];
     CAShapeLayer * lineLayer        = [CAShapeLayer layer];
-    lineLayer.lineWidth             = 1.0;
-    lineLayer.strokeColor           = [UIColor whiteColor].CGColor;
+    lineLayer.lineWidth             = 0.5;
+    lineLayer.strokeColor           = [UIColor lightGrayColor].CGColor;
     lineLayer.fillColor             = nil;
     lineLayer.path                  = linePath.CGPath;
     
