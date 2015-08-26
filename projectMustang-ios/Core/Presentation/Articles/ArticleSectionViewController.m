@@ -39,7 +39,7 @@
 
 -(void)loadData{
     DataFetcher *fetch = [[DataFetcher alloc]init];
-    [fetch fetchWithId:^(BOOL success, NSMutableArray *articles, NSError *error) {
+    [fetch fetchWithIdArticle:^(BOOL success, NSMutableArray *articles, NSError *error) {
         if (!success){
             NSLog(@"%@", error);
         }else {

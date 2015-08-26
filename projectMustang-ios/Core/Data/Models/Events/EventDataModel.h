@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TCEventDataModel : NSObject
+@interface EventDataModel : NSObject
 
 @property (nonatomic, strong) NSString* contentType;
 @property (nonatomic, strong) NSString* eventId;

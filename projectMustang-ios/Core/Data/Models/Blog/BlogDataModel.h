@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TCBlogDataModel : NSObject
+@interface BlogDataModel : NSObject
 
 @property (nonatomic, strong) NSString* contentType;
 @property (nonatomic, strong) NSString* blogId;
@@ -19,5 +19,7 @@
 @property (nonatomic, strong) NSDate* publishDate;
 @property (nonatomic, strong) NSArray* thumbnails;
 @property (nonatomic, strong) NSArray* tags;
+
+-(id)initWithContent: (NSString*)cType andBlogId:(NSString*)blgId andSeries:(NSString*)siri andDescrip:(NSString*)blogDes andAuthor:(NSString*)arthur andBody:(NSString*)cBody andDate:(NSDate*)pubDate andThumbs:(NSArray*)tNails andTags:(NSArray*)tag;
 
 @end

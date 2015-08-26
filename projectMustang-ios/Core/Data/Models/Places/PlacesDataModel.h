@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TCPlacesDataModel : NSObject
+@interface PlacesDataModel : NSObject
 
 @property (nonatomic, strong) NSString* contentType;
 @property (nonatomic, strong) NSString* locationName;

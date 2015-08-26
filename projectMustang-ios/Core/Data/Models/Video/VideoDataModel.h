@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TCVideoDataModel : NSObject
+@interface VideoDataModel : NSObject
 
 @property (nonatomic, strong) NSString* contentType;
 @property (nonatomic, strong) NSString* contentId;
