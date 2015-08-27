@@ -20,6 +20,30 @@
     // Do any additional setup after loading the view.
     self.view                   = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.view.backgroundColor   = [UIColor whiteColor];
+    
+    self.scr_view       = [[UIScrollView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:self.scr_view];
+    self.upview         =  [[UIView alloc]initWithFrame:self.view.frame];
+    [self.scr_view addSubview:self.upview];
+    self.blogPostNameStr    = @"BLOG POST NAME";
+    self.authNameStr        = @"AUTHOR";
+    self.photoSourceStr     = @"PHOTOSOURCE";
+    self.blogPostStr        = @"KSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDKSDBKABKDJBAKJSDBAKJSBDKAJBDKJABDKAJBDKJABSDKJABSKDJABSKJDBAKSJDBKAJSBDKAJSBDKAJSBDKAJBDKJABSKDJBAKDH 9876543210";
+    
+    [self setupViews];
+    [self setupHorizontalSpacing];
+    [self setupSizeConstraints];
+    [self setupPOSConstraints];
+    [self setupLabels];
+    [self setupImage];
+    
+    CGSize nwsz    = CGSizeMake(self.scr_view.frame.size.width, self.blogPostName.frame.size.height+self.authorName.frame.size.height+self.photoSource.frame.size.height+self.blogPost.frame.size.height+self.blogPostImage.frame.size.height+15.0);
+
+    [self.upview setFrame:CGRectMake(self.upview.frame.origin.x, self.upview.frame.origin.y, nwsz.width, nwsz.height)];
+    
+    
+    [self.scr_view setContentSize:CGSizeMake(nwsz.width, nwsz.height)];
+
 }
 
 #pragma AutoLayout Positioning Methods
@@ -49,7 +73,7 @@
     self.blogPost           = [[UITextView alloc] init];
     self.blogPost.text      = self.blogPostStr;
 
-    self.blogPostImage      = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.photoStr]];
+    self.blogPostImage      = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Miss"]];
 
     
     self.blogPostName.translatesAutoresizingMaskIntoConstraints = NO;
@@ -58,11 +82,11 @@
     self.blogPost.translatesAutoresizingMaskIntoConstraints     = NO;
     self.blogPostImage.translatesAutoresizingMaskIntoConstraints= NO;
     
-    [self.view addSubview:self.blogPostName];
-    [self.view addSubview:self.authorName];
-    [self.view addSubview:self.photoSource];
-    [self.view addSubview:self.blogPost];
-    [self.view addSubview:self.blogPostImage];
+    [self.upview addSubview:self.blogPostName];
+    [self.upview addSubview:self.authorName];
+    [self.upview addSubview:self.photoSource];
+    [self.upview addSubview:self.blogPost];
+    [self.upview addSubview:self.blogPostImage];
 }
 
 -(void) setupHorizontalSpacing
@@ -76,37 +100,104 @@
                      @"hSpacing1":@1,
                      @"hSpacing2":@13,
                      @"postNameSize":@36};
-    NSArray *constraint_POS_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-vSpacing-[postName(postNameSize)]-|"
-                                                                        options:0
-                                                                        metrics:self.metrics
-                                                                          views:self.viewsDictionary];
+
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.scr_view
+                              attribute:NSLayoutAttributeTop
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.view
+                              attribute:NSLayoutAttributeTop
+                              multiplier:1.0
+                              constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.scr_view
+                              attribute:NSLayoutAttributeBottom
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.view
+                              attribute:NSLayoutAttributeBottom
+                              multiplier:1.0
+                              constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.scr_view
+                              attribute:NSLayoutAttributeLeading
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.view
+                              attribute:NSLayoutAttributeLeading
+                              multiplier:1.0
+                              constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.scr_view
+                              attribute:NSLayoutAttributeTrailing
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.view
+                              attribute:NSLayoutAttributeTrailing
+                              multiplier:1.0
+                              constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.upview
+                              attribute:NSLayoutAttributeTop
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.view
+                              attribute:NSLayoutAttributeTop
+                              multiplier:1.0
+                              constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.upview
+                              attribute:NSLayoutAttributeBottom
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.view
+                              attribute:NSLayoutAttributeBottom
+                              multiplier:1.0
+                              constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.upview
+                              attribute:NSLayoutAttributeLeading
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.view
+                              attribute:NSLayoutAttributeLeading
+                              multiplier:1.0
+                              constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.upview
+                              attribute:NSLayoutAttributeTrailing
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.view
+                              attribute:NSLayoutAttributeTrailing
+                              multiplier:1.0
+                              constant:0.0]];
     
-    NSArray *constraint_POS_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[postName]-hSpacing2-|"
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.upview
+                              attribute:NSLayoutAttributeWidth
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.view
+                              attribute:NSLayoutAttributeWidth
+                              multiplier:1.0
+                              constant:0.0]];
+    
+    [self.view addConstraints: [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-vSpacing-[postName(postNameSize)]-|"
                                                                         options:0
                                                                         metrics:self.metrics
-                                                                          views:self.viewsDictionary];
-    NSArray *constraint_POS_H1 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[authorName]-hSpacing2-|"
+                                                                          views:self.viewsDictionary]];
+
+    self.blogPostName.frame = CGRectMake(0.0, 0.0, self.blogPostName.frame.size.width, 36.0);
+   [self.view addConstraints: [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[postName]-hSpacing2-|"
+                                                                        options:0
+                                                                        metrics:self.metrics
+                                                                          views:self.viewsDictionary]];
+    [self.view addConstraints: [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[authorName]-hSpacing2-|"
                                                                          options:0
                                                                          metrics:self.metrics
-                                                                           views:self.viewsDictionary];
-    NSArray *constraint_POS_H2 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[photoSource]-hSpacing2-|"
+                                                                           views:self.viewsDictionary]];
+    [self.view addConstraints: [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[photoSource]-hSpacing2-|"
                                                                          options:0
                                                                          metrics:self.metrics
-                                                                           views:self.viewsDictionary];
-    NSArray *constraint_POS_H3 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing2-[blogPost]-hSpacing2-|"
+                                                                           views:self.viewsDictionary]];
+
+    [self.view addConstraints: [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing1-[postImage]-hSpacing1-|"
                                                                          options:0
                                                                          metrics:self.metrics
-                                                                           views:self.viewsDictionary];
-    NSArray *constraint_POS_H4 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-hSpacing1-[postImage]-hSpacing1-|"
-                                                                         options:0
-                                                                         metrics:self.metrics
-                                                                           views:self.viewsDictionary];
-    [self.view addConstraints:constraint_POS_V];
-    [self.view addConstraints:constraint_POS_H];
-    [self.view addConstraints:constraint_POS_H1];
-    [self.view addConstraints:constraint_POS_H2];
-    [self.view addConstraints:constraint_POS_H3];
-    [self.view addConstraints:constraint_POS_H4];
+                                                                           views:self.viewsDictionary]];
     
 }
 
@@ -144,13 +235,30 @@
                               constant:0.0]];
     
     //article
+
     [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:self.blogPost
-                              attribute:NSLayoutAttributeHeight
+                              attribute:NSLayoutAttributeLeading
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.photoSource
+                              attribute:NSLayoutAttributeLeading
+                              multiplier:1.0
+                              constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.blogPost
+                              attribute:NSLayoutAttributeTrailing
                               relatedBy:NSLayoutRelationEqual
                               toItem:self.view
-                              attribute:NSLayoutAttributeHeight
-                              multiplier:0.5
+                              attribute:NSLayoutAttributeTrailing
+                              multiplier:0.96
+                              constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.blogPost
+                              attribute:NSLayoutAttributeBottom
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.scr_view
+                              attribute:NSLayoutAttributeBottom
+                              multiplier:0.95
                               constant:0.0]];
 }
 
@@ -227,8 +335,16 @@
     self.blogPost.textAlignment     = NSTextAlignmentLeft;
     self.blogPost.font              = [UIFont fontWithName:@"Avenir-Roman"
                                                       size:13 ];
+    self.blogPost.editable           = NO;
+    self.blogPost.scrollEnabled     = NO;
     self.blogPost.textColor         = [UIColor blackColor];
     self.blogPost.backgroundColor   = [UIColor colorWithRed:0.0 green:0.5 blue:0.5 alpha:0.2];
+    
+    CGSize newSize      = [self.blogPost sizeThatFits:CGSizeMake(self.blogPost.frame.size.width, INFINITY)];
+    CGRect newFrame     = self.blogPost.frame;
+    newFrame.size       = CGSizeMake(fmaxf(newSize.width, self.blogPost.frame.size.width), newSize.height);
+    self.blogPost.frame = newFrame;
+
 }
 
 -(void) setupImage
@@ -236,23 +352,6 @@
     self.blogPostImage.contentMode     = UIViewContentModeScaleAspectFill;
     self.blogPostImage.clipsToBounds   = YES;
 }
-
-- (void) loadData:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3 :(NSString*)txt4 :(NSString*)img
-{
-    self.blogPostNameStr    = txt;
-    self.authNameStr        = txt2;
-    self.photoSourceStr     = txt3;
-    self.blogPostStr        = txt4;
-    self.photoStr           = img;
-
-    [self setupViews];
-    [self setupHorizontalSpacing];
-    [self setupSizeConstraints];
-    [self setupPOSConstraints];
-    [self setupLabels];
-    [self setupImage];
-}
-
 
 #pragma methods that adjust appearance
 

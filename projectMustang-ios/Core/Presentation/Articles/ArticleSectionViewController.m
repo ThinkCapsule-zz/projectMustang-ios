@@ -18,9 +18,6 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.navigationController.navigationBar.translucent = NO;
-    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
-        self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view                   = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIBarButtonItem *newBackButton =
     [[UIBarButtonItem alloc] initWithTitle:@""

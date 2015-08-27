@@ -16,6 +16,9 @@
     
     [super viewDidLoad];
     [self setupCustomNavigationBar];
+    self.navigationController.navigationBar.translucent = NO;
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
     
 }
 

@@ -10,6 +10,7 @@
 
 @interface BlogsDetailViewController : UIViewController
 
+@property (nonatomic,strong) UIView    *upview;
 @property (nonatomic,strong) UIScrollView  *scr_view;
 @property (nonatomic) UILabel       *blogPostName;
 @property (nonatomic) UILabel       *authorName;
@@ -23,15 +24,13 @@
 @property (nonatomic, strong) NSString *authNameStr;
 @property (nonatomic, strong) NSString *photoSourceStr;
 @property (nonatomic, strong) NSString *blogPostStr;
-@property (nonatomic, strong) NSString *photoStr;
 @property (nonatomic, strong) NSMutableAttributedString *by;
 
--(void)setupViews;
+-(void) setupViews;
 -(void) setupHorizontalSpacing;
 -(void) setupSizeConstraints;
 -(void) setupPOSConstraints;
 -(void) setupImage;
 -(void) setupLabels;
--(void) loadData:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3 :(NSString*)txt4 :(NSString*)img;
 
 @end
