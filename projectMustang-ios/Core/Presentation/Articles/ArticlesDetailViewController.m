@@ -37,8 +37,6 @@
     return self;
 }
 
-#pragma AutoLayout Positioning Methods
-
 - (void)setupTextViews
 {
     self.articleName                = [[UITextView alloc]initWithFrame:CGRectMake(10.0, 5.0, self.view.frame.size.width-20.0, 36.0)];

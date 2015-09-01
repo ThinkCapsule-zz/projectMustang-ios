@@ -20,16 +20,12 @@
 @property (nonatomic, strong) UIImageView   *artImage;
 @property (nonatomic, strong) NSDictionary  *viewsDictionary;
 @property (nonatomic, strong) NSDictionary  *metrics;
-
-@property (nonatomic, strong) NSString *photoStr;
 @property (nonatomic, strong) NSMutableAttributedString *by;
-
+@property (nonatomic, strong)ArticleDataModel  *dataModel;
+-(id)initWithData:(ArticleDataModel*)data;
 -(void) setupTextViews;
 -(void) setupImageViews;
 -(void) adjustAttributes;
 -(void) adjustContentSizes;
-
-@property (nonatomic, strong)ArticleDataModel  *dataModel;
--(id)initWithData:(ArticleDataModel*)data;
 
 @end

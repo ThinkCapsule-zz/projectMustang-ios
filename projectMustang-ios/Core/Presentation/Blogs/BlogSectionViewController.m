@@ -23,10 +23,29 @@
                                     target:nil
                                     action:nil];
     [[self navigationItem] setBackBarButtonItem:newBackButton];
-    [self loadBlogCollectionView];
-    [self loadBlogPictures];
+    [self loadData];
+
+
     }
 
+- (void)viewWillAppear:(BOOL)animated{
+[super viewWillAppear:YES];
+}
+
+-(void)loadData{
+    DataFetcher *fetch = [[DataFetcher alloc]init];
+    [fetch fetchWithIdBlog:^(BOOL success, NSMutableArray *blogPosts, NSError *error) {
+        if (!success){
+            NSLog(@"%@", error);
+        }else {
+            self.gatherData = blogPosts;
+            [self.blogCollectionView reloadData];
+            [self loadBlogCollectionView];
+            [self loadBlogPictures];
+            
+        }
+    }];
+}
 
 -(void) loadBlogCollectionView
 {
@@ -47,7 +66,7 @@
 -(void) loadBlogPictures
 {
     self.blogImgArray   = [[NSMutableArray alloc]init];
-    for (NSInteger i = 0; i<10; i++) {
+    for (NSInteger i = 0; i<self.gatherData.count; i++) {
         [self.blogImgArray addObject:@"Miss"];
     }
 }
@@ -60,7 +79,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 4;
+    return self.blogImgArray.count;
 }
 
 - (NSInteger) numOfSectionsCollectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -71,25 +90,23 @@
 //populates each cell with whatever is in the arraycell indexpath
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    BlogDataModel *model = self.gatherData[indexPath.row];
     //setup reusable cell object
     BlogCell *cell = [self.blogCollectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    
-    [cell loadImages:[self.blogImgArray objectAtIndex:indexPath.row]];
-    [cell loadLabels: [NSString stringWithFormat:@"Blog Post #%ld", (long)indexPath.item+1]
-                    : [NSString stringWithFormat:@"A 54 character summary of the associated blog post."]
-                    : [NSString stringWithFormat:@"Western Mustang"]];
+    [cell initWithData:model];
     return cell;
 }
 
 //size of each cell (width x height)
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(self.view.frame.size.width, 190);
+    return CGSizeMake(self.view.frame.size.width, 180);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    BlogsDetailViewController *detVC = [[BlogsDetailViewController alloc] init];
+    BlogDataModel *model = self.gatherData[indexPath.row];
+    BlogsDetailViewController *detVC = [[BlogsDetailViewController alloc] initWithData:model];
     [self.navigationController pushViewController:detVC animated:YES];
 }
 

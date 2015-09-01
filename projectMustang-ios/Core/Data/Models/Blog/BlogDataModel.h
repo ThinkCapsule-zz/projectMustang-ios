@@ -20,6 +20,6 @@
 @property (nonatomic, strong) NSArray* thumbnails;
 @property (nonatomic, strong) NSArray* tags;
 
--(id)initWithContent: (NSString*)cType andBlogId:(NSString*)blgId andSeries:(NSString*)siri andDescrip:(NSString*)blogDes andAuthor:(NSString*)arthur andBody:(NSString*)cBody andDate:(NSDate*)pubDate andThumbs:(NSArray*)tNails andTags:(NSArray*)tag;
+-(id)initWithContent: (NSString*)cType andBlogId:(NSString*)blgId andSeries:(NSString*)siri andDescrip:(NSString*)blogDes andAuthor:(NSString*)author andBody:(NSString*)cBody andDate:(NSDate*)pubDate andThumbs:(NSArray*)tNails andTags:(NSArray*)tag;
 
 @end

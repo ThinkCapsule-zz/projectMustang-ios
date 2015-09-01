@@ -7,18 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BlogDataModel.h"
 @interface BlogCell : UICollectionViewCell
 
-@property (strong, nonatomic) UILabel *titleLabel;
-@property (strong, nonatomic) UILabel *descLabel;
-@property (strong, nonatomic) UILabel *authLabel;
-@property (strong, nonatomic) UIImageView *photoImageView;
-@property (strong, nonatomic) UIView *overView;
--(void) loadImages:(NSString*)img;
--(void) loadLabels:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3;
+@property (strong, nonatomic) UITextView       *titleLabel;
+@property (strong, nonatomic) UILabel       *descLabel;
+@property (strong, nonatomic) UILabel       *authLabel;
+@property (strong, nonatomic) UIImageView   *photoImageView;
+@property (strong, nonatomic) UIView        *overView;
+@property (strong, nonatomic) UIView        *whiteView;
+@property (strong, nonatomic) UILabel        *dateLabel;
+@property (nonatomic, strong)BlogDataModel  *dataModel;
+-(void)initWithData:(BlogDataModel*)data;
+-(void) loadImages;
 -(void) setupImages;
 -(void) setupLabels;
 -(void) setupPicOverlay;
+-(void) setupBrLine;
 
 @end

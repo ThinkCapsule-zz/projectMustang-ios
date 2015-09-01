@@ -10,7 +10,7 @@
 
 @implementation BlogDataModel
 
--(id)initWithContent: (NSString*)cType andBlogId:(NSString*)blgId andSeries:(NSString*)siri andDescrip:(NSString*)blogDes andAuthor:(NSString*)arthur andBody:(NSString*)cBody andDate:(NSDate*)pubDate andThumbs:(NSArray*)tNails andTags:(NSArray*)tag
+-(id)initWithContent: (NSString*)cType andBlogId:(NSString*)blgId andSeries:(NSString*)siri andDescrip:(NSString*)blogDes andAuthor:(NSString*)author andBody:(NSString*)cBody andDate:(NSDate*)pubDate andThumbs:(NSArray*)tNails andTags:(NSArray*)tag
 {
     self = [super init];
     if(self){
@@ -18,12 +18,12 @@
         self.blogId = blgId;
         self.series = siri;
         self.blogDescription = blogDes;
-        self.author = arthur;
+        self.author = author;
         self.body = cBody;
         self.publishDate = pubDate;
         self.thumbnails = tNails;
         self.tags = tag;
-        
+        NSLog(@"%@", self.author);
     }
     
     return self;

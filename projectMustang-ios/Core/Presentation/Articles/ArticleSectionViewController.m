@@ -102,8 +102,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    ArticleDataModel *model = self.gatherData[indexPath.row];
-    ArticlesDetailViewController *detVC = [[ArticlesDetailViewController alloc] initWithData:model];
+    ArticlesDetailViewController *detVC = [[ArticlesDetailViewController alloc] initWithData:self.gatherData[indexPath.row]];
     [self.navigationController pushViewController:detVC animated:YES];
 }
 
