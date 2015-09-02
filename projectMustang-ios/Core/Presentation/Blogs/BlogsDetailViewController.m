@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.view.backgroundColor = [UIColor whiteColor];
     self.scr_view = [[UIScrollView alloc] initWithFrame:self.view.frame];
     [self.view addSubview: self.scr_view];

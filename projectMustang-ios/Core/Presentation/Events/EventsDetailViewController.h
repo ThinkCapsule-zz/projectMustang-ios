@@ -10,29 +10,33 @@
 
 @interface EventsDetailViewController : UIViewController
 
-@property (nonatomic) UIView                        *upview;
 @property (nonatomic,strong) UIScrollView  *scr_view;
 @property (nonatomic) UIImageView   *photoImage;
+@property (nonatomic) UITextView    *eventDetails;
 @property (nonatomic) UIImageView   *locIcon;
-@property (nonatomic) UIImageView   *dateIcon;
 @property (nonatomic) UITextView    *locInfo;
+@property (nonatomic) UIImageView   *dateIcon;
 @property (nonatomic) UITextView    *dateInfo;
-@property (nonatomic) UITextView    *eventOrganizers;
-@property (nonatomic) UITextView    *eventDeets;
-@property (nonatomic) UIView        *backView;
-@property (nonatomic) UILabel       *timeBar;
-
-@property (nonatomic) NSDictionary  *viewsDictionary;
-@property (nonatomic) NSDictionary  *metrics;
+@property (nonatomic) UIImageView   *eventTypeIcon;
+@property (nonatomic) UITextView    *eventType;
+@property (nonatomic) UIImageView   *restrictionsIcon;
+@property (nonatomic) UITextView    *restrictions;
+@property (nonatomic) UIImageView   *distanceIcon;
+@property (nonatomic) UITextView    *distance;
+@property (nonatomic) UIImageView   *attendeesIcon;
+@property (nonatomic) UITextView    *attendees;
+@property (nonatomic) UILabel       *notifBar;
+@property (nonatomic) UIView        *locationViewArea;
+@property (nonatomic) UIView        *dateArea;
+@property (nonatomic) UIView        *eventTypeViewArea;
+@property (nonatomic) UIView        *RestrictionsViewArea;
+@property (nonatomic) UIView        *distanceViewArea;
+@property (nonatomic) UIView        *attendeesViewArea;
 
 @property (nonatomic) NSString *eventName;
-@property (nonatomic) NSString *eventDetails;
-@property (nonatomic) NSString *organizerDeets;
 
 -(void) setupViews;
--(void) setupSpacing;
--(void) setupSizeConstraints;
--(void) setupPOSConstraints;
+-(void) setupFrames;
 -(void) setupText;
 -(void) setupImages;
 

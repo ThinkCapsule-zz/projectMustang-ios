@@ -16,7 +16,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.view           = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.view           = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIBarButtonItem *newBackButton =
     [[UIBarButtonItem alloc] initWithTitle:@""
                                      style:UIBarButtonItemStylePlain

@@ -17,6 +17,9 @@
     [super viewDidLoad];
     [self setupCustomNavigationBar];
     self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Avenir-Light" size:14],
+                                                                     NSFontAttributeName,
+                                                                     nil]];
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
     
