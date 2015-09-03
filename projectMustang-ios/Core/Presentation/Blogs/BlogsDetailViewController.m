@@ -17,8 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.view.backgroundColor = [UIColor whiteColor];
     self.scr_view = [[UIScrollView alloc] initWithFrame:self.view.frame];
     [self.view addSubview: self.scr_view];
@@ -107,13 +105,11 @@
     self.blogPostName.textAlignment      = NSTextAlignmentLeft;
     self.blogPostName.font               = [UIFont fontWithName:@"AvenirNext-Medium" size:23 ];
     self.blogPostName.textColor          = UIColorFromRGB(0x3f3f3f);
-    //    self.blogPostName.backgroundColor    = [UIColor colorWithRed:0.5 green:0.0 blue:0.0 alpha:0.1];
     self.blogPostName.editable           = NO;
     self.blogPostName.scrollEnabled      = NO;
     
     self.authorName.textAlignment       = NSTextAlignmentLeft;
     self.authorName.font                = [UIFont fontWithName:@"Avenir-Book" size:11.5];
-    //    self.authorName.backgroundColor     = [UIColor colorWithRed:0.0 green:0.5 blue:0.0 alpha:0.1];
     
     self.blogPostImage.contentMode     = UIViewContentModeScaleAspectFill;
     self.blogPostImage.clipsToBounds   = YES;
@@ -121,14 +117,12 @@
     self.blogDesc.textAlignment      = NSTextAlignmentLeft;
     self.blogDesc.font               = [UIFont fontWithName:@"Avenir-Roman" size:11.5 ];
     self.blogDesc.textColor          = UIColorFromRGB(0x7f8c8d);
-//        self.blogDesc.backgroundColor    = [UIColor colorWithRed:0.0 green:0.0 blue:0.5 alpha:0.1];
     self.blogDesc.editable           = NO;
     self.blogDesc.scrollEnabled      = NO;
     
     self.blogPost.textAlignment      = NSTextAlignmentLeft;
     self.blogPost.font               = [UIFont fontWithName:@"Avenir-Light" size:12.5 ];
     self.blogPost.textColor          = [UIColor blackColor];
-//        self.blogPost.backgroundColor    = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.1];
     self.blogPost.editable           = NO;
     self.blogPost.scrollEnabled      = NO;
 }

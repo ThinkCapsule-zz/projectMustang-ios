@@ -32,12 +32,16 @@
 @property (nonatomic) UIView        *RestrictionsViewArea;
 @property (nonatomic) UIView        *distanceViewArea;
 @property (nonatomic) UIView        *attendeesViewArea;
+@property (nonatomic) UIImageView   *host;
 
-@property (nonatomic) NSString *eventName;
+@property (nonatomic) CGFloat       margin1;
+@property (nonatomic) NSString      *eventName;
 
--(void) setupViews;
--(void) setupFrames;
--(void) setupText;
--(void) setupImages;
-
+-(void) setupDetails;
+-(void) setupMainFrames;
+-(void) setupInteriorInfoFrames;
+-(void) setupViewAreaAttr;
+-(void) setupTextAttr;
+-(void) setupImageAttr;
+-(void) adjustScrView;
 @end

@@ -16,7 +16,6 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-//    self.view           = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIBarButtonItem *newBackButton =
     [[UIBarButtonItem alloc] initWithTitle:@""
                                      style:UIBarButtonItemStylePlain
@@ -24,8 +23,6 @@
                                     action:nil];
     [[self navigationItem] setBackBarButtonItem:newBackButton];
     [self loadData];
-
-
     }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -42,7 +39,6 @@
             [self.blogCollectionView reloadData];
             [self loadBlogCollectionView];
             [self loadBlogPictures];
-            
         }
     }];
 }
