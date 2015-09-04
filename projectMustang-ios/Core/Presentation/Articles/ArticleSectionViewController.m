@@ -37,6 +37,8 @@
     [super viewWillAppear:YES];
 }
 
+#pragma mark - 
+#pragma mark factory api function
 -(void)loadData{
     ArticleFactory *fetch = [[ArticleFactory alloc]init];
     [fetch gatherData:^(BOOL success, NSMutableArray *articles, NSError *error) {
