@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSString* Location;
 @property (nonatomic, strong) NSString* phone;
 @property (nonatomic, strong) NSString* address;
-@property (nonatomic, strong) NSArray* thumnail;
+@property (nonatomic, strong) NSArray* thumbnails;
 @property (nonatomic, strong) NSArray* tags;
 
 @end

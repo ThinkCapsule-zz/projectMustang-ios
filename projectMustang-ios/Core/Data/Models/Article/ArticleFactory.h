@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "DataFetcher.h"
+#import "ArticleDataModel.h"
 
-@interface TCArticleFactory: NSObject
+@interface ArticleFactory: NSObject
+
 @property (nonatomic, strong) NSMutableArray* articleArray;
-@property (nonatomic, strong) NSMutableArray* articles;
 
--(NSMutableArray*) returnData;
+typedef void (^myCompletionBlock)(BOOL success, NSMutableArray *articles, NSError *error);
+
+-(void) gatherData:(myCompletionBlock)completionBlock;
 
 @end

@@ -38,8 +38,8 @@
 }
 
 -(void)loadData{
-    DataFetcher *fetch = [[DataFetcher alloc]init];
-    [fetch fetchWithIdArticle:^(BOOL success, NSMutableArray *articles, NSError *error) {
+    ArticleFactory *fetch = [[ArticleFactory alloc]init];
+    [fetch gatherData:^(BOOL success, NSMutableArray *articles, NSError *error) {
         if (!success){
             NSLog(@"%@", error);
         }else {
