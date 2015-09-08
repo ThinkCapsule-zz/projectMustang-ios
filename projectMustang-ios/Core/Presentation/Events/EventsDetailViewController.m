@@ -19,10 +19,10 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    self.eventName = @"NOT ANOTHER LAME EVENT";
-    self.title = self.eventName;
+    self.eventName  = @"NOT ANOTHER LAME EVENT";
+    self.title      = self.eventName;
     
-    self.scr_view = [[UIScrollView alloc] initWithFrame:self.view.frame];
+    self.scr_view   = [[UIScrollView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:self.scr_view];
     
     [self setupDetails];
@@ -32,7 +32,30 @@
     [self setupTextAttr];
     [self setupImageAttr];
     [self adjustScrView];
+    
+    self.view.userInteractionEnabled = YES;
+    
+    
+    [self.locationViewArea      addTarget:self action:@selector(LocationAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.locInfo               addTarget:self action:@selector(LocationAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.dateArea              addTarget:self action:@selector(dateAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.dateInfo              addTarget:self action:@selector(dateAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.eventTypeViewArea     addTarget:self action:@selector(eventTypeAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.eventType             addTarget:self action:@selector(eventTypeAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.RestrictionsViewArea  addTarget:self action:@selector(restrictionsAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.restrictions          addTarget:self action:@selector(restrictionsAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.distanceViewArea      addTarget:self action:@selector(distanceAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.distance              addTarget:self action:@selector(distanceAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.attendeesViewArea     addTarget:self action:@selector(attendeesAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.attendees             addTarget:self action:@selector(attendeesAction) forControlEvents:UIControlEventTouchUpInside];
 }
+
+#pragma Load Content
 
 - (void)setupDetails
 {
@@ -49,28 +72,29 @@
     
     self.eventDetails       = [[UITextView alloc] init];
     self.eventDetails.text  = @"something nice about the event and stuffffffffffffff  Hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hbecauseippopotamusxxxxx done";
-    self.locInfo        = [[UITextView alloc] init];
-    self.locInfo.text   = @"location info\n123 whoknows way\nBR,ON";
+    self.locInfo        = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.locInfo setTitle:@"123 whoknows way\nBR,ON" forState:UIControlStateNormal];
     
-    self.dateInfo       = [[UITextView alloc] init];
-    self.dateInfo.text  = @"July 24-26\n7:00AM-2:00PM";
+    self.dateInfo       = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.dateInfo setTitle:@"July 24-26\n7:00AM-2:00PM" forState:UIControlStateNormal];
     
-    self.eventType      = [[UITextView alloc] init];
-    self.eventType.text = @"Private Party";
+    self.eventType      = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.eventType setTitle:@"Private Party ;)" forState:UIControlStateNormal];
     
-    self.restrictions       = [[UITextView alloc] init];
-    self.restrictions.text  = @"Restrictions";
+    self.restrictions   = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.restrictions setTitle:@"Restricitons" forState:UIControlStateNormal];
     
-    self.distance       = [[UITextView alloc] init];
-    self.distance.text  = @"25 Minutes away";
+    self.distance       = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.distance setTitle:@"25 minutes away" forState:UIControlStateNormal];
     
-    self.attendees      = [[UITextView alloc] init];
-    self.attendees.text = @"25 people attending";
+    self.attendees      = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.attendees setTitle:@"25 people attending" forState:UIControlStateNormal];
 }
 
+#pragma Adjust Compnent Frames
 -(void) setupMainFrames
 {
-    CGFloat photosize       = 250.0;
+    CGFloat photosize       = 130.0;
     self.margin1            = 10.0;
     CGFloat viewWidth       = self.view.frame.size.width;
     CGFloat areaBlockWidths = self.view.frame.size.width/2-3.0;
@@ -86,27 +110,27 @@
     self.eventDetails.frame = newFrame;
     
     
-    self.locationViewArea   = [[UIView alloc] initWithFrame:CGRectMake(2.0,
+    self.locationViewArea   = [[UIButton alloc] initWithFrame:CGRectMake(2.0,
                                                                        self.eventDetails.frame.origin.y+self.eventDetails.frame.size.height,
                                                                        areaBlockWidths,
                                                                        areaHeights)];
-    self.dateArea           = [[UIView alloc] initWithFrame:CGRectMake(areaBlockWidths+4.0,
+    self.dateArea           = [[UIButton alloc] initWithFrame:CGRectMake(areaBlockWidths+4.0,
                                                                        self.eventDetails.frame.origin.y+self.eventDetails.frame.size.height,
                                                                        areaBlockWidths,
                                                                        areaHeights)];
-    self.eventTypeViewArea   = [[UIView alloc] initWithFrame:CGRectMake(2.0,
+    self.eventTypeViewArea   = [[UIButton alloc] initWithFrame:CGRectMake(2.0,
                                                                         self.locationViewArea.frame.origin.y+self.locationViewArea.frame.size.height+2.0,
                                                                         areaBlockWidths,
                                                                         areaHeights)];
-    self.RestrictionsViewArea  = [[UIView alloc] initWithFrame:CGRectMake(areaBlockWidths+4.0,
+    self.RestrictionsViewArea  = [[UIButton alloc] initWithFrame:CGRectMake(areaBlockWidths+4.0,
                                                                           self.locationViewArea.frame.origin.y+self.locationViewArea.frame.size.height+2.0,
                                                                           areaBlockWidths,
                                                                           areaHeights)];
-    self.distanceViewArea   = [[UIView alloc] initWithFrame:CGRectMake(2.0,
+    self.distanceViewArea   = [[UIButton alloc] initWithFrame:CGRectMake(2.0,
                                                                        self.eventTypeViewArea.frame.origin.y+self.eventTypeViewArea.frame.size.height+2.0,
                                                                        areaBlockWidths,
                                                                        areaHeights)];
-    self.attendeesViewArea  = [[UIView alloc] initWithFrame:CGRectMake(areaBlockWidths+4.0,
+    self.attendeesViewArea  = [[UIButton alloc] initWithFrame:CGRectMake(areaBlockWidths+4.0,
                                                                        self.eventTypeViewArea.frame.origin.y+self.eventTypeViewArea.frame.size.height+2.0,
                                                                        areaBlockWidths,
                                                                        areaHeights)];
@@ -124,6 +148,7 @@
 -(void) setupInteriorInfoFrames
 {
     CGFloat iconSizes       = 30.0;
+    CGFloat margin          = 3.5;
     CGFloat detailSizes     = (self.view.frame.size.width/2)-iconSizes-self.margin1;
     CGFloat blockHeights    = self.locationViewArea.frame.size.height;
 
@@ -131,7 +156,8 @@
                                          (blockHeights-iconSizes)/2,
                                          iconSizes,
                                          iconSizes);
-    self.locInfo.frame      = CGRectMake(self.margin1+iconSizes,
+    [self.locInfo sizeToFit];
+    self.locInfo.frame    = CGRectMake(self.margin1+iconSizes+margin,
                                          (blockHeights-iconSizes)/2,
                                          detailSizes,
                                          iconSizes);
@@ -140,7 +166,7 @@
                                          (blockHeights-iconSizes)/2,
                                          iconSizes,
                                          iconSizes);
-    self.dateInfo.frame     = CGRectMake(self.margin1+iconSizes,
+    self.dateInfo.frame     = CGRectMake(self.margin1+iconSizes+margin,
                                          (blockHeights-iconSizes)/2,
                                          detailSizes,
                                          iconSizes);
@@ -149,7 +175,7 @@
                                          (blockHeights-iconSizes)/2,
                                          iconSizes,
                                          iconSizes);
-    self.eventType.frame    = CGRectMake(self.margin1+self.locIcon.frame.size.width,
+    self.eventType.frame    = CGRectMake(self.margin1+iconSizes+margin,
                                          (blockHeights-iconSizes)/2,
                                          detailSizes,
                                          iconSizes);
@@ -158,7 +184,7 @@
                                              blockHeights/2-iconSizes/2,
                                              iconSizes,
                                              iconSizes);
-    self.restrictions.frame = CGRectMake(self.margin1+iconSizes,
+    self.restrictions.frame = CGRectMake(self.margin1+iconSizes+margin,
                                          (blockHeights-iconSizes)/2,
                                          detailSizes,
                                          iconSizes);
@@ -167,7 +193,7 @@
                                          blockHeights/2-iconSizes/2,
                                          iconSizes,
                                          iconSizes);
-    self.distance.frame     = CGRectMake(self.margin1+iconSizes,
+    self.distance.frame     = CGRectMake(self.margin1+iconSizes+margin,
                                          (blockHeights-iconSizes)/2,
                                          detailSizes,
                                          iconSizes);
@@ -176,7 +202,7 @@
                                          (blockHeights-iconSizes)/2,
                                          iconSizes,
                                          iconSizes);
-    self.attendees.frame    = CGRectMake(self.margin1+iconSizes,
+    self.attendees.frame    = CGRectMake(self.margin1+iconSizes+margin,
                                          (blockHeights-iconSizes)/2,
                                          detailSizes,
                                          iconSizes);
@@ -215,48 +241,35 @@
     self.eventDetails.scrollEnabled     = NO;
     self.eventDetails.textColor         = [UIColor darkGrayColor];
 
-    self.locInfo.textAlignment  = NSTextAlignmentLeft;
-    self.locInfo.font           = [UIFont fontWithName:@"Avenir" size:11 ];
-    self.locInfo.textColor      = [UIColor darkGrayColor];
-    self.locInfo.scrollEnabled  = NO;
-    self.locInfo.editable       = NO;
-    self.locInfo.backgroundColor= nil;
+    self.locInfo.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    self.locInfo.titleLabel.font            = [UIFont fontWithName:@"Avenir" size:11 ];
+    [self.locInfo       setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    self.locInfo.titleLabel.lineBreakMode   = NSLineBreakByWordWrapping;
 
+    self.dateInfo.contentHorizontalAlignment= UIControlContentHorizontalAlignmentLeft;
+    self.dateInfo.titleLabel.font           = [UIFont fontWithName:@"Avenir" size:11];
+    [self.dateInfo      setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    self.dateInfo.titleLabel.lineBreakMode   = NSLineBreakByWordWrapping;
+    
+    self.eventType.contentHorizontalAlignment   = UIControlContentHorizontalAlignmentLeft;
+    self.eventType.titleLabel.font          = [UIFont fontWithName:@"Avenir" size:11 ];
+    [self.eventType     setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    self.eventType.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
 
-    self.dateInfo.textAlignment     = NSTextAlignmentLeft;
-    self.dateInfo.font              = [UIFont fontWithName:@"Avenir" size:11];
-    self.dateInfo.textColor         = [UIColor darkGrayColor];
-    self.dateInfo.scrollEnabled     = NO;
-    self.dateInfo.editable          = NO;
-    self.dateInfo.backgroundColor   = nil;
+    self.restrictions.contentHorizontalAlignment   = UIControlContentHorizontalAlignmentLeft;
+    self.restrictions.titleLabel.font           = [UIFont fontWithName:@"Avenir" size:11 ];
+    [self.restrictions  setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    self.restrictions.titleLabel.lineBreakMode  = NSLineBreakByWordWrapping;
 
-    self.eventType.textAlignment    = NSTextAlignmentLeft;
-    self.eventType.font             = [UIFont fontWithName:@"Avenir" size:11 ];
-    self.eventType.textColor        = [UIColor darkGrayColor];
-    self.eventType.editable         = NO;
-    self.eventType.scrollEnabled    = NO;
-    self.eventType.backgroundColor  = nil;
+    self.distance.contentHorizontalAlignment   = UIControlContentHorizontalAlignmentLeft;
+    self.distance.titleLabel.font           = [UIFont fontWithName:@"Avenir" size:11];
+    [self.distance      setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    self.distance.titleLabel.lineBreakMode  = NSLineBreakByWordWrapping;
 
-    self.restrictions.textAlignment     = NSTextAlignmentLeft;
-    self.restrictions.font              = [UIFont fontWithName:@"Avenir" size:11 ];
-    self.restrictions.textColor         = [UIColor darkGrayColor];
-    self.restrictions.editable          = NO;
-    self.restrictions.scrollEnabled     = NO;
-    self.restrictions.backgroundColor   = nil;
-
-    self.distance.textAlignment     = NSTextAlignmentLeft;
-    self.distance.font              = [UIFont fontWithName:@"Avenir" size:11 ];
-    self.distance.textColor         = [UIColor darkGrayColor];
-    self.distance.editable          = NO;
-    self.distance.scrollEnabled     = NO;
-    self.distance.backgroundColor   = nil;
-
-    self.attendees.textAlignment    = NSTextAlignmentLeft;
-    self.attendees.font             = [UIFont fontWithName:@"Avenir" size:11 ];
-    self.attendees.textColor        = [UIColor darkGrayColor];
-    self.attendees.editable         = NO;
-    self.attendees.scrollEnabled    = NO;
-    self.attendees.backgroundColor  = nil;
+    self.attendees.contentHorizontalAlignment   = UIControlContentHorizontalAlignmentLeft;
+    self.attendees.titleLabel.font          = [UIFont fontWithName:@"Avenir" size:11 ];
+    [self.attendees     setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    self.attendees.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
 }
 
 -(void) setupImageAttr
@@ -286,6 +299,45 @@
 -(void) adjustScrView
 {
     [self.scr_view setContentSize:CGSizeMake(self.view.frame.size.width, self.distanceViewArea.frame.origin.y+self.distanceViewArea.frame.size.height*2+8.0)];
+}
+
+#pragma Button Tap Actions
+
+-(void) LocationAction
+{
+    NSLog(@"LOCATION!!!!!!!");
+    //open maps
+}
+
+-(void) dateAction
+{
+    NSLog(@"DATE!!!!!!!");
+    //open new calendar event with date/info automatically put in
+}
+
+-(void) eventTypeAction
+{
+    NSLog(@"eventType!!!!!!!");
+    // create switch/if statements for description of type of events (generally)
+}
+
+-(void) restrictionsAction
+{
+    NSLog(@"restrictions!!!!!!!");
+    //so.. people can add their own restrictions?
+    //soooooo, assuming that's so, just list restriction here by creating a table view!
+}
+
+-(void) distanceAction
+{
+    NSLog(@"distance!!!!!!!");
+    //same as map except use current location already mapped out!
+}
+
+-(void) attendeesAction
+{
+    NSLog(@"attendees!!!!!!!");
+    //pop up showing event attendees? or no action???? CLARIFY DURING MEETING !!!! (and how would I do the  event attendees???)
 }
 
 - (void)didReceiveMemoryWarning {
