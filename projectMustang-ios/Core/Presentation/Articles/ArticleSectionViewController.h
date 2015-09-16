@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "ArticleFactory.h"
 
 @interface ArticleSectionViewController : BaseViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 

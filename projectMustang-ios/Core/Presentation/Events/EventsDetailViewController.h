@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EventDataModel.h"
 
 @interface EventsDetailViewController : UIViewController
 
@@ -36,7 +37,8 @@
 @property (nonatomic) UITapGestureRecognizer *tap;
 @property (nonatomic) CGFloat       margin1;
 @property (nonatomic) NSString      *eventName;
-
+@property (nonatomic) EventDataModel *dataModel;
+-(id) initWithData:(EventDataModel *)data;
 -(void) setupDetails;
 -(void) setupMainFrames;
 -(void) setupInteriorInfoFrames;

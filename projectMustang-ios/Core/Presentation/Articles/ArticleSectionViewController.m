@@ -24,7 +24,6 @@
                                     target:nil
                                     action:nil];
     [[self navigationItem] setBackBarButtonItem:newBackButton];
-    
     [self loadData];
     [self loadCollectionView];
     
@@ -34,16 +33,17 @@
     [super viewWillAppear:YES];
 }
 
+#pragma mark - 
+#pragma mark factory api function
 -(void)loadData{
-    DataFetcher *fetch = [[DataFetcher alloc]init];
-    [fetch fetchWithIdArticle:^(BOOL success, NSMutableArray *articles, NSError *error) {
+    ArticleFactory *fetch = [[ArticleFactory alloc]init];
+    [fetch gatherData:^(BOOL success, NSMutableArray *articles, NSError *error) {
         if (!success){
             NSLog(@"%@", error);
         }else {
             self.gatherData = articles;
             [self.articleCollectionView reloadData];
             [self loadPictures];
-            
         }
     }];
 }

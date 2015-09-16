@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EventDataModel.h"
 
 @interface EventsCell : UICollectionViewCell
 

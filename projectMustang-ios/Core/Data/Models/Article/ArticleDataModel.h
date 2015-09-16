@@ -22,9 +22,4 @@
 @property (nonatomic, strong) NSString* tags;
 
 
-#pragma mark -
-#pragma mark Class Methods
-
--(id)initWithContentType: (NSString*)cType andArticleId: (NSString*)aId andHeadline: (NSString *)hline andSubtitle: (NSString *)stitle andAuthor: (NSString *)athor andBody: (NSString *)bdy andPublishDate: (NSDate *)pDate andThumbnails: (NSArray *)tNails andTags: (NSString *)tgs;
-
 @end

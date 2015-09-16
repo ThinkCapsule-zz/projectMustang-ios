@@ -10,7 +10,6 @@
 
 @interface VideoDataModel : NSObject
 
-@property (nonatomic, strong) NSString* contentType;
 @property (nonatomic, strong) NSString* contentId;
 @property (nonatomic, strong) NSString* seriesId;
 @property (nonatomic, strong) NSString* title;

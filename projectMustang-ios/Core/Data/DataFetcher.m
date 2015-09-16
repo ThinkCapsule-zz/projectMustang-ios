@@ -45,40 +45,14 @@
 - (void) fetchWithIdArticle:(myCompletionBlock)completionBlock{
     CDAClient *client = [DataFetcher singletonInstance].fetchClient;
     
-    [client fetchEntriesMatching:@{ @"content_type": @"1or7CAktokKiIUogkmU8O4"}
+    [client fetchEntriesMatching:@{ contentType: articleContent}
                          success:^(CDAResponse *response, CDAArray *entries){
                              self.array = entries.items;
                              NSMutableArray *array = [[NSMutableArray alloc]initWithArray:self.array];
-                             
-                             self.articleArray = [[NSMutableArray alloc]init];
-                             for (NSInteger i = array.count-1; i >=0; i--){
-                                 CDAEntry   *temp   = [array objectAtIndex:i];
-                                 
-                                 if (temp.fields[@"headline"])
-                                 {
-                                     NSString   *type   = temp.fields[@"contentType"];
-                                     NSString   *art    = temp.fields[@"articleId"];
-                                     NSString   *head   = temp.fields[@"headline"];
-                                     NSString   *sub    = temp.fields[@"subtitle"];
-                                     NSString   *aut    = temp.fields[@"author"];
-                                     NSString   *bod    = temp.fields[@"body"];
-                                     NSDate     *date   = temp.fields[@"publishDate"];
-                                     NSArray    *thumb  = temp.fields[@"thumbnails"];
-                                     NSString   *tags   = temp.fields[@"tags"];
-                                     
-                                     ArticleDataModel *articleModel = [[ArticleDataModel alloc]initWithContentType:type andArticleId:art andHeadline:head andSubtitle:sub andAuthor:aut andBody:bod andPublishDate:date andThumbnails:thumb andTags:tags];
-                                     
-                                     [self.articleArray addObject:articleModel];
-                                 }
-                                 
-                                 
-                             }
-                             
-                             NSMutableArray *temp = [self.articleArray objectAtIndex:0];
-                             if (!temp) {
+                             if (!entries.items) {
                                  completionBlock(NO, nil, nil);
                              }else{
-                                 completionBlock(YES, self.articleArray, nil);
+                                 completionBlock(YES, array, nil);
                              }
                              
                          }
@@ -92,40 +66,14 @@
 - (void) fetchWithIdBlog:(myCompletionBlock)completionBlock{
     CDAClient *client = [DataFetcher singletonInstance].fetchClient;
     
-    [client fetchEntriesMatching:@{ @"content_type": @"5gLJdg7h32eGomEcAGMGsS"}
+    [client fetchEntriesMatching:@{ contentType: blogContent}
                          success:^(CDAResponse *response, CDAArray *entries){
                              self.array = entries.items;
                              NSMutableArray *array = [[NSMutableArray alloc]initWithArray:self.array];
-                             
-                             self.blogArray = [[NSMutableArray alloc]init];
-                             for (NSInteger i = array.count-1; i >=0; i--){
-                                 CDAEntry   *temp   = [array objectAtIndex:i];
-                                 
-                                 if (temp.fields[@"blogId"])
-                                 {
-                                     NSString   *type   = temp.fields[@"contentType"];
-                                     NSString   *blog    = temp.fields[@"blogId"];
-                                     NSString   *series   = temp.fields[@"seriesName"];
-                                     NSString   *description    = temp.fields[@"description"];
-                                     NSString   *aut    = temp.fields[@"author"];
-                                     NSString   *bod    = temp.fields[@"body"];
-                                     NSDate     *date   = temp.fields[@"publishDate"];
-                                     NSArray    *thumb  = temp.fields[@"thumbnails"];
-                                     NSArray   *tags   = temp.fields[@"tags"];
-                                     
-                                     BlogDataModel *blogModel = [[BlogDataModel alloc]initWithContent:type andBlogId:blog andSeries:series andDescrip:description andAuthor:aut andBody:bod andDate:date andThumbs:thumb andTags:tags];
-                                     
-                                     [self.blogArray addObject:blogModel];
-                                 }
-                                 
-                                 
-                             }
-                             
-                             NSMutableArray *temp = [self.blogArray objectAtIndex:0];
-                             if (!temp) {
+                             if (!entries.items) {
                                  completionBlock(NO, nil, nil);
                              }else{
-                                 completionBlock(YES, self.blogArray, nil);
+                                 completionBlock(YES, array, nil);
                              }
                              
                          }
@@ -136,6 +84,68 @@
      ];
 }
 
+- (void) fetchWithIdEvent:(myCompletionBlock)completionBlock{
+    CDAClient *client = [DataFetcher singletonInstance].fetchClient;
+    
+    [client fetchEntriesMatching:@{ contentType: eventContent}
+                         success:^(CDAResponse *response, CDAArray *entries){
+                             self.array = entries.items;
+                             NSMutableArray *array = [[NSMutableArray alloc]initWithArray:self.array];
+                             if (!entries.items) {
+                                 completionBlock(NO, nil, nil);
+                             }else{
+                                 completionBlock(YES, array, nil);
+                             }
+                             
+                         }
+                         failure:^(CDAResponse *response, NSError *error){
+                             NSLog(@"%@", error);
+                             completionBlock(NO, nil, error);
+                         }
+     ];
+}
+
+- (void) fetchWithIdPlaces:(myCompletionBlock)completionBlock{
+    CDAClient *client = [DataFetcher singletonInstance].fetchClient;
+    
+    [client fetchEntriesMatching:@{ contentType: placesContent}
+                         success:^(CDAResponse *response, CDAArray *entries){
+                             self.array = entries.items;
+                             NSMutableArray *array = [[NSMutableArray alloc]initWithArray:self.array];
+                             if (!entries.items) {
+                                 completionBlock(NO, nil, nil);
+                             }else{
+                                 completionBlock(YES, array, nil);
+                             }
+                             
+                         }
+                         failure:^(CDAResponse *response, NSError *error){
+                             NSLog(@"%@", error);
+                             completionBlock(NO, nil, error);
+                         }
+     ];
+}
+
+- (void) fetchWithIdVideo:(myCompletionBlock)completionBlock{
+    CDAClient *client = [DataFetcher singletonInstance].fetchClient;
+    
+    [client fetchEntriesMatching:@{ contentType: videoContent}
+                         success:^(CDAResponse *response, CDAArray *entries){
+                             self.array = entries.items;
+                             NSMutableArray *array = [[NSMutableArray alloc]initWithArray:self.array];
+                             if (!entries.items) {
+                                 completionBlock(NO, nil, nil);
+                             }else{
+                                 completionBlock(YES, array, nil);
+                             }
+                             
+                         }
+                         failure:^(CDAResponse *response, NSError *error){
+                             NSLog(@"%@", error);
+                             completionBlock(NO, nil, error);
+                         }
+     ];
+}
 
 
 @end

@@ -19,7 +19,8 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    self.eventName  = @"NOT ANOTHER LAME EVENT";
+//    self.eventName  = @"NOT ANOTHER LAME EVENT";
+    self.eventName = [NSString stringWithFormat:@"%@", self.dataModel.eventName];
     self.title      = self.eventName;
     
     self.scr_view   = [[UIScrollView alloc] initWithFrame:self.view.frame];
@@ -55,6 +56,15 @@
     [self.attendees             addTarget:self action:@selector(attendeesAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
+-(id) initWithData:(EventDataModel *)data{
+    self = [super init];
+    if (self)
+    {
+        self.dataModel = data;
+    }
+    return self;
+}
+
 #pragma Load Content
 
 - (void)setupDetails
@@ -67,25 +77,42 @@
     self.distanceIcon       = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"distance_img"]];
     self.attendeesIcon      = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"attending_img"]];
 
+    // $ still need to work on the notification bar!
+    
     self.notifBar        = [[UILabel alloc] init];
-    self.notifBar.text   = @"82 people are attending";
+    self.notifBar.text   = @"NOTIF";
     
     self.eventDetails       = [[UITextView alloc] init];
-    self.eventDetails.text  = @"something nice about the event and stuffffffffffffff  Hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hippopotamus hbecauseippopotamusxxxxx done";
+    self.eventDetails.text  = [NSString stringWithFormat:@"%@", self.dataModel.eventDescription];
+    
     self.locInfo        = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.locInfo setTitle:@"123 whoknows way\nBR,ON" forState:UIControlStateNormal];
+    [self.locInfo setTitle:[NSString stringWithFormat: @"%@", self.dataModel.location] forState:UIControlStateNormal];
+    
+    // $ need date data
     
     self.dateInfo       = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.dateInfo setTitle:@"July 24-26\n7:00AM-2:00PM" forState:UIControlStateNormal];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterLongStyle];
+    [self.dateInfo setTitle:[dateFormatter stringFromDate: self.dataModel.eventDate] forState:UIControlStateNormal];
+    
+    
+    // $ Event type not included either
     
     self.eventType      = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.eventType setTitle:@"Private Party ;)" forState:UIControlStateNormal];
+    [self.eventType setTitle:[NSString stringWithFormat:@"%@", self.dataModel.contentType] forState:UIControlStateNormal];
+    
+    // | create new table view for this (leave text as Restrictions... or maybe put "NO restrictions" if there aren't any int he restrictions array)
     
     self.restrictions   = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.restrictions setTitle:@"Restricitons" forState:UIControlStateNormal];
     
+    // | try to figure this out.... :S
+    
     self.distance       = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.distance setTitle:@"25 minutes away" forState:UIControlStateNormal];
+    
+    // $ ask what to do with this!!!!
     
     self.attendees      = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.attendees setTitle:@"25 people attending" forState:UIControlStateNormal];

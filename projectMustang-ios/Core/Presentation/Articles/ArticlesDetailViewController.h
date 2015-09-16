@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ArticleDataModel.h"
-#import "TCArticleFactory.h"
+#import "ArticleFactory.h"
 
 @interface ArticlesDetailViewController : UIViewController
 

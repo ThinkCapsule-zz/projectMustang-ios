@@ -29,6 +29,9 @@
     if(self)
     {
         self.dataModel = data;
+        NSLog(@"%@", data);
+        NSLog(@"%@", self.dataModel);
+
         [self setupLabels];
         [self loadImages];
         [self fixFrameSizes];
@@ -61,7 +64,7 @@
     self.descLabel.textAlignment    = NSTextAlignmentLeft;
     self.descLabel.font             = [UIFont fontWithName:@"Avenir-Light" size:11];
     self.descLabel.textColor        = [UIColor blackColor];
-    self.descLabel.text             = self.dataModel.blogDescription;
+    self.descLabel.text             = self.dataModel.description;
     
     
     NSString *auth;

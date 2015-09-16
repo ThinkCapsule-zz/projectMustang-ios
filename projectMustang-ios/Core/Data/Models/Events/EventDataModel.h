@@ -13,10 +13,11 @@
 @property (nonatomic, strong) NSString* contentType;
 @property (nonatomic, strong) NSString* eventId;
 @property (nonatomic, strong) NSString* eventName;
+@property (nonatomic, strong) NSDate*   eventDate;
 @property (nonatomic, strong) NSString* eventDescription;
 @property (nonatomic, strong) NSString* location;
 @property (nonatomic, strong) NSString* restrictions;
-@property (nonatomic, strong) NSArray* thumbnails;
-@property (nonatomic, strong) NSArray* tags;
+@property (nonatomic, strong) NSArray*  thumbnails;
+@property (nonatomic, strong) NSArray*  tags;
 
 @end

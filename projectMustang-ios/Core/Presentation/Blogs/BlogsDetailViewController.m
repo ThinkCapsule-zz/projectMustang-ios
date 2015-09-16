@@ -37,11 +37,11 @@
 
 - (void)setupTextViews
 {
-    self.blogPostName                = [[UITextView alloc]initWithFrame:CGRectMake(10.0, 5.0, self.view.frame.size.width-20.0, 36.0)];
+    self.blogPostName                   = [[UITextView alloc]initWithFrame:CGRectMake(10.0, 5.0, self.view.frame.size.width-20.0, 36.0)];
     NSMutableParagraphStyle *titleattr  = [[NSMutableParagraphStyle alloc] init];
     titleattr.lineHeightMultiple        = 0.75f;
-    NSDictionary *titledic          = @{ NSParagraphStyleAttributeName:titleattr,};
-    self.blogPostName.attributedText = [[NSAttributedString alloc] initWithString:self.dataModel.series attributes:titledic];
+    NSDictionary *titledic              = @{ NSParagraphStyleAttributeName:titleattr,};
+    self.blogPostName.attributedText    = [[NSAttributedString alloc] initWithString:self.dataModel.series attributes:titledic];
     
     
     NSString *auth;

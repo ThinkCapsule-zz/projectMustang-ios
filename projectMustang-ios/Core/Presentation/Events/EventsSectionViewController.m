@@ -26,8 +26,24 @@
                                     action:nil];
     [[self navigationItem] setBackBarButtonItem:newBackButton];
     [self loadEventCollectionView];
-    [self loadEventPictures];
+    [self loadData];
    }
+
+-(void)loadData{
+    EventsFactory *fetch = [[EventsFactory alloc]init];
+    [fetch gatherData:^(BOOL success, NSMutableArray *events, NSError *error) {
+        if (!success)
+        {
+            NSLog(@"%@", error);
+        }
+        else
+        {
+            self.gatherData = events;
+            [self.eventsCollectionView reloadData];
+            [self loadEventPictures];
+        }
+    }];
+}
 
 -(void) loadEventCollectionView
 {
@@ -88,7 +104,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    EventsDetailViewController *detVC = [[EventsDetailViewController alloc] init];
+//    EventsDetailViewController *detVC = [[EventsDetailViewController alloc] init];
+        EventsDetailViewController *detVC = [[EventsDetailViewController alloc] initWithData:self.gatherData[indexPath.row]];
     [self.navigationController pushViewController:detVC animated:YES];
 }
 
