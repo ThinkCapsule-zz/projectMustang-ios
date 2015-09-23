@@ -12,6 +12,7 @@
 
 @property (nonatomic) UIImageView   *photoImage;
 
+@property (nonatomic,strong) UIScrollView  *scr_view;
 @property (nonatomic,strong) UILabel       *placeName;
 @property (nonatomic,strong) UILabel       *placeType;
 @property (nonatomic,strong) UIImageView   *address_img;

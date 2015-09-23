@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "ArticleFactory.h"
 
 @interface ArticleSectionViewController : BaseViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -15,10 +16,11 @@
 @property (nonatomic) NSMutableArray                *articleArray;
 @property (nonatomic) NSMutableArray                *picArray;
 @property (nonatomic) NSString                      *sourcePath;
+@property (nonatomic, strong)NSMutableArray         *gatherData;
 
 @property (nonatomic, strong) NSMutableArray *temp;
 
 -(void) loadCollectionView;
 -(void) loadPictures;
--(void) reloadData;
+-(void) loadData;
 @end

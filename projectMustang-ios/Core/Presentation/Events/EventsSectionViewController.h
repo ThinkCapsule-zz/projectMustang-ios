@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "EventsFactory.h"
 
 @interface EventsSectionViewController : BaseViewController<UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -14,6 +15,7 @@
 @property (nonatomic) UICollectionView              *eventsCollectionView;
 @property (nonatomic) NSMutableArray                *eventsImgArray;
 @property (nonatomic) NSString                      *sourcePath;
+@property (nonatomic, strong) NSMutableArray        *gatherData;
 -(void) loadEventCollectionView;
 -(void) loadEventPictures;
 

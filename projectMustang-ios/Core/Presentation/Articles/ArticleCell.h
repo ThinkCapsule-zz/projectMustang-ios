@@ -7,20 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ArticleDataModel.h"
 @interface ArticleCell : UICollectionViewCell
 
-@property (strong, nonatomic) UILabel *titleLabel;
-@property (strong, nonatomic) UILabel *descLabel;
-@property (strong, nonatomic) UILabel *authLabel;
-@property (strong, nonatomic) UIImageView *photoImageView;
-@property (strong, nonatomic) UIView *overView;
--(void) loadImages:(NSString*)img;
--(void) loadLabels:(NSString*)txt :(NSString*)txt2 :(NSString*)txt3;
-//- (void)prepareForReuse;
+@property (strong, nonatomic) UITextView    *titleLabel;
+@property (strong, nonatomic) UILabel       *dateLabel;
+@property (strong, nonatomic) UILabel       *descLabel;
+@property (strong, nonatomic) UILabel       *authLabel;
+@property (strong, nonatomic) UIImageView   *photoImageView;
+@property (strong, nonatomic) UIView        *overView;
+@property (strong, nonatomic) UIView        *whiteView;
+@property (nonatomic, strong)ArticleDataModel  *dataModel;
+-(void)initWithData:(ArticleDataModel*)data;
+-(void) loadImages;
 -(void) setupImages;
 -(void) setupLabels;
 -(void) setupPicOverlay;
-
+-(void) fixFrameSizes;
+-(void) addBrLine;
 
 @end

@@ -47,7 +47,7 @@
     sideMenuVC.scaleBackgroundImageView = NO;
     sideMenuVC.scaleMenuView            = NO;
     sideMenuVC.contentViewShadowEnabled = YES;
-    sideMenuVC.backgroundImage          = [UIImage imageNamed:@"background"];
+    //sideMenuVC.backgroundImage          = [UIImage imageNamed:@"background"];
     
     
     self.window.rootViewController = sideMenuVC;

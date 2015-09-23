@@ -19,7 +19,7 @@
 -(NSMutableArray*)returnData{
     
     DataFetcher *fetch = [[DataFetcher alloc]init];
-    [fetch fetchWithId:^(BOOL success, NSMutableArray *article, NSError *error) {
+    [fetch fetchWithIdArticle:^(BOOL success, NSMutableArray *article, NSError *error) {
         if(!success){
             NSLog(@"error");
         }else{
