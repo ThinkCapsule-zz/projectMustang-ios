@@ -7,15 +7,22 @@
 //
 
 #import "RestrictionsTableViewController.h"
-
 @interface RestrictionsTableViewController ()
-
 @end
 
 @implementation RestrictionsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Event Restrictions";
+    
+    //why wont the title be removed after I place nil or @" " for the initwithtitle?
+    UIBarButtonItem *newBackButton =
+    [[UIBarButtonItem alloc] initWithTitle:nil
+                                     style:UIBarButtonItemStylePlain
+                                    target:nil
+                                    action:nil];
+    [[self navigationItem] setBackBarButtonItem:newBackButton];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -24,87 +31,78 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
--(void) initWithRestrictions:(NSArray *)restrictionsData
+
+- (void)loadView
 {
-    self.restrictions = restrictionsData;
+    UITableView *tableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] style:UITableViewStylePlain];
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.backgroundColor = [UIColor whiteColor];
+    [tableView reloadData];
+    [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
+    self.view = tableView;
+}
+
+
+-(id) initWithRestrictions:(NSArray *)restrictionsData
+{
+    if (restrictionsData !=NULL){
+        self.restrictions = restrictionsData;
+    }
+    else {
+        self.restrictions = [[NSArray alloc] initWithObjects:(NSString*) @"No Restrictions ;)", nil];
+    }
+    return self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 1;
+    // Return the number of restrictions
+    return self.restrictions.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 2;
+    
+    return 1;
+
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    //space between cells
+    return 7.0;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //configure cell
     
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *MyIdentifier = @"MyReuseIdentifier";
     
-    // Configure the cell...
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                    reuseIdentifier:MyIdentifier];
+    cell.textLabel.text             = self.restrictions[indexPath.section];
+    
+    //having trouble trying to figureout ohow to make the background of the table white, while cells remain the light gray color
+    cell.backgroundColor  = [UIColor whiteColor];
+    cell.textLabel.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.01];
+    
+    cell.textLabel.textColor        = [UIColor grayColor];
+    cell.textLabel.font             = [UIFont fontWithName:@"Avenir-Light" size:16];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
+    
 @end
+

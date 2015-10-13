@@ -87,8 +87,8 @@
 //populates each cell with whatever is in the arraycell indexpath
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    ArticleDataModel *model = self.gatherData[indexPath.row];
-    ArticleCell *cell   = (ArticleCell*)[self.articleCollectionView dequeueReusableCellWithReuseIdentifier:@"FlickrCell" forIndexPath:indexPath];
+    ArticleDataModel*model  = self.gatherData[indexPath.row];
+    ArticleCell     *cell   = (ArticleCell*)[self.articleCollectionView dequeueReusableCellWithReuseIdentifier:@"FlickrCell" forIndexPath:indexPath];
     [cell initWithData:model];
     return cell;
 }

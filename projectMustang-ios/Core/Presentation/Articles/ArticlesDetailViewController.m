@@ -166,7 +166,7 @@
     newFrame.size       = CGSizeMake(fmaxf(newSize.width, fixedWidth), newSize.height);
     self.article.frame  = newFrame;
     
-    [self.scr_view setContentSize:CGSizeMake(self.view.frame.size.width, self.articleName.frame.size.height+self.authorName.frame.size.height+self.artImage.frame.size.height+self.article_description.frame.size.height+self.article.frame.size.height)];
+    [self.scr_view setContentSize:CGSizeMake(self.view.frame.size.width, self.articleName.frame.size.height+self.authorName.frame.size.height+self.artImage.frame.size.height+self.article_description.frame.size.height+self.article.frame.size.height+80.0)];
 }
 
 - (void)didReceiveMemoryWarning {

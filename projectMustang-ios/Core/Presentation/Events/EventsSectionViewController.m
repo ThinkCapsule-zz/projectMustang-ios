@@ -69,13 +69,10 @@
     }
 }
 
-//this needs to be changed when bill's part is done
-//- (void) loadEvents
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 6;
+    return self.gatherData.count;
 }
 
 //number of rows in each section
@@ -89,10 +86,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     EventsCell *cell = [self.eventsCollectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    
-    [cell loadImages:[self.eventsImgArray objectAtIndex:indexPath.row]];
-    [cell loadLabel: [NSString stringWithFormat:@"Best Party Ever # %ld", (long)indexPath.item+1]];
-
+    [cell initWithData:self.gatherData[indexPath.row]];
     return cell;
 }
 
@@ -104,8 +98,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    EventsDetailViewController *detVC = [[EventsDetailViewController alloc] init];
-        EventsDetailViewController *detVC = [[EventsDetailViewController alloc] initWithData:self.gatherData[indexPath.row]];
+   EventsDetailViewController *detVC = [[EventsDetailViewController alloc] initWithData:self.gatherData[indexPath.row]];
     [self.navigationController pushViewController:detVC animated:YES];
 }
 

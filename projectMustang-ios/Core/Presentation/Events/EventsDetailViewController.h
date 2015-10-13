@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EventDataModel.h"
+#import "RestrictionsTableViewController.h"
 
 @interface EventsDetailViewController : UIViewController
 

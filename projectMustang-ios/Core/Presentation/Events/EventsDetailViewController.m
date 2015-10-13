@@ -88,8 +88,6 @@
     self.locInfo        = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.locInfo setTitle:[NSString stringWithFormat: @"%@", self.dataModel.location] forState:UIControlStateNormal];
     
-    // $ need date data
-    
     self.dateInfo       = [UIButton buttonWithType:UIButtonTypeSystem];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -332,39 +330,41 @@
 
 -(void) LocationAction
 {
-    NSLog(@"LOCATION!!!!!!!");
     //open maps
+//    MKPlacemark *place = [[MKPlacemark alloc]
+//                          initWithCoordinate:coords addressDictionary:address];
+//    MKMapItem *mapItem = [[MKMapItem alloc]
+//                          initWithPlacemark:place];
+//
+//   [mapItem openInMapsWithLaunchOptions:nil];
+    
 }
 
 -(void) dateAction
 {
-    NSLog(@"DATE!!!!!!!");
     //open new calendar event with date/info automatically put in
 }
 
 -(void) eventTypeAction
 {
-    NSLog(@"eventType!!!!!!!");
     // create switch/if statements for description of type of events (generally)
 }
 
 -(void) restrictionsAction
 {
-    NSLog(@"restrictions!!!!!!!");
-    //so.. people can add their own restrictions?
-    //soooooo, assuming that's so, just list restriction here by creating a table view!
+    RestrictionsTableViewController *restrictionstable = [[RestrictionsTableViewController alloc] initWithRestrictions:self.dataModel.restrictions];
+    [self.navigationController pushViewController:restrictionstable animated:YES];
 }
 
 -(void) distanceAction
 {
-    NSLog(@"distance!!!!!!!");
     //same as map except use current location already mapped out!
 }
 
 -(void) attendeesAction
 {
-    NSLog(@"attendees!!!!!!!");
-    //pop up showing event attendees? or no action???? CLARIFY DURING MEETING !!!! (and how would I do the  event attendees???)
+    // pop up showing event attendees? or no action????
+    // (and how would I do the  event attendees???)
 }
 
 - (void)didReceiveMemoryWarning {
@@ -381,5 +381,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

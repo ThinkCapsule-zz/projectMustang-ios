@@ -10,7 +10,9 @@
 
 @interface RestrictionsTableViewController : UITableViewController
 
-@property (nonatomic) UICollectionViewFlowLayout *restrictionsFlowLayout;
-@property (nonatomic) NSArray *restrictions;
--(void) initWithRestrictions: (NSArray *) restrictionsData;
+@property (nonatomic, strong) UITableView       *RestrictionsCollectionView;
+@property (nonatomic, strong) NSString          *sourcePath;
+@property (nonatomic, strong) NSArray           *restrictions;
+@property (nonatomic, strong) NSMutableArray    *temp;
+-(id) initWithRestrictions: (NSArray*)          restrictionsData;
 @end

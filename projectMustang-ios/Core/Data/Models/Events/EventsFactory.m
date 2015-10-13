@@ -35,7 +35,7 @@
                     eventModel.eventName    = temp.fields[@"eventName"];
                     eventModel.eventDescription = temp.fields[@"eventDescription"];
                     eventModel.location     = temp.fields[@"location"];
-                    eventModel.restrictions = temp.fields[@"restrictions"];
+                    eventModel.restrictions = temp.fields[@"restriction"];
                     eventModel.thumbnails   = temp.fields[@"thumbnails"];
                     eventModel.tags         = temp.fields[@"tags"];
                     eventModel.eventDate    = temp.fields[@"eventDate"];

@@ -13,9 +13,11 @@
 
 @property (strong, nonatomic) UILabel *label;
 @property (strong, nonatomic) UIImageView *photoImageView;
--(void) loadImages:(NSString*)img;
--(void) loadLabel:(NSString*)txt;
--(void) setupImages;
+@property (nonatomic, strong)EventDataModel  *dataModel;
+-(void)initWithData:(EventDataModel*)data;
+-(void) loadImage;
+-(void) loadLabel;
+-(void) setupImageView;
 -(void) setupLabels;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "EventsCell.h"
+#import "EventsSectionViewController.h"
 
 @implementation EventsCell
 
@@ -15,13 +16,23 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor    = [UIColor colorWithWhite:1.0 alpha:0.6];
-        [self setupImages];
+        [self setupImageView];
         [self setupLabels];
     }
     return self;
 }
 
--(void) setupImages
+-(void)initWithData:(EventDataModel *)data
+{
+    if(self)
+    {
+        self.dataModel = data;
+        [self loadLabel];
+        [self loadImage];
+    }
+}
+
+-(void) setupImageView
 {
     self.photoImageView                 = [[UIImageView alloc] init];
     self.photoImageView.frame           = CGRectMake(self.photoImageView.frame.origin.x, self.photoImageView.frame.origin.y, self.frame.size.width, 100);
@@ -41,15 +52,19 @@
     [self addSubview:self.label];
 }
 
-- (void) loadImages:(NSString*)img
-{
-    UIImage     *image          = [UIImage imageNamed:[NSString stringWithFormat:@"%@", img]];
-    self.photoImageView.image   = image;
+- (void) loadImage{
+    CDAAsset *asset = self.dataModel.thumbnails[0];
+    UIImage *pic    = [UIImage imageWithData:[NSData dataWithContentsOfURL:asset.URL]];
+    
+    if (!pic)
+    {
+        pic = [UIImage imageNamed:[NSString stringWithFormat:@"Eve"]];
+    }
+    self.photoImageView.image   = pic;
 }
 
-- (void) loadLabel:(NSString*)txt
-{
-    self.label.text             = txt;
+- (void) loadLabel{
+    self.label.text             = self.dataModel.eventName;
 }
 
 
