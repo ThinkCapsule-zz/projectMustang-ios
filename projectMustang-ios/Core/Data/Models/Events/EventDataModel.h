@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSDate*   eventDate;
 @property (nonatomic, strong) NSString* eventDescription;
 @property (nonatomic, strong) NSString* location;
-@property (nonatomic, strong) NSArray* restrictions;
+@property (nonatomic, strong) NSArray*  restrictions;
 @property (nonatomic, strong) NSArray*  thumbnails;
 @property (nonatomic, strong) NSArray*  tags;
 

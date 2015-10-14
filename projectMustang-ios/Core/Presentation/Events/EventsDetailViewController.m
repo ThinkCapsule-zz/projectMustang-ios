@@ -348,6 +348,45 @@
 -(void) eventTypeAction
 {
     // create switch/if statements for description of type of events (generally)
+    __block NSString *msg;
+    NSString *key = self.dataModel.contentType;
+    void (^selectedCase)() = @{
+                               @"Student Event" : ^{
+                                   msg = @"s are for students. NO OUTSIDERS";
+                               },
+                               @"Public Event" : ^{
+                                   msg = @"s are generally events held by organizaer not associated with the school ";
+                               },
+                               @"Private Event" : ^{
+                                   msg = @"s  = private party ;) Contact if you want a +1";
+                               },
+                               }[key];
+    
+    if (selectedCase != nil)
+        selectedCase();
+    
+//    TRYING TO CHANGE MESSAGE BOX ATTRIBUTES
+    /*
+    
+    NSString *attr_str  = [NSString stringWithFormat:@"%@%@", self.dataModel.contentType, msg];
+    NSMutableAttributedString *message             = [[NSMutableAttributedString alloc] initWithString:attr_str];
+    [message addAttribute:NSForegroundColorAttributeName
+                    value:[UIColor redColor]
+                    range:[attr_str rangeOfString:self.dataModel.contentType]];
+    [message addAttribute:NSForegroundColorAttributeName
+                    value:[UIColor grayColor]
+                    range:[attr_str rangeOfString:msg]];
+    
+    */
+    
+    UIAlertController *alertController = [UIAlertController
+                                       alertControllerWithTitle:@""
+                                       message:[NSString stringWithFormat:@"%@%@", self.dataModel.contentType, msg]
+                                       preferredStyle:UIAlertControllerStyleAlert];
+    
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    alertController.view.tintColor = [UIColor redColor];
 }
 
 -(void) restrictionsAction
